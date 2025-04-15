@@ -1,0 +1,506 @@
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h2 {
+    color: #444;
+    margin-top: 20px;
+}
+
+.tool-section {
+    margin-bottom: 40px;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+}
+
+/* PDF結合用のスタイル */
+.pdf-upload-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.pdf-upload-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+    color: white;
+    font-size: 16px;
+}
+
+.pdf-upload-button:hover {
+    background-color: #45a049;
+}
+
+.plus-icon {
+    font-size: 20px;
+    margin-right: 8px;
+    line-height: 1;
+}
+
+.pdf-combine-preview {
+    min-height: 200px;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+    padding: 20px;
+}
+
+.pdf-list {
+    display: flex;
+    gap: 10px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+    min-height: 200px;
+    align-items: center;
+}
+
+.pdf-preview-item {
+    position: relative;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 8px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+}
+
+.preview-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    height: fit-content;
+}
+
+.file-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.file-name {
+    text-align: center;
+    font-size: 12px;
+    color: #333;
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    background-color: #f0f0f0;
+    padding: 4px 8px;
+    border-radius: 12px;
+}
+
+.page-count {
+    text-align: center;
+    font-size: 11px;
+    color: #666;
+}
+
+.preview-content {
+    position: relative;
+    width: 200px;
+}
+
+.preview-content canvas {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 2px;
+}
+
+.remove-pdf {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #ff4444;
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    padding: 0;
+    line-height: 1;
+}
+
+.remove-pdf:hover {
+    background-color: #d32f2f;
+}
+
+.combine-plus {
+    width: 24px;
+    height: 160px;
+    background-color: #eee;
+    cursor: default;
+    position: relative;
+    flex-shrink: 0;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    font-size: 16px;
+}
+
+.combine-plus::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 2px;
+    height: 20px;
+    background-color: currentColor;
+}
+
+.combine-plus::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 2px;
+    background-color: currentColor;
+}
+
+.combine-controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+button[disabled] {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+button[disabled]:hover {
+    background-color: #cccccc;
+}
+
+input[type="file"] {
+    display: block;
+    margin: 15px 0;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#pagePreview, #pdfPreview {
+    margin-top: 20px;
+}
+
+.preview-scroll {
+    overflow-x: auto;
+    padding: 0;
+}
+
+#pdfPreviewContainer, #pdfCombinePreview {
+    padding: 0;
+    margin: 0;
+}
+
+.page-container {
+    display: flex;
+    gap: 10px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+    min-height: 200px;
+    align-items: center;
+    position: relative;
+}
+
+.pdf-page {
+    position: relative;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 8px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.pdf-page.group-start {
+    border-left: 3px solid #4CAF50;
+}
+
+.pdf-page.group-end {
+    border-right: 3px solid #ff4444;
+}
+
+.page-number {
+    text-align: center;
+    margin-top: 4px;
+    font-size: 12px;
+    color: #666;
+}
+
+.split-line-container {
+    width: 24px;
+    height: 160px;
+    background-color: #eee;
+    cursor: pointer;
+    position: relative;
+    flex-shrink: 0;
+    transition: background-color 0.3s;
+    border-radius: 2px;
+    margin: 0 12px;
+}
+
+.split-line-container:hover {
+    background-color: #ff8888;
+}
+
+.split-line-container.active {
+    background-color: #ff4444;
+}
+
+.split-line-container::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 2px;
+    height: 20px;
+    background-color: white;
+}
+
+/* ボタンのスタイル */
+.split-controls, .delete-controls, .extract-controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+#selectAllSplit, #selectAllDelete, #selectAllExtract {
+    background-color: #2196F3;
+}
+
+#selectAllSplit:hover, #selectAllDelete:hover, #selectAllExtract:hover {
+    background-color: #1976D2;
+}
+
+#resetSplits, #resetDelete, #resetExtract {
+    background-color: #f44336;
+}
+
+#resetSplits:hover, #resetDelete:hover, #resetExtract:hover {
+    background-color: #d32f2f;
+}
+
+.split-info, .delete-info, .extract-info {
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+    display: none;
+}
+
+.split-info:not(:empty), .delete-info:not(:empty), .extract-info:not(:empty) {
+    display: block;
+}
+
+.split-info p, .delete-info p, .extract-info p {
+    margin: 0 0 10px 0;
+    font-weight: bold;
+    color: #333;
+}
+
+.group-info {
+    padding: 8px;
+    margin: 5px 0;
+    background-color: white;
+    border-radius: 4px;
+    border-left: 3px solid #4CAF50;
+}
+
+.error {
+    color: #d32f2f;
+    margin-top: 10px;
+}
+
+/* チェックボックススタイル */
+input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+label {
+    font-size: 14px;
+    color: #666;
+}
+
+#pagePreview p, #deletePreview p, #extractPreview p {
+    margin: 0 0 10px 0;
+    text-align: left;
+}
+
+#fileInfoSection {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+}
+
+#fileInfoSection .file-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    align-items: center;
+}
+
+.page-delete-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 48px;
+    height: 48px;
+    background-color: transparent;
+    border: 2px solid #ff4444;
+    border-radius: 50%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    color: #ff4444;
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+.page-delete-icon svg {
+    width: 32px;
+    height: 32px;
+}
+
+.pdf-page:hover .preview-content canvas {
+    opacity: 0.7;
+}
+
+.pdf-page:hover .page-delete-icon {
+    display: flex;
+    background-color: white;
+    border-color: #ff4444;
+    color: #ff4444;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.pdf-page.page-selected .preview-content canvas {
+    opacity: 0.7;
+}
+
+.pdf-page.page-selected .page-delete-icon {
+    display: flex;
+    background-color: #ff4444;
+    border-color: #ff4444;
+    color: white;
+}
+
+/* 抽出用のページ選択スタイル */
+#extractPageContainer .pdf-page {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+#extractPageContainer .pdf-page::before {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 48px;
+    color: white;
+    z-index: 2;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+#extractPageContainer .pdf-page:hover .preview-content canvas {
+    opacity: 0.7;
+}
+
+#extractPageContainer .pdf-page:hover::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(76, 175, 80, 0.1);
+    z-index: 1;
+}
+
+#extractPageContainer .pdf-page.page-selected {
+    border: 2px solid #4CAF50;
+    box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.3);
+}
+
+#extractPageContainer .pdf-page.page-selected::before {
+    opacity: 1;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#extractPageContainer .pdf-page.page-selected::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(76, 175, 80, 0.2);
+    z-index: 1;
+}
+
+#extractPageContainer .pdf-page.page-selected .preview-content canvas {
+    opacity: 0.8;
+}

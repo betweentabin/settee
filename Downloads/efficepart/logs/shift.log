@@ -1,0 +1,9 @@
+2025-04-02 14:05:19,106 - module_resolver - INFO - Applied Python 3.12 compatibility patch to /Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py
+2025-04-02 14:05:19,339 - module_resolver - INFO - All required modules are available
+Traceback (most recent call last):
+  File "/Users/kuwatataiga/Downloads/epweb/tools/run_separate_bp.py", line 107, in create_app_from_blueprint
+    spec = importlib.util.spec_from_file_location("bp_module", blueprint_file)
+UnboundLocalError: local variable 'importlib' referenced before assignment
+アプリケーションファイルが見つからないため、新しいFlaskアプリを作成します
+Blueprintファイルを発見: /Users/kuwatataiga/Downloads/epweb/tools/shift/blueprint.py
+エラー: shift アプリケーションの作成に失敗しました: local variable 'importlib' referenced before assignment

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <title>目次生成 - Efficiency Expert</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+  <script type="module" src="script.js"></script>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">
+        <a href="/">
+          <img src="https://placehold.co/120x40/fff/000?text=Efficepart" alt="Efficepart Logo" />
+        </a>
+      </div>
+      <div class="nav-links">
+        <a href="/" class="nav-link">ホーム</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Efficiency Expert</h1>
+      <p class="subtitle">目々進化するタスクの解決にはエフィスパート</p>
+      <button class="explore-btn">Explore</button>
+    </section>
+
+    <section class="features">
+      <div class="feature-grid">
+        <div class="feature-card" onclick="window.location.href='index-generator.html'">
+          <div class="icon">🌐</div>
+          <h3>目次生成</h3>
+          <p>Generates an index for manuals.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon">✍️</div>
+          <h3>文章校正</h3>
+          <p>Proofreads and suggests content.</p>
+        </div>
+        <div class="feature-card" onclick="window.location.href='shift-scheduler.html'">
+          <div class="icon">👥</div>
+          <h3>休暇シフト</h3>
+          <p>Creates optimized schedules.</p>
+        </div>
+        <div class="feature-card" onclick="window.location.href='nametag-generator-top.html'">
+            <div class="icon">🏷️</div>
+            <h3>名札生成</h3>
+            <p>Generates name tags data.</p>
+        </div>        
+        <div class="feature-card" onclick="window.location.href='nametag-generator.html'">
+          <div class="icon">📄</div>
+          <h3>形式変換</h3>
+          <p>Converts file formats.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon">📦</div>
+          <h3>圧縮転送</h3>
+          <p>Compresses and shares files.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="form-section">
+      <div class="top-container">
+        <div class="left-container">
+          <div class="box1"></div>
+          <div class="box1box">
+            <span class="box1box-text">目次生成</span>
+          </div>
+        </div>
+        <div class="right-container">
+          <div class="box2"></div>
+          <div class="box3"></div>
+        </div>
+      </div>
+
+      <div class="bottom-container">
+        <div class="box4">
+          <h2>「マニュアルの目次、自動で完成。」</h2>
+          <p class="form-description">
+            マニュアルのテキストを入力することで、見やすい目次を自動生成。
+            階層構造を解析し、整理された目次データをエクセル形式でダウンロード可能。
+          </p>
+          <form class="index-generator">
+            <div class="form-group">
+              <label>1. マニュアルテキスト</label>
+              <textarea class="form-control" rows="10" placeholder="ここにマニュアルのテキストを入力してください"></textarea>
+            </div>
+            <div class="form-group">
+              <label>2. 目次レベル</label>
+              <div class="level-inputs">
+                <div class="input-wrapper">
+                  <input type="number" min="1" max="5" value="3" class="form-control" />
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>3. 出力形式</label>
+              <div class="radio-options">
+                <label class="radio-label">
+                  <input type="radio" name="output-type" value="excel" checked /> Excel
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="output-type" value="text" /> テキスト
+                </label>
+              </div>
+            </div>
+            <button type="submit" class="generate-btn">目次生成</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 by CARSON Co.,Ltd.</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PDF Tool</title>
+    <link rel="stylesheet" href="{{ url_for('pdf.static', filename='css/pdf_index.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script>pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';</script>
+    <script src="{{ url_for('pdf.static', filename='js/pdf_app.js') }}"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>PDF ツール</h1>
+        
+        <div class="tool-section">
+            <h2>PDF 結合</h2>
+            <form id="combineForm" action="/combine" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                <div class="pdf-upload-container">
+                    <label class="pdf-upload-button">
+                        <span class="plus-icon">+</span>
+                        <span>PDFを追加</span>
+                        <input type="file" id="pdfUpload" accept=".pdf" style="display: none;">
+                    </label>
+                </div>
+                <div id="pdfPreview" style="display: none;">
+                    <div class="preview-scroll">
+                        <div id="pdfCombinePreview">
+                            <div class="pdf-list"></div>
+                        </div>
+                    </div>
+                    <div class="combine-controls">
+                        <button type="submit" disabled>PDFを結合する</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="tool-section">
+            <h2>PDF 分割</h2>
+            <form id="splitForm" action="/split" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                <div class="pdf-upload-container">
+                    <label class="pdf-upload-button">
+                        <span class="plus-icon">+</span>
+                        <span>PDFを選択</span>
+                        <input type="file" name="pdf_file" id="pdfFile" accept=".pdf" required style="display: none;">
+                    </label>
+                </div>
+                <div id="pagePreview" style="display: none;">
+                    <p>総ページ数: <span id="totalPages"></span>ページ</p>
+                    <div class="preview-scroll">
+                        <div id="pdfPreviewContainer">
+                            <div id="pageContainer" class="page-container"></div>
+                        </div>
+                    </div>
+                    <div class="split-info"></div>
+                    <div class="split-controls">
+                        <button type="button" id="selectAllSplit">全分割</button>
+                        <button type="button" id="resetSplits">分割線をリセット</button>
+                        <button type="submit">PDFを分割する</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="tool-section">
+            <h2>PDF 削除</h2>
+            <form id="deleteForm" action="/delete" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                <div class="pdf-upload-container">
+                    <label class="pdf-upload-button">
+                        <span class="plus-icon">+</span>
+                        <span>PDFを選択</span>
+                        <input type="file" name="pdf_file" id="deleteFile" accept=".pdf" required style="display: none;">
+                    </label>
+                </div>
+                <div id="deletePreview" style="display: none;">
+                    <p style="text-align: left;">総ページ数: <span id="deleteTotalPages"></span>ページ</p>
+                    <div class="preview-scroll">
+                        <div id="pdfDeletePreview">
+                            <div id="deletePageContainer" class="page-container"></div>
+                        </div>
+                    </div>
+                    <div class="delete-info"></div>
+                    <div class="delete-controls">
+                        <button type="button" id="selectAllDelete">全選択</button>
+                        <button type="button" id="resetDelete">選択をリセット</button>
+                        <button type="submit">PDFを保存する</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="tool-section">
+            <h2>PDF 抽出</h2>
+            <form id="extractForm" action="/extract" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                <div class="pdf-upload-container">
+                    <label class="pdf-upload-button">
+                        <span class="plus-icon">+</span>
+                        <span>PDFを選択</span>
+                        <input type="file" name="pdf_file" id="extractFile" accept=".pdf" required style="display: none;">
+                    </label>
+                </div>
+                <div id="extractPreview" style="display: none;">
+                    <p style="text-align: left;">総ページ数: <span id="extractTotalPages"></span>ページ</p>
+                    <div class="preview-scroll">
+                        <div id="pdfExtractPreview">
+                            <div id="extractPageContainer" class="page-container"></div>
+                        </div>
+                    </div>
+                    <div class="extract-info"></div>
+                    <div class="extract-controls">
+                        <button type="button" id="selectAllExtract">全選択</button>
+                        <button type="button" id="resetExtract">選択をリセット</button>
+                        <button type="submit">PDFを保存する</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

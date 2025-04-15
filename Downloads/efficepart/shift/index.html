@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <title>休憩シフト - EP Web</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- 外部CSSファイルの読み込み -->
+  <link rel="stylesheet" href="/static/css/index.style.css" />
+  <link rel="stylesheet" href="/static/css/shift_index.css" />
+  <!-- PDF.jsライブラリの読み込み -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script>pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';</script>
+</head>
+<body>
+  <!-- ===== ヘッダーセクション ===== -->
+  <header>
+    <nav>
+      <div class="logo">
+        <a href="/">EP Web</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ===== ヒーローセクション ===== -->
+    <section class="hero">
+      <h1>シフト管理ツール</h1>
+      <p class="subtitle">スタッフの休憩シフトを簡単に最適化</p>
+      <button class="explore-btn">使い方を見る</button>
+    </section>
+
+    <!-- ===== 機能カードセクション ===== -->
+    <section class="features">
+      <div class="feature-grid">
+        <!-- 各機能カード -->
+        <div class="feature-card" onclick="window.location.href='/toc'">
+          <div class="icon">🌐</div>
+          <h3>目次生成</h3>
+          <p>会議資料などの目次を生成します</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon">✍️</div>
+          <h3>文章校正</h3>
+          <p>文章をチェックし改善提案します</p>
+        </div>
+        <div class="feature-card active" onclick="window.location.href='/shift'">
+          <div class="icon">👥</div>
+          <h3>休憩シフト</h3>
+          <p>最適なシフトスケジュールを作成</p>
+        </div>
+        <div class="feature-card" onclick="window.location.href='#'">
+          <div class="icon">🏷️</div>
+          <h3>名札生成</h3>
+          <p>イベント用の名札データを作成</p>
+        </div>        
+        <div class="feature-card" onclick="window.location.href='/converter'">
+          <div class="icon">📄</div>
+          <h3>形式変換</h3>
+          <p>ファイル形式を変換します</p>
+        </div>
+        <div class="feature-card" onclick="window.location.href='/gigafile'">
+          <div class="icon">📦</div>
+          <h3>圧縮転送</h3>
+          <p>ファイルを圧縮し共有します</p>
+        </div>
+        <div class="feature-card" onclick="window.location.href='/pdf'">
+          <div class="icon">📑</div>
+          <h3>PDFツール</h3>
+          <p>PDFファイルを編集・処理</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ここから下がシフトツールセクション -->
+    <!-- ============================== -->
+
+    <!-- ===== シフトツールフォームセクション ===== -->
+    <section class="form-section">
+      <!-- ヘッダーコンテナ -->
+      <div class="top-container">
+        <div class="left-container">
+          <div class="box1"></div>
+          <div class="box1box">
+            <span class="box1box-text">休憩シフト</span>
+          </div>
+        </div>
+        <div class="right-container">
+          <div class="box2"></div>
+          <div class="box3"></div>
+        </div>
+      </div>
+
+      <!-- メインコンテンツコンテナ -->
+      <div class="bottom-container">
+        <div class="box4">
+          <h2>「休暇シフト、手間なくスムーズに。」</h2>
+          <p class="form-description">
+            必要事項を入力することで、スタッフ全員の休暇回し用のシフトを
+            生成し、エクセルデータとしてダウンロードできるのでご自身で調整も可能。
+          </p>
+          <form class="shift-generator" action="/api/shift/generate" method="POST" target="_blank">
+            <div class="form-group">
+              <label>1. スタッフ人数</label>
+              <input type="number" min="1" class="form-control" name="staff_count" required />
+            
+            <div class="form-group">
+              <label>2. ポジション名</label>
+              <div class="position-inputs">
+                <div class="input-wrapper">
+                  <input
+                    type="text"
+                    placeholder="ポジション名"
+                    class="form-control"
+                    name="position_names"
+                    required
+                  />
+                </div>
+              </div>
+              <button type="button" class="add-btn" id="add-position">+ ポジション追加</button>
+            </div>
+            <div class="form-group">
+              <label>3. 臨時ポジション名</label>
+              <div class="temp-position-inputs"></div>
+            </div>
+
+            <!-- 他の入力フィールド -->
+            <div class="form-group">
+              <label>4. シフト時間設定</label>
+              <div class="time-settings">
+                <div class="time-input">
+                  <label>開始時間:</label>
+                  <input type="time" name="start_time" required />
+                </div>
+                <div class="time-input">
+                  <label>終了時間:</label>
+                  <input type="time" name="end_time" required />
+                </div>
+                <div class="time-input">
+                  <label>間隔（分）:</label>
+                  <input type="number" name="interval" min="5" max="60" step="5" value="15" required />
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>5. 休憩設定</label>
+              <div class="break-settings">
+                <div class="break-input">
+                  <label>休憩時間（分）:</label>
+                  <input type="number" name="break_duration" min="5" max="120" step="5" value="30" required />
+                </div>
+                <div class="break-input">
+                  <label>連続勤務制限（時間）:</label>
+                  <input type="number" name="max_continuous" min="1" max="12" step="0.5" value="2" required />
+                </div>
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="generate-btn">シフト表を作成する</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== フッターセクション ===== -->
+  <footer>
+    <p>&copy; 2023-2025 EP Web Application</p>
+  </footer>
+  
+  <!-- 外部JavaScriptファイルを読み込む -->
+  <script src="../static/js/shift_index.js"></script>
+</body>
+</html> 

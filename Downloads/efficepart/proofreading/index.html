@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Efficiency Expert</title>
+  <!-- 共通CSSファイル -->
+  <link rel="stylesheet" href="/static/css/style.css" />
+  <!-- 追加のCSSファイル -->
+  <link rel="stylesheet" href="/static/css/styles.css" />
+  <!-- PDF.jsライブラリの読み込み -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script>pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';</script>
+  <!-- 追加のJavaScriptファイル -->
+  <script src="/static/js/main.js"></script>
+  <style>
+    /* 編集パネル部分のセンター配置 */
+    .editor-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .editor-header {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .editor-content {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    
+    .text-panel, .result-panel {
+      width: 48%;
+    }
+    
+    .upload-area {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+    
+    .text-panel-controls, .result-panel-controls {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <!-- ===== ヘッダーセクション ===== -->
+  <header>
+    <nav>
+      <div class="logo">
+        <a href="/">Efficiency Expert</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ===== ヒーローセクション ===== -->
+  <section class="hero">
+    <h1>Efficiency Expert</h1>
+    <p class="subtitle">日々進化するタスクの解決にはエフィスパート</p>
+    <a href="#features" class="explore-btn">Explore</a>
+  </section>
+
+  <!-- ===== コンテンツセクション ===== -->
+  <main id="features">
+
+    <!-- ===== 機能カードセクション ===== -->
+    <section class="features">
+      <div class="feature-grid">
+        <!-- 各機能カード -->
+        <div class="feature-card" id="indexcard" data-card-type="目次生成" onclick="window.location.href='/toc?show=toc'">
+          <div class="icon">🌐</div>
+          <h3>目次生成</h3>
+          <p>Generates an index for manuals.</p>
+        </div>
+        <div class="feature-card" id="proofreadcard" data-card-type="文章校正" onclick="window.location.href='/proofreading'">
+          <div class="icon">✍️</div>
+          <h3>文章校正</h3>
+          <p>Proofreads and suggests content.</p>
+        </div>
+        <div class="feature-card" id="breakcard" data-card-type="休憩シフト" onclick="window.location.href='/shift'">
+          <div class="icon">👥</div>
+          <h3>休憩シフト</h3>
+          <p>Creates optimized schedules.</p>
+        </div>
+        <div class="feature-card" id="namecard" data-card-type="名札生成" onclick="window.location.href='/namecard'">
+          <div class="icon">🏷️</div>
+          <h3>名札生成</h3>
+          <p>Generates name tags data.</p>
+        </div>        
+        <div class="feature-card" id="formatcard" data-card-type="形式変換" onclick="window.location.href='/converter'">
+          <div class="icon">📄</div>
+          <h3>形式変換</h3>
+          <p>Converts file formats.</p>
+        </div>
+        <div class="feature-card" id="compresscard" data-card-type="圧縮転送" onclick="window.location.href='/gigafile'">
+          <div class="icon">📦</div>
+          <h3>圧縮転送</h3>
+          <p>Compresses and shares files.</p>
+        </div>
+        <div class="feature-card" id="pdftool1" data-card-type="PDFツール" onclick="window.location.href='/pdf'">
+          <div class="icon">📑</div>
+          <h3>PDFツール</h3>
+          <p>Edit and process PDF files.</p>
+        </div>
+        <div class="feature-card" id="pdftool2" data-card-type="PDFツール" onclick="window.location.href='/pdf'">
+          <div class="icon">❔</div>
+          <h3>使用方法</h3>
+          <p>Edit and process PDF files.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ページトランジション用オーバーレイ ===== -->
+    <div class="page-transition"></div>
+    
+    <div class="page-container">
+        <div class="content-container">
+            <main>
+                <div class="editor-container">
+                    <div class="editor-header">
+                        <div class="tab-group">
+                            <button class="tab-button active">未修正</button>
+                            <button class="tab-button">修正済</button>
+                            <button class="tab-button">無視リスト</button>
+                        </div>
+                        <div class="correction-status">
+                            <span class="status-count">校正箇所: <strong>0</strong></span>
+                            <div class="status-indicator">
+                                <div class="indicator-bar" style="width: 0%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="editor-content">
+                        <div class="text-panel">
+                            <div class="upload-area" id="upload-area">
+                                <div class="upload-content">
+                                    <div class="upload-icon">📄</div>
+                                    <p class="upload-text">ファイルをドラッグ＆ドロップ<br>または</p>
+                                    <label class="upload-button">
+                                        ファイルを選択
+                                        <input type="file" id="file-input" accept=".txt,.doc,.docx,.pdf,.xls,.xlsx,.ppt,.pptx,.odt,.ods,.odp" style="display: none;">
+                                    </label>
+                                    <p class="upload-hint">対応形式: TXT, DOC, DOCX, PDF, XLS, XLSX, PPT, PPTX, ODT, ODS, ODP</p>
+                                </div>
+                            </div>
+                            <textarea id="original-text" placeholder="校正したい文章を入力してください"></textarea>
+                            <div class="text-panel-controls">
+                                <button id="clear-button" class="secondary-button">クリア</button>
+                                <button id="proofread-button" class="primary-button">校正する</button>
+                            </div>
+                        </div>
+
+                        <div class="result-panel">
+                            <div id="result-container">
+                                <div id="result-text"></div>
+                                <div id="suggestions-container"></div>
+                            </div>
+                            <div class="result-panel-controls">
+                                <button id="apply-all-button" class="secondary-button" disabled>すべて適用</button>
+                                <button id="reject-all-button" class="secondary-button" disabled>すべて無視</button>
+                                <button id="copy-result-button" class="primary-button" disabled>結果をコピー</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="history-container" id="history">
+                    <div class="history-panel">
+                        <div class="history-header">
+                            <h2>校正履歴</h2>
+                            <button class="clear-history-button">履歴を消去</button>
+                        </div>
+                        <div id="history-container">
+                            <p class="no-history">履歴はありません</p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            
+            
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <footer>
+                <div class="footer-text">© 2024 文章校正APIツール</div>
+            </footer>
+        </div>
+    </div>
+
+    <div class="file-drop-overlay" style="display: none;">
+        <div class="drop-zone">
+            <div class="drop-zone-content">
+                <span class="drop-icon">📄</span>
+                <p>ファイルをドロップしてアップロード</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ローディング画面の制御
+        window.addEventListener('load', function() {
+            // セッションストレージをチェックして、初回アクセスかどうかを判断
+            if (!sessionStorage.getItem('visited')) {
+                // 初回アクセスの場合のみローディング画面を表示
+                setTimeout(function() {
+                    document.querySelector('.loading-screen').classList.add('fade-out');
+                    setTimeout(function() {
+                        document.querySelector('.loading-screen').style.display = 'none';
+                        // 訪問済みフラグをセット
+                        sessionStorage.setItem('visited', 'true');
+                    }, 1000);
+                }, 1500); // 1.5秒後にフェードアウト開始
+            } else {
+                // 2回目以降のアクセスの場合はローディング画面を非表示
+                document.querySelector('.loading-screen').style.display = 'none';
+            }
+        });
+
+        document.querySelector('.menu-button').addEventListener('click', function(e) {
+            document.querySelector('.menu-nav').classList.toggle('active');
+            document.querySelector('.menu-overlay').classList.toggle('active');
+        });
+
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.menu-button')) {
+                document.querySelector('.menu-nav').classList.remove('active');
+                document.querySelector('.menu-overlay').classList.remove('active');
+            }
+        });
+
+        document.querySelectorAll('.menu-nav a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                document.querySelector('.menu-nav').classList.remove('active');
+                document.querySelector('.menu-overlay').classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html> 

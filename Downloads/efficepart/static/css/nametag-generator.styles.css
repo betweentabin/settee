@@ -1,0 +1,605 @@
+/* 既存のスタイルに追加 */
+.feature-card.active {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.feature-card.active h3 {
+  color: white;
+}
+
+/* 他のスタイルは変更なし */
+.radio-options {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+
+.radio-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.radio-label input[type="radio"] {
+  margin: 0;
+  cursor: pointer;
+}
+
+.break-details {
+  margin-top: 1rem;
+  display: none; /* Initially hidden, will be shown by JavaScript when "あり" is selected */
+}
+
+.tab-pane {
+  display: none;
+}
+
+.tab-pane.active {
+  display: block;
+}
+
+.tab {
+  cursor: pointer;
+  padding: 1rem;
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: var(--border-radius);
+  transition: background-color 0.3s ease;
+}
+
+.tab.active {
+  background-color: var(--secondary-color);
+}
+
+/* 既存のスタイルはそのままで、box1boxのテキストスタイルを追加 */
+.box1box {
+  background-color: var(--secondary-color);
+  width: 90%;
+  height: 70%;
+  border-radius: 30px 30px 30px 30px;
+  margin: 0px;
+  padding: 0px;
+  box-shadow: 0 0px 0px rgba(0, 0, 0, 0);
+  border: 0px solid #ccc;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box1box-text {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* 他の既存のスタイルはそのまま維持 */
+:root {
+  --primary-color: #8B9CDB;
+  --secondary-color: #B7C4FF;
+  --tertiary-color: #F0F0F0;
+  --background-color: #F5F7FF;
+  --text-color: #333;
+  --border-radius: 30px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: var(--text-color);
+  line-height: 1.6;
+  background-color: #F5F7FF;
+}
+
+/* Header & Navigation */
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 8rem 2rem;
+  background-color: #FFFFFF;
+  position: relative;
+  overflow: hidden;
+  background-image: url('EPBG2.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0;
+}
+
+header {
+  background-color: rgba(var(--primary-color), 0.8);
+  padding: 1rem 2rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+  transition: background-color 0.3s ease;
+}
+
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 2;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.explore-btn {
+  background-color: white;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  padding: 0.8rem 3rem;
+  border-radius: var(--border-radius);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.explore-btn:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* Features */
+.features {
+  padding: 2rem 2rem;
+  background-color: var(--background-color);
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.feature-card {
+  background-color: white;
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  text-align: center;
+  box-shadow: 0 2px 20px rgba(139, 156, 219, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 25px rgba(139, 156, 219, 0.2);
+  background-color: var(--background-color);
+}
+
+.icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+  font-size: 1rem;
+}
+
+/* Form Sections */
+.form-section, .right-form-section {
+  padding: 2rem 2rem;
+  background-color: #ffffff;
+  width: 50%; /* 幅を50%に設定 */
+  margin: 0; /* marginを0に設定 */
+}
+.form-section {
+  border-radius: 30px 0px 0px 30px;
+}
+
+/* Right Form Section */
+.right-form-section {
+  color: black;
+  border-radius: 0px 30px 30px 0px;
+}
+
+/* Form Container */
+.form-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch; /* 子要素の高さを揃える */
+  padding: 2rem;
+  margin: 0 auto;
+  max-width: 1300px; /* 最大幅を設定 */
+}
+
+/* Floatの影響をクリア */
+main::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* 以下は既存のスタイル */
+.top-container {
+  padding: 0rem 0rem;
+  background-color: #ffffff;
+  max-width: 900px;
+  height: 80px;
+  border-radius: 30px;
+  margin: 0 auto;
+  display: flex;
+  gap: 0rem;
+  position: relative;
+}
+
+.left-container {
+  display: flex;
+  width: 40%;
+  position: relative;
+  z-index: 2;
+}
+
+.right-container {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  position: relative;
+  z-index: 1;
+}
+
+.box1 {
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  margin: 0px;
+  padding: 0px;
+  box-shadow: 0 0px 0px rgba(0, 0, 0, 0);
+  border: 0px solid #ccc;
+  position: relative;
+}
+
+.box2, .box3 {
+  height: 50%;
+  margin: 0px;
+  padding: 0px;
+  box-shadow: 0 0px 0px rgba(0, 0, 0, 0);
+  border: 0px solid #ccc;
+}
+
+.box2 {
+  background-color: var(--tertiary-color);
+  width: 100%;
+  margin-bottom: 0rem;
+  border-radius: 30px 30px 0px 0px;
+}
+
+.box3 {
+  width: 115%;
+  background-color: var(--tertiary-color);
+  border-radius: 0px;
+  position: absolute;
+  left: -15%;
+  top: 50%;
+  transform: translateY(0%);
+  z-index: 1;
+}
+
+.bottom-container {
+  background-color: var(--tertiary-color);
+  max-width: 900px;
+  border-radius: 30px 0px 30px 30px;
+  margin: 0 auto;
+}
+
+.box4 {
+  width: 100%;
+  background-color: var(--tertiary-color);
+  padding: 3rem;
+  border-radius: 30px 0px 30px 30px;
+}
+
+.box4 h2 {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.form-description {
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+  font-size: 1rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.form-group {
+  margin-bottom: 2rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.8rem;
+  font-weight: 500;
+  color: black;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid #E0E7FF;
+  border-radius: var(--border-radius);
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 0 3px rgba(183, 196, 255, 0.2);
+}
+
+textarea.form-control {
+  resize: vertical;
+  min-height: 200px;
+}
+
+.time-range {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.time-range .form-control {
+  width: auto;
+}
+
+.add-btn {
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  cursor: pointer;
+  padding: 0.8rem;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.add-btn:hover {
+  color: var(--secondary-color);
+}
+
+.break-settings {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.radio-label {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.generate-btn {
+  width: 100%;
+  padding: 1rem;
+  background-color: var(--secondary-color);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 2rem;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+.generate-btn:hover {
+  background-color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.input-wrapper .form-control {
+  margin-bottom: 0;
+}
+
+.delete-btn {
+  background: none;
+  border: none;
+  color: var(--secondary-color);
+  cursor: pointer;
+  font-size: 1.2rem;
+  padding: 0.25rem 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.delete-btn:hover {
+  color: var(--primary-color);
+}
+
+/* タブの横並び設定 */
+.tab-container {
+  display: flex;
+}
+
+.tab {
+  flex: 1;
+  padding: 10px;
+  text-align: center;
+  color: var(--primary-color);
+  background-color: white;
+  cursor: pointer;
+  border: none; /* 枠線を消す */
+  border-radius: 15px;
+  margin-right: 1rem; /* タブ同士のスペースを追加 */
+}
+
+.tab:last-child {
+  margin-right: 0; /* 最後のタブの右側スペースを削除 */
+}
+
+.tab.active {
+  background-color: var(--primary-color);
+  color: #fff;
+  font-weight: bold;
+}
+
+/* タブのコンテンツは初期で非表示 */
+.tab-content {
+  display: none; /* 初期状態では非表示 */
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 15px;
+}
+
+/* アクティブなタブコンテンツだけを表示 */
+.tab-content.active {
+  margin: 2rem auto; /* 上下の余白と中央寄せ */
+  padding: 1rem;
+  width: 100%; /* 任意の幅、例えば80% */
+  display: block; /* アクティブタブコンテンツを表示 */
+  background-color: #fff; /* 任意の背景色 */
+}
+
+.input-container {
+  margin-bottom: 1rem; /* 各入力項目間のスペース */
+}
+
+.input-container label {
+  display: block; /* ラベルをブロック表示にして改行を強制 */
+  margin-bottom: 0.5rem;
+}
+
+.input-container input,
+.input-container select {
+  display: block; /* 入力欄をブロック要素にして改行 */
+  width: 100%; /* 入力欄を100%の幅で表示 */
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+/* 共通のスタイル */
+.input-container input[type="color"] {
+  width: 100%; /* 幅を100%に統一 */
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  height: 40px; /* 高さを統一 */
+}
+
+.input-container select {
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .feature-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero {
+    padding: 4rem 2rem;
+    min-height: 400px;
+    background-size: 150% auto;
+  }
+
+  .feature-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .form-container {
+    padding: 1.5rem;
+  }
+
+  .tabs {
+    justify-content: flex-start;
+  }
+
+  .box1box-text {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .box1box-text {
+    font-size: 0.9rem;
+  }
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem;
+  color: #666;
+  background-color: white;
+}

@@ -1,0 +1,358 @@
+/* 既存のスタイルに追加 */
+.feature-card.active {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.feature-card.active h3 {
+  color: white;
+}
+
+/* 既存のスタイルはそのままで、box1boxのテキストスタイルを追加 */
+.box1box {
+  background-color: var(--secondary-color);
+  width: 90%;
+  height: 70%;
+  border-radius: 30px 30px 30px 30px;
+  margin: 0px;
+  padding: 0px;
+  box-shadow: 0 0px 0px rgba(0, 0, 0, 0);
+  border: 0px solid #ccc;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box1box-text {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* 他の既存のスタイルはそのまま維持 */
+:root {
+  --primary-color: #8B9CDB;
+  --secondary-color: #B7C4FF;
+  --tertiary-color: #F0F0F0;
+  --background-color: #F5F7FF;
+  --text-color: #333;
+  --border-radius: 30px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: var(--text-color);
+  line-height: 1.6;
+  background-color: #F5F7FF;
+}
+
+/* Header & Navigation */
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 8rem 2rem;
+  background-color: #FFFFFF;
+  position: relative;
+  overflow: hidden;
+  background-image: url('EPBG2.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0;
+}
+
+header {
+  background-color: rgba(var(--primary-color), 0.8);
+  padding: 1rem 2rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+  transition: background-color 0.3s ease;
+}
+
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 2;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.explore-btn {
+  background-color: white;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  padding: 0.8rem 3rem;
+  border-radius: var(--border-radius);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.explore-btn:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* Features */
+.features {
+  padding: 2rem 2rem;
+  background-color: var(--background-color);
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.feature-card {
+  background-color: white;
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  text-align: center;
+  box-shadow: 0 2px 20px rgba(139, 156, 219, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 25px rgba(139, 156, 219, 0.2);
+  background-color: var(--background-color);
+}
+
+.icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+  font-size: 1rem;
+}
+
+/* Form Sections */
+.form-section {
+  padding: 2rem 2rem;
+  background-color: #ffffff;
+  max-width: 900px;
+  border-radius: var(--border-radius);
+  margin: 0rem auto 2rem;
+}
+
+.top-container {
+  padding: 0rem 0rem;
+  background-color: #ffffff;
+  max-width: 900px;
+  height: 80px;
+  border-radius: 30px;
+  margin: 0 auto;
+  display: flex;
+  gap: 0rem;
+  position: relative;
+}
+
+.left-container {
+  display: flex;
+  width: 40%;
+  position: relative;
+  z-index: 2;
+}
+
+.right-container {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  position: relative;
+  z-index: 1;
+}
+
+.box1 {
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+  height: 100%;
+  border-radius: 30px 30px 30px 30px;
+  margin: 0px;
+  padding: 0px;
+  box-shadow: 0 0px 0px rgba(0, 0, 0, 0);
+  border: 0px solid #ccc;
+  position: relative;
+}
+
+.box2, .box3 {
+  height: 50%;
+  margin: 0px;
+  padding: 0px;
+  box-shadow: 0 0px 0px rgba(0, 0, 0, 0);
+  border: 0px solid #ccc;
+}
+
+.box2 {
+  background-color: var(--tertiary-color);
+  width: 100%;
+  margin-bottom: 0rem;
+  border-radius: 30px 30px 0px 0px;
+}
+
+.box3 {
+  width: 115%;
+  background-color: var(--tertiary-color);
+  border-radius: 0px;
+  position: absolute;
+  left: -15%;
+  top: 50%;
+  transform: translateY(0%);
+  z-index: 1;
+}
+
+.bottom-container {
+  background-color: var(--tertiary-color);
+  max-width: 900px;
+  border-radius: 30px 0px 30px 30px;
+  margin: 0 auto;
+}
+
+.box4 {
+  width: 100%;
+  background-color: var(--tertiary-color);
+  padding: 3rem;
+  border-radius: 30px 0px 30px 30px;
+}
+
+.box4 h2 {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.form-description {
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+  font-size: 1rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.drag-drop-container {
+  background-color: #f9f9f9;
+  border: 2px dashed #ccc;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  margin-top: 20px; /* 上とのスペース */
+  cursor: pointer;
+}
+
+.drag-drop-container p {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #666;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem;
+  color: #666;
+  background-color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .feature-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero {
+    padding: 4rem 2rem;
+    min-height: 400px;
+    background-size: 150% auto;
+  }
+
+  .feature-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .form-container {
+    padding: 1.5rem;
+  }
+
+  .tabs {
+    justify-content: flex-start;
+  }
+
+  .box1box-text {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .box1box-text {
+    font-size: 0.9rem;
+  }
+}

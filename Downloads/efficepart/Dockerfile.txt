@@ -1,0 +1,33 @@
+# ベースイメージとしてPython 3.9を使用
+FROM python:3.9-slim
+
+# 作業ディレクトリを設定
+WORKDIR /app
+
+# 必要なパッケージをインストール
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    && rm -rf /var/lib/apt/lists/*
+
+# 依存関係ファイルをコピー
+COPY requirements.txt .
+COPY setup.sh .
+COPY pptx_compat_patch.py .
+
+# 依存関係をインストール
+RUN pip install --no-cache-dir -r requirements.txt
+RUN python pptx_compat_patch.py
+
+# アプリケーションファイルをコピー
+COPY . .
+
+# 環境変数を設定
+ENV FLASK_APP=app.py
+ENV FLASK_ENV=production
+ENV PYTHONUNBUFFERED=1
+
+# ポートを公開
+EXPOSE 5007
+
+# Gunicornを使用してアプリケーションを起動
+CMD ["gunicorn", "--bind", "0.0.0.0:5007", "--workers", "4", "app:app"] 

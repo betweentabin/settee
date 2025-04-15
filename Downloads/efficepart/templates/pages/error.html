@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>エラー - {{ code }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <style>
+        .error-container {
+            text-align: center;
+            padding: 50px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .error-code {
+            font-size: 8rem;
+            color: #dc3545;
+            margin-bottom: 20px;
+        }
+        .error-message {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+        }
+        .home-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .home-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <div class="error-code">{{ code }}</div>
+        <div class="error-message">
+            {% if code == 404 %}
+                お探しのページは見つかりませんでした。
+            {% elif code == 403 %}
+                このページにアクセスする権限がありません。
+            {% elif code == 500 %}
+                サーバーエラーが発生しました。
+            {% else %}
+                エラーが発生しました。
+            {% endif %}
+        </div>
+        <a href="{{ url_for('index') }}" class="home-button">ホームに戻る</a>
+    </div>
+</body>
+</html>

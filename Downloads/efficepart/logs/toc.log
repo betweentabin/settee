@@ -1,0 +1,489 @@
+Flaskアプリケーションを発見: <Flask 'app_module'>
+toc アプリケーションをポート 8001 で起動中...
+アクセスURL: http://localhost:8001/
+2025-04-03 14:23:08,117 - werkzeug - INFO -  * Restarting with stat
+2025-04-03 14:23:08,528 - module_resolver - INFO - Applied Python 3.12 compatibility patch to /Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py
+2025-04-03 14:23:08,865 - module_resolver - INFO - All required modules are available
+2025-04-03 14:23:08,867 - app_module - INFO - TOC app imported as a module
+2025-04-03 14:23:08,876 - werkzeug - WARNING -  * Debugger is active!
+2025-04-03 14:23:08,881 - werkzeug - INFO -  * Debugger PIN: 550-680-307
+2025-04-03 14:23:09,409 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py', reloading
+アプリケーションファイルを発見: /Users/kuwatataiga/Downloads/epweb/tools/toc/toc＿app.py
+Flaskアプリケーションを発見: <Flask 'app_module'>
+toc アプリケーションをポート 8001 で起動中...
+アクセスURL: http://localhost:8001/
+2025-04-03 14:23:09,456 - werkzeug - INFO -  * Restarting with stat
+2025-04-03 14:23:09,700 - module_resolver - INFO - Applied Python 3.12 compatibility patch to /Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py
+2025-04-03 14:23:09,989 - module_resolver - INFO - All required modules are available
+2025-04-03 14:23:09,990 - app_module - INFO - TOC app imported as a module
+2025-04-03 14:23:10,003 - werkzeug - WARNING -  * Debugger is active!
+2025-04-03 14:23:10,009 - werkzeug - INFO -  * Debugger PIN: 550-680-307
+2025-04-03 14:23:11,466 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py', reloading
+アプリケーションファイルを発見: /Users/kuwatataiga/Downloads/epweb/tools/toc/toc＿app.py
+Flaskアプリケーションを発見: <Flask 'app_module'>
+toc アプリケーションをポート 8001 で起動中...
+アクセスURL: http://localhost:8001/
+2025-04-03 14:23:11,521 - werkzeug - INFO -  * Restarting with stat
+2025-04-03 14:23:11,701 - module_resolver - INFO - Applied Python 3.12 compatibility patch to /Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py
+2025-04-03 14:23:12,002 - module_resolver - INFO - All required modules are available
+2025-04-03 14:23:12,004 - app_module - INFO - TOC app imported as a module
+2025-04-03 14:23:12,011 - werkzeug - WARNING -  * Debugger is active!
+2025-04-03 14:23:12,016 - werkzeug - INFO -  * Debugger PIN: 550-680-307
+2025-04-03 14:23:12,259 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py', reloading
+アプリケーションファイルを発見: /Users/kuwatataiga/Downloads/epweb/tools/toc/toc＿app.py
+Flaskアプリケーションを発見: <Flask 'app_module'>
+toc アプリケーションをポート 8001 で起動中...
+アクセスURL: http://localhost:8001/
+2025-04-03 14:23:12,305 - werkzeug - INFO -  * Restarting with stat
+2025-04-03 14:23:12,694 - module_resolver - INFO - Applied Python 3.12 compatibility patch to /Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py
+2025-04-03 14:23:13,069 - module_resolver - INFO - All required modules are available
+2025-04-03 14:23:13,071 - app_module - INFO - TOC app imported as a module
+2025-04-03 14:23:13,082 - werkzeug - WARNING -  * Debugger is active!
+2025-04-03 14:23:13,089 - werkzeug - INFO -  * Debugger PIN: 550-680-307
+2025-04-03 14:23:13,651 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py', reloading
+アプリケーションファイルを発見: /Users/kuwatataiga/Downloads/epweb/tools/toc/toc＿app.py
+Flaskアプリケーションを発見: <Flask 'app_module'>
+toc アプリケーションをポート 8001 で起動中...
+アクセスURL: http://localhost:8001/
+2025-04-03 14:23:13,709 - werkzeug - INFO -  * Restarting with stat
+2025-04-03 14:23:13,983 - module_resolver - INFO - Applied Python 3.12 compatibility patch to /Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py
+2025-04-03 14:23:14,297 - module_resolver - INFO - All required modules are available
+2025-04-03 14:23:14,298 - app_module - INFO - TOC app imported as a module
+2025-04-03 14:23:14,307 - werkzeug - WARNING -  * Debugger is active!
+2025-04-03 14:23:14,313 - werkzeug - INFO -  * Debugger PIN: 550-680-307
+2025-04-03 14:23:15,083 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py', reloading
+アプリケーションファイルを発見: /Users/kuwatataiga/Downloads/epweb/tools/toc/toc＿app.py
+Flaskアプリケーションを発見: <Flask 'app_module'>
+toc アプリケーションをポート 8001 で起動中...
+アクセスURL: http://localhost:8001/
+2025-04-03 14:23:15,151 - werkzeug - INFO -  * Restarting with stat
+2025-04-03 14:23:15,366 - module_resolver - INFO - Applied Python 3.12 compatibility patch to /Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py
+2025-04-03 14:23:15,703 - module_resolver - INFO - All required modules are available
+2025-04-03 14:23:15,704 - app_module - INFO - TOC app imported as a module
+2025-04-03 14:23:15,724 - werkzeug - WARNING -  * Debugger is active!
+2025-04-03 14:23:15,744 - werkzeug - INFO -  * Debugger PIN: 550-680-307
+2025-04-03 14:23:16,067 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py', reloading
+アプリケーションファイルを発見: /Users/kuwatataiga/Downloads/epweb/tools/toc/toc＿app.py
+Flaskアプリケーションを発見: <Flask 'app_module'>
+toc アプリケーションをポート 8001 で起動中...
+アクセスURL: http://localhost:8001/
+2025-04-03 14:23:16,203 - werkzeug - INFO -  * Restarting with stat
+2025-04-03 14:23:16,427 - module_resolver - INFO - Applied Python 3.12 compatibility patch to /Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py
+2025-04-03 14:23:16,725 - module_resolver - INFO - All required modules are available
+2025-04-03 14:23:16,727 - app_module - INFO - TOC app imported as a module
+2025-04-03 14:23:16,738 - werkzeug - WARNING -  * Debugger is active!
+2025-04-03 14:23:16,745 - werkzeug - INFO -  * Debugger PIN: 550-680-307
+2025-04-03 14:23:17,118 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py', reloading
+アプリケーションファイルを発見: /Users/kuwatataiga/Downloads/epweb/tools/toc/toc＿app.py
+Flaskアプリケーションを発見: <Flask 'app_module'>
+toc アプリケーションをポート 8001 で起動中...
+アクセスURL: http://localhost:8001/
+2025-04-03 14:23:17,470 - werkzeug - INFO -  * Restarting with stat
+2025-04-03 14:23:17,883 - module_resolver - INFO - Applied Python 3.12 compatibility patch to /Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py
+2025-04-03 14:23:18,541 - module_resolver - INFO - All required modules are available
+2025-04-03 14:23:18,543 - app_module - INFO - TOC app imported as a module
+2025-04-03 14:23:18,555 - werkzeug - WARNING -  * Debugger is active!
+2025-04-03 14:23:18,571 - werkzeug - INFO -  * Debugger PIN: 550-680-307
+2025-04-03 14:23:19,058 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py', reloading
+アプリケーションファイルを発見: /Users/kuwatataiga/Downloads/epweb/tools/toc/toc＿app.py
+Flaskアプリケーションを発見: <Flask 'app_module'>
+toc アプリケーションをポート 8001 で起動中...
+アクセスURL: http://localhost:8001/
+2025-04-03 14:23:19,098 - werkzeug - INFO -  * Restarting with stat
+2025-04-03 14:23:19,388 - module_resolver - INFO - Applied Python 3.12 compatibility patch to /Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py
+2025-04-03 14:23:19,924 - module_resolver - INFO - All required modules are available
+2025-04-03 14:23:19,925 - app_module - INFO - TOC app imported as a module
+2025-04-03 14:23:19,939 - werkzeug - WARNING -  * Debugger is active!
+2025-04-03 14:23:19,954 - werkzeug - INFO -  * Debugger PIN: 550-680-307
+2025-04-03 14:23:20,406 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py', reloading
+アプリケーションファイルを発見: /Users/kuwatataiga/Downloads/epweb/tools/toc/toc＿app.py
+Flaskアプリケーションを発見: <Flask 'app_module'>
+toc アプリケーションをポート 8001 で起動中...
+アクセスURL: http://localhost:8001/
+2025-04-03 14:23:20,606 - werkzeug - INFO -  * Restarting with stat
+2025-04-03 14:23:20,864 - module_resolver - INFO - Applied Python 3.12 compatibility patch to /Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py
+2025-04-03 14:23:21,363 - module_resolver - INFO - All required modules are available
+2025-04-03 14:23:21,366 - app_module - INFO - TOC app imported as a module
+2025-04-03 14:23:21,378 - werkzeug - WARNING -  * Debugger is active!
+2025-04-03 14:23:21,401 - werkzeug - INFO -  * Debugger PIN: 550-680-307
+2025-04-03 14:23:23,193 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py', reloading
+アプリケーションファイルを発見: /Users/kuwatataiga/Downloads/epweb/tools/toc/toc＿app.py
+Flaskアプリケーションを発見: <Flask 'app_module'>
+toc アプリケーションをポート 8001 で起動中...
+アクセスURL: http://localhost:8001/
+2025-04-03 14:23:23,248 - werkzeug - INFO -  * Restarting with stat
+2025-04-03 14:23:23,658 - module_resolver - INFO - Applied Python 3.12 compatibility patch to /Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py
+2025-04-03 14:23:24,250 - module_resolver - INFO - All required modules are available
+2025-04-03 14:23:24,251 - app_module - INFO - TOC app imported as a module
+2025-04-03 14:23:24,261 - werkzeug - WARNING -  * Debugger is active!
+2025-04-03 14:23:24,280 - werkzeug - INFO -  * Debugger PIN: 550-680-307
+2025-04-03 14:23:24,791 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py', reloading
+アプリケーションファイルを発見: /Users/kuwatataiga/Downloads/epweb/tools/toc/toc＿app.py
+Flaskアプリケーションを発見: <Flask 'app_module'>
+toc アプリケーションをポート 8001 で起動中...
+アクセスURL: http://localhost:8001/
+2025-04-03 14:23:24,844 - werkzeug - INFO -  * Restarting with stat
+2025-04-03 14:23:25,150 - module_resolver - INFO - Applied Python 3.12 compatibility patch to /Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py
+2025-04-03 14:23:25,388 - module_resolver - INFO - All required modules are available
+2025-04-03 14:23:25,389 - app_module - INFO - TOC app imported as a module
+2025-04-03 14:23:25,405 - werkzeug - WARNING -  * Debugger is active!
+2025-04-03 14:23:25,409 - werkzeug - INFO -  * Debugger PIN: 550-680-307
+2025-04-03 14:23:26,926 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py', reloading
+アプリケーションファイルを発見: /Users/kuwatataiga/Downloads/epweb/tools/toc/toc＿app.py
+Flaskアプリケーションを発見: <Flask 'app_module'>
+toc アプリケーションをポート 8001 で起動中...
+アクセスURL: http://localhost:8001/
+2025-04-03 14:23:27,033 - werkzeug - INFO -  * Restarting with stat
+2025-04-03 14:23:27,287 - module_resolver - INFO - Applied Python 3.12 compatibility patch to /Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py
+2025-04-03 14:23:27,881 - module_resolver - INFO - All required modules are available
+2025-04-03 14:23:27,882 - app_module - INFO - TOC app imported as a module
+2025-04-03 14:23:27,902 - werkzeug - WARNING -  * Debugger is active!
+2025-04-03 14:23:27,918 - werkzeug - INFO -  * Debugger PIN: 550-680-307
+2025-04-03 14:23:28,374 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py', reloading
+アプリケーションファイルを発見: /Users/kuwatataiga/Downloads/epweb/tools/toc/toc＿app.py
+Flaskアプリケーションを発見: <Flask 'app_module'>
+toc アプリケーションをポート 8001 で起動中...
+アクセスURL: http://localhost:8001/
+2025-04-03 14:23:28,446 - werkzeug - INFO -  * Restarting with stat
+2025-04-03 14:23:28,661 - module_resolver - INFO - Applied Python 3.12 compatibility patch to /Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py
+2025-04-03 14:23:29,163 - module_resolver - INFO - All required modules are available
+2025-04-03 14:23:29,164 - app_module - INFO - TOC app imported as a module
+2025-04-03 14:23:29,172 - werkzeug - WARNING -  * Debugger is active!
+2025-04-03 14:23:29,177 - werkzeug - INFO -  * Debugger PIN: 550-680-307
+2025-04-03 14:23:30,954 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py', reloading
+アプリケーションファイルを発見: /Users/kuwatataiga/Downloads/epweb/tools/toc/toc＿app.py
+Flaskアプリケーションを発見: <Flask 'app_module'>
+toc アプリケーションをポート 8001 で起動中...
+アクセスURL: http://localhost:8001/
+2025-04-03 14:23:30,996 - werkzeug - INFO -  * Restarting with stat
+2025-04-03 14:23:31,444 - module_resolver - INFO - Applied Python 3.12 compatibility patch to /Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py
+2025-04-03 14:23:31,990 - module_resolver - INFO - All required modules are available
+2025-04-03 14:23:31,991 - app_module - INFO - TOC app imported as a module
+2025-04-03 14:23:32,026 - werkzeug - WARNING -  * Debugger is active!
+2025-04-03 14:23:32,065 - werkzeug - INFO -  * Debugger PIN: 550-680-307
+2025-04-03 14:23:34,415 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py', reloading
+アプリケーションファイルを発見: /Users/kuwatataiga/Downloads/epweb/tools/toc/toc＿app.py
+Flaskアプリケーションを発見: <Flask 'app_module'>
+toc アプリケーションをポート 8001 で起動中...
+アクセスURL: http://localhost:8001/
+2025-04-03 14:23:34,496 - werkzeug - INFO -  * Restarting with stat
+2025-04-03 14:23:34,914 - module_resolver - INFO - Applied Python 3.12 compatibility patch to /Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py
+2025-04-03 14:23:35,441 - module_resolver - INFO - All required modules are available
+2025-04-03 14:23:35,442 - app_module - INFO - TOC app imported as a module
+2025-04-03 14:23:35,453 - werkzeug - WARNING -  * Debugger is active!
+2025-04-03 14:23:35,465 - werkzeug - INFO -  * Debugger PIN: 550-680-307
+2025-04-03 14:23:36,666 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py', reloading
+アプリケーションファイルを発見: /Users/kuwatataiga/Downloads/epweb/tools/toc/toc＿app.py
+Flaskアプリケーションを発見: <Flask 'app_module'>
+toc アプリケーションをポート 8001 で起動中...
+アクセスURL: http://localhost:8001/
+2025-04-03 14:23:36,731 - werkzeug - INFO -  * Restarting with stat
+2025-04-03 14:23:37,303 - module_resolver - INFO - Applied Python 3.12 compatibility patch to /Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py
+2025-04-03 14:23:37,735 - module_resolver - INFO - All required modules are available
+2025-04-03 14:23:37,739 - app_module - INFO - TOC app imported as a module
+2025-04-03 14:23:37,748 - werkzeug - WARNING -  * Debugger is active!
+2025-04-03 14:23:37,755 - werkzeug - INFO -  * Debugger PIN: 550-680-307
+2025-04-03 14:23:38,431 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py', reloading
+アプリケーションファイルを発見: /Users/kuwatataiga/Downloads/epweb/tools/toc/toc＿app.py
+Flaskアプリケーションを発見: <Flask 'app_module'>
+toc アプリケーションをポート 8001 で起動中...
+アクセスURL: http://localhost:8001/
+2025-04-03 14:23:38,481 - werkzeug - INFO -  * Restarting with stat
+2025-04-03 14:23:38,678 - module_resolver - INFO - Applied Python 3.12 compatibility patch to /Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py
+2025-04-03 14:23:38,889 - module_resolver - INFO - All required modules are available
+2025-04-03 14:23:38,890 - app_module - INFO - TOC app imported as a module
+2025-04-03 14:23:38,896 - werkzeug - WARNING -  * Debugger is active!
+2025-04-03 14:23:38,901 - werkzeug - INFO -  * Debugger PIN: 550-680-307
+2025-04-03 14:23:40,325 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py', reloading
+アプリケーションファイルを発見: /Users/kuwatataiga/Downloads/epweb/tools/toc/toc＿app.py
+Flaskアプリケーションを発見: <Flask 'app_module'>
+toc アプリケーションをポート 8001 で起動中...
+アクセスURL: http://localhost:8001/
+2025-04-03 14:23:40,377 - werkzeug - INFO -  * Restarting with stat
+2025-04-03 14:23:40,546 - module_resolver - INFO - Applied Python 3.12 compatibility patch to /Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py
+2025-04-03 14:23:40,803 - module_resolver - INFO - All required modules are available
+2025-04-03 14:23:40,804 - app_module - INFO - TOC app imported as a module
+2025-04-03 14:23:40,821 - werkzeug - WARNING -  * Debugger is active!
+2025-04-03 14:23:40,864 - werkzeug - INFO -  * Debugger PIN: 550-680-307
+2025-04-03 14:23:42,778 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py', reloading
+アプリケーションファイルを発見: /Users/kuwatataiga/Downloads/epweb/tools/toc/toc＿app.py
+Flaskアプリケーションを発見: <Flask 'app_module'>
+toc アプリケーションをポート 8001 で起動中...
+アクセスURL: http://localhost:8001/
+2025-04-03 14:23:42,824 - werkzeug - INFO -  * Restarting with stat
+2025-04-03 14:23:43,018 - module_resolver - INFO - Applied Python 3.12 compatibility patch to /Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py
+2025-04-03 14:23:43,386 - module_resolver - INFO - All required modules are available
+2025-04-03 14:23:43,388 - app_module - INFO - TOC app imported as a module
+2025-04-03 14:23:43,394 - werkzeug - WARNING -  * Debugger is active!
+2025-04-03 14:23:43,399 - werkzeug - INFO -  * Debugger PIN: 550-680-307
+2025-04-03 14:23:44,597 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py', reloading
+アプリケーションファイルを発見: /Users/kuwatataiga/Downloads/epweb/tools/toc/toc＿app.py
+Flaskアプリケーションを発見: <Flask 'app_module'>
+toc アプリケーションをポート 8001 で起動中...
+アクセスURL: http://localhost:8001/
+2025-04-03 14:23:44,633 - werkzeug - INFO -  * Restarting with stat
+2025-04-03 14:23:44,786 - module_resolver - INFO - Applied Python 3.12 compatibility patch to /Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py
+2025-04-03 14:23:44,985 - module_resolver - INFO - All required modules are available
+2025-04-03 14:23:44,986 - app_module - INFO - TOC app imported as a module
+2025-04-03 14:23:44,998 - werkzeug - WARNING -  * Debugger is active!
+2025-04-03 14:23:45,003 - werkzeug - INFO -  * Debugger PIN: 550-680-307
+2025-04-03 14:23:46,338 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py', reloading
+アプリケーションファイルを発見: /Users/kuwatataiga/Downloads/epweb/tools/toc/toc＿app.py
+Flaskアプリケーションを発見: <Flask 'app_module'>
+toc アプリケーションをポート 8001 で起動中...
+アクセスURL: http://localhost:8001/
+2025-04-03 14:23:46,388 - werkzeug - INFO -  * Restarting with stat
+2025-04-03 14:23:46,885 - module_resolver - INFO - Applied Python 3.12 compatibility patch to /Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py
+2025-04-03 14:23:47,198 - module_resolver - INFO - All required modules are available
+2025-04-03 14:23:47,199 - app_module - INFO - TOC app imported as a module
+2025-04-03 14:23:47,204 - werkzeug - WARNING -  * Debugger is active!
+2025-04-03 14:23:47,210 - werkzeug - INFO -  * Debugger PIN: 550-680-307
+2025-04-03 14:23:48,387 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py', reloading
+アプリケーションファイルを発見: /Users/kuwatataiga/Downloads/epweb/tools/toc/toc＿app.py
+Flaskアプリケーションを発見: <Flask 'app_module'>
+toc アプリケーションをポート 8001 で起動中...
+アクセスURL: http://localhost:8001/
+2025-04-03 14:23:48,456 - werkzeug - INFO -  * Restarting with stat
+2025-04-03 14:23:48,888 - module_resolver - INFO - Applied Python 3.12 compatibility patch to /Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py
+2025-04-03 14:23:49,268 - module_resolver - INFO - All required modules are available
+2025-04-03 14:23:49,270 - app_module - INFO - TOC app imported as a module
+2025-04-03 14:23:49,278 - werkzeug - WARNING -  * Debugger is active!
+2025-04-03 14:23:49,285 - werkzeug - INFO -  * Debugger PIN: 550-680-307
+2025-04-03 14:23:50,053 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py', reloading
+アプリケーションファイルを発見: /Users/kuwatataiga/Downloads/epweb/tools/toc/toc＿app.py
+Flaskアプリケーションを発見: <Flask 'app_module'>
+toc アプリケーションをポート 8001 で起動中...
+アクセスURL: http://localhost:8001/
+2025-04-03 14:23:50,103 - werkzeug - INFO -  * Restarting with stat
+2025-04-03 14:23:50,409 - module_resolver - INFO - Applied Python 3.12 compatibility patch to /Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py
+2025-04-03 14:23:50,800 - module_resolver - INFO - All required modules are available
+2025-04-03 14:23:50,802 - app_module - INFO - TOC app imported as a module
+2025-04-03 14:23:50,812 - werkzeug - WARNING -  * Debugger is active!
+2025-04-03 14:23:50,819 - werkzeug - INFO -  * Debugger PIN: 550-680-307
+2025-04-03 14:23:52,425 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py', reloading
+アプリケーションファイルを発見: /Users/kuwatataiga/Downloads/epweb/tools/toc/toc＿app.py
+Flaskアプリケーションを発見: <Flask 'app_module'>
+toc アプリケーションをポート 8001 で起動中...
+アクセスURL: http://localhost:8001/
+2025-04-03 14:23:52,456 - werkzeug - INFO -  * Restarting with stat
+2025-04-03 14:23:52,608 - module_resolver - INFO - Applied Python 3.12 compatibility patch to /Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py
+2025-04-03 14:23:52,967 - module_resolver - INFO - All required modules are available
+2025-04-03 14:23:52,968 - app_module - INFO - TOC app imported as a module
+2025-04-03 14:23:52,977 - werkzeug - WARNING -  * Debugger is active!
+2025-04-03 14:23:52,985 - werkzeug - INFO -  * Debugger PIN: 550-680-307
+2025-04-03 14:23:53,505 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py', reloading
+アプリケーションファイルを発見: /Users/kuwatataiga/Downloads/epweb/tools/toc/toc＿app.py
+Flaskアプリケーションを発見: <Flask 'app_module'>
+toc アプリケーションをポート 8001 で起動中...
+アクセスURL: http://localhost:8001/
+2025-04-03 14:23:53,547 - werkzeug - INFO -  * Restarting with stat
+2025-04-03 14:23:53,869 - module_resolver - INFO - Applied Python 3.12 compatibility patch to /Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py
+2025-04-03 14:23:54,223 - module_resolver - INFO - All required modules are available
+2025-04-03 14:23:54,224 - app_module - INFO - TOC app imported as a module
+2025-04-03 14:23:54,238 - werkzeug - WARNING -  * Debugger is active!
+2025-04-03 14:23:54,244 - werkzeug - INFO -  * Debugger PIN: 550-680-307
+2025-04-03 14:23:55,553 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py', reloading
+アプリケーションファイルを発見: /Users/kuwatataiga/Downloads/epweb/tools/toc/toc＿app.py
+Flaskアプリケーションを発見: <Flask 'app_module'>
+toc アプリケーションをポート 8001 で起動中...
+アクセスURL: http://localhost:8001/
+2025-04-03 14:23:55,638 - werkzeug - INFO -  * Restarting with stat
+2025-04-03 14:23:55,946 - module_resolver - INFO - Applied Python 3.12 compatibility patch to /Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py
+2025-04-03 14:23:56,303 - module_resolver - INFO - All required modules are available
+2025-04-03 14:23:56,305 - app_module - INFO - TOC app imported as a module
+2025-04-03 14:23:56,324 - werkzeug - WARNING -  * Debugger is active!
+2025-04-03 14:23:56,333 - werkzeug - INFO -  * Debugger PIN: 550-680-307
+2025-04-03 14:27:32,194 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py', reloading
+アプリケーションファイルを発見: /Users/kuwatataiga/Downloads/epweb/tools/toc/toc＿app.py
+Flaskアプリケーションを発見: <Flask 'app_module'>
+toc アプリケーションをポート 8001 で起動中...
+アクセスURL: http://localhost:8001/
+2025-04-03 14:27:32,281 - werkzeug - INFO -  * Restarting with stat
+2025-04-03 14:27:32,628 - module_resolver - INFO - Applied Python 3.12 compatibility patch to /Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py
+2025-04-03 14:27:33,295 - module_resolver - INFO - All required modules are available
+2025-04-03 14:27:33,304 - app_module - INFO - TOC app imported as a module
+2025-04-03 14:27:33,312 - werkzeug - WARNING -  * Debugger is active!
+2025-04-03 14:27:33,332 - werkzeug - INFO -  * Debugger PIN: 550-680-307
+2025-04-03 14:27:34,644 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py', reloading
+アプリケーションファイルを発見: /Users/kuwatataiga/Downloads/epweb/tools/toc/toc＿app.py
+Flaskアプリケーションを発見: <Flask 'app_module'>
+toc アプリケーションをポート 8001 で起動中...
+アクセスURL: http://localhost:8001/
+2025-04-03 14:27:34,694 - werkzeug - INFO -  * Restarting with stat
+2025-04-03 14:27:34,986 - module_resolver - INFO - Applied Python 3.12 compatibility patch to /Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py
+2025-04-03 14:27:35,543 - module_resolver - INFO - All required modules are available
+2025-04-03 14:27:35,544 - app_module - INFO - TOC app imported as a module
+2025-04-03 14:27:35,551 - werkzeug - WARNING -  * Debugger is active!
+2025-04-03 14:27:35,557 - werkzeug - INFO -  * Debugger PIN: 550-680-307
+2025-04-03 14:27:36,843 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py', reloading
+アプリケーションファイルを発見: /Users/kuwatataiga/Downloads/epweb/tools/toc/toc＿app.py
+Flaskアプリケーションを発見: <Flask 'app_module'>
+toc アプリケーションをポート 8001 で起動中...
+アクセスURL: http://localhost:8001/
+2025-04-03 14:27:36,890 - werkzeug - INFO -  * Restarting with stat
+2025-04-03 14:27:37,389 - module_resolver - INFO - Applied Python 3.12 compatibility patch to /Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py
+2025-04-03 14:27:37,909 - module_resolver - INFO - All required modules are available
+2025-04-03 14:27:37,910 - app_module - INFO - TOC app imported as a module
+2025-04-03 14:27:37,918 - werkzeug - WARNING -  * Debugger is active!
+2025-04-03 14:27:37,924 - werkzeug - INFO -  * Debugger PIN: 550-680-307
+2025-04-03 14:27:39,197 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py', reloading
+アプリケーションファイルを発見: /Users/kuwatataiga/Downloads/epweb/tools/toc/toc＿app.py
+Flaskアプリケーションを発見: <Flask 'app_module'>
+toc アプリケーションをポート 8001 で起動中...
+アクセスURL: http://localhost:8001/
+2025-04-03 14:27:39,241 - werkzeug - INFO -  * Restarting with stat
+2025-04-03 14:27:39,805 - module_resolver - INFO - Applied Python 3.12 compatibility patch to /Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py
+2025-04-03 14:27:40,168 - module_resolver - INFO - All required modules are available
+2025-04-03 14:27:40,169 - app_module - INFO - TOC app imported as a module
+2025-04-03 14:27:40,177 - werkzeug - WARNING -  * Debugger is active!
+2025-04-03 14:27:40,182 - werkzeug - INFO -  * Debugger PIN: 550-680-307
+2025-04-03 14:27:41,467 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py', reloading
+アプリケーションファイルを発見: /Users/kuwatataiga/Downloads/epweb/tools/toc/toc＿app.py
+Flaskアプリケーションを発見: <Flask 'app_module'>
+toc アプリケーションをポート 8001 で起動中...
+アクセスURL: http://localhost:8001/
+2025-04-03 14:27:41,516 - werkzeug - INFO -  * Restarting with stat
+2025-04-03 14:27:42,049 - module_resolver - INFO - Applied Python 3.12 compatibility patch to /Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py
+2025-04-03 14:27:42,461 - module_resolver - INFO - All required modules are available
+2025-04-03 14:27:42,463 - app_module - INFO - TOC app imported as a module
+2025-04-03 14:27:42,472 - werkzeug - WARNING -  * Debugger is active!
+2025-04-03 14:27:42,479 - werkzeug - INFO -  * Debugger PIN: 550-680-307
+2025-04-03 14:27:43,712 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py', reloading
+アプリケーションファイルを発見: /Users/kuwatataiga/Downloads/epweb/tools/toc/toc＿app.py
+Flaskアプリケーションを発見: <Flask 'app_module'>
+toc アプリケーションをポート 8001 で起動中...
+アクセスURL: http://localhost:8001/
+2025-04-03 14:27:43,756 - werkzeug - INFO -  * Restarting with stat
+2025-04-03 14:27:44,386 - module_resolver - INFO - Applied Python 3.12 compatibility patch to /Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py
+2025-04-03 14:27:44,702 - module_resolver - INFO - All required modules are available
+2025-04-03 14:27:44,703 - app_module - INFO - TOC app imported as a module
+2025-04-03 14:27:44,715 - werkzeug - WARNING -  * Debugger is active!
+2025-04-03 14:27:44,721 - werkzeug - INFO -  * Debugger PIN: 550-680-307
+2025-04-03 14:27:45,989 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py', reloading
+アプリケーションファイルを発見: /Users/kuwatataiga/Downloads/epweb/tools/toc/toc＿app.py
+Flaskアプリケーションを発見: <Flask 'app_module'>
+toc アプリケーションをポート 8001 で起動中...
+アクセスURL: http://localhost:8001/
+2025-04-03 14:27:46,033 - werkzeug - INFO -  * Restarting with stat
+2025-04-03 14:27:46,604 - module_resolver - INFO - Applied Python 3.12 compatibility patch to /Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py
+2025-04-03 14:27:46,980 - module_resolver - INFO - All required modules are available
+2025-04-03 14:27:46,981 - app_module - INFO - TOC app imported as a module
+2025-04-03 14:27:46,990 - werkzeug - WARNING -  * Debugger is active!
+2025-04-03 14:27:46,995 - werkzeug - INFO -  * Debugger PIN: 550-680-307
+2025-04-03 14:27:48,249 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py', reloading
+アプリケーションファイルを発見: /Users/kuwatataiga/Downloads/epweb/tools/toc/toc＿app.py
+Flaskアプリケーションを発見: <Flask 'app_module'>
+toc アプリケーションをポート 8001 で起動中...
+アクセスURL: http://localhost:8001/
+2025-04-03 14:27:48,297 - werkzeug - INFO -  * Restarting with stat
+2025-04-03 14:27:48,821 - module_resolver - INFO - Applied Python 3.12 compatibility patch to /Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py
+2025-04-03 14:27:49,197 - module_resolver - INFO - All required modules are available
+2025-04-03 14:27:49,198 - app_module - INFO - TOC app imported as a module
+2025-04-03 14:27:49,206 - werkzeug - WARNING -  * Debugger is active!
+2025-04-03 14:27:49,212 - werkzeug - INFO -  * Debugger PIN: 550-680-307
+2025-04-03 14:27:50,469 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py', reloading
+アプリケーションファイルを発見: /Users/kuwatataiga/Downloads/epweb/tools/toc/toc＿app.py
+Flaskアプリケーションを発見: <Flask 'app_module'>
+toc アプリケーションをポート 8001 で起動中...
+アクセスURL: http://localhost:8001/
+2025-04-03 14:27:50,516 - werkzeug - INFO -  * Restarting with stat
+2025-04-03 14:27:51,336 - module_resolver - INFO - Applied Python 3.12 compatibility patch to /Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py
+2025-04-03 14:27:51,756 - module_resolver - INFO - All required modules are available
+2025-04-03 14:27:51,759 - app_module - INFO - TOC app imported as a module
+2025-04-03 14:27:51,766 - werkzeug - WARNING -  * Debugger is active!
+2025-04-03 14:27:51,772 - werkzeug - INFO -  * Debugger PIN: 550-680-307
+2025-04-03 14:27:53,033 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py', reloading
+アプリケーションファイルを発見: /Users/kuwatataiga/Downloads/epweb/tools/toc/toc＿app.py
+Flaskアプリケーションを発見: <Flask 'app_module'>
+toc アプリケーションをポート 8001 で起動中...
+アクセスURL: http://localhost:8001/
+2025-04-03 14:27:53,080 - werkzeug - INFO -  * Restarting with stat
+2025-04-03 14:27:53,678 - module_resolver - INFO - Applied Python 3.12 compatibility patch to /Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py
+2025-04-03 14:27:54,047 - module_resolver - INFO - All required modules are available
+2025-04-03 14:27:54,048 - app_module - INFO - TOC app imported as a module
+2025-04-03 14:27:54,058 - werkzeug - WARNING -  * Debugger is active!
+2025-04-03 14:27:54,064 - werkzeug - INFO -  * Debugger PIN: 550-680-307
+2025-04-03 14:27:55,311 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py', reloading
+アプリケーションファイルを発見: /Users/kuwatataiga/Downloads/epweb/tools/toc/toc＿app.py
+Flaskアプリケーションを発見: <Flask 'app_module'>
+toc アプリケーションをポート 8001 で起動中...
+アクセスURL: http://localhost:8001/
+2025-04-03 14:27:55,355 - werkzeug - INFO -  * Restarting with stat
+2025-04-03 14:27:56,031 - module_resolver - INFO - Applied Python 3.12 compatibility patch to /Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py
+2025-04-03 14:27:56,412 - module_resolver - INFO - All required modules are available
+2025-04-03 14:27:56,413 - app_module - INFO - TOC app imported as a module
+2025-04-03 14:27:56,424 - werkzeug - WARNING -  * Debugger is active!
+2025-04-03 14:27:56,436 - werkzeug - INFO -  * Debugger PIN: 550-680-307
+2025-04-03 14:27:57,710 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py', reloading
+アプリケーションファイルを発見: /Users/kuwatataiga/Downloads/epweb/tools/toc/toc＿app.py
+Flaskアプリケーションを発見: <Flask 'app_module'>
+toc アプリケーションをポート 8001 で起動中...
+アクセスURL: http://localhost:8001/
+2025-04-03 14:27:57,782 - werkzeug - INFO -  * Restarting with stat
+2025-04-03 14:27:58,105 - module_resolver - INFO - Applied Python 3.12 compatibility patch to /Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py
+2025-04-03 14:27:58,714 - module_resolver - INFO - All required modules are available
+2025-04-03 14:27:58,717 - app_module - INFO - TOC app imported as a module
+2025-04-03 14:27:58,731 - werkzeug - WARNING -  * Debugger is active!
+2025-04-03 14:27:58,737 - werkzeug - INFO -  * Debugger PIN: 550-680-307
+2025-04-03 14:33:06,543 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/app.py', reloading
+アプリケーションファイルを発見: /Users/kuwatataiga/Downloads/epweb/tools/toc/toc＿app.py
+Flaskアプリケーションを発見: <Flask 'app_module'>
+toc アプリケーションをポート 8001 で起動中...
+アクセスURL: http://localhost:8001/
+2025-04-03 14:33:06,678 - werkzeug - INFO -  * Restarting with stat
+2025-04-03 14:33:07,079 - module_resolver - INFO - Applied Python 3.12 compatibility patch to /Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py
+2025-04-03 14:33:07,906 - module_resolver - INFO - All required modules are available
+2025-04-03 14:33:07,907 - app_module - INFO - TOC app imported as a module
+2025-04-03 14:33:07,914 - werkzeug - WARNING -  * Debugger is active!
+2025-04-03 14:33:07,920 - werkzeug - INFO -  * Debugger PIN: 550-680-307
+2025-04-03 14:33:33,101 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py', reloading
+アプリケーションファイルを発見: /Users/kuwatataiga/Downloads/epweb/tools/toc/toc＿app.py
+Flaskアプリケーションを発見: <Flask 'app_module'>
+toc アプリケーションをポート 8001 で起動中...
+アクセスURL: http://localhost:8001/
+2025-04-03 14:33:33,187 - werkzeug - INFO -  * Restarting with stat
+2025-04-03 14:33:33,606 - module_resolver - INFO - Applied Python 3.12 compatibility patch to /Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py
+2025-04-03 14:33:34,185 - module_resolver - INFO - All required modules are available
+2025-04-03 14:33:34,189 - app_module - INFO - TOC app imported as a module
+2025-04-03 14:33:34,200 - werkzeug - WARNING -  * Debugger is active!
+2025-04-03 14:33:34,207 - werkzeug - INFO -  * Debugger PIN: 550-680-307
+2025-04-03 14:33:35,717 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py', reloading
+アプリケーションファイルを発見: /Users/kuwatataiga/Downloads/epweb/tools/toc/toc＿app.py
+Flaskアプリケーションを発見: <Flask 'app_module'>
+toc アプリケーションをポート 8001 で起動中...
+アクセスURL: http://localhost:8001/
+2025-04-03 14:33:35,770 - werkzeug - INFO -  * Restarting with stat
+2025-04-03 14:33:36,100 - module_resolver - INFO - Applied Python 3.12 compatibility patch to /Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py
+2025-04-03 14:33:36,485 - module_resolver - INFO - All required modules are available
+2025-04-03 14:33:36,488 - app_module - INFO - TOC app imported as a module
+2025-04-03 14:33:36,500 - werkzeug - WARNING -  * Debugger is active!
+2025-04-03 14:33:36,507 - werkzeug - INFO -  * Debugger PIN: 550-680-307
+2025-04-03 14:33:37,989 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py', reloading
+アプリケーションファイルを発見: /Users/kuwatataiga/Downloads/epweb/tools/toc/toc＿app.py
+Flaskアプリケーションを発見: <Flask 'app_module'>
+toc アプリケーションをポート 8001 で起動中...
+アクセスURL: http://localhost:8001/
+2025-04-03 14:33:38,233 - werkzeug - INFO -  * Restarting with stat
+2025-04-03 14:33:38,882 - module_resolver - ERROR - Failed to apply pptx compatibility patch: cannot import name 'is_string' from 'pptx.compat' (/Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py)
+2025-04-03 14:33:38,883 - module_resolver - ERROR - Failed to copy pptx module to tools: cannot import name 'is_string' from 'pptx.compat' (/Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py)
+2025-04-03 14:33:38,887 - module_resolver - WARNING - Module pptx is NOT available
+2025-04-03 14:33:39,362 - module_resolver - WARNING - Missing required modules: pptx
+2025-04-03 14:33:39,363 - app_module - INFO - TOC app imported as a module
+Traceback (most recent call last):
+  File "/Users/kuwatataiga/Downloads/epweb/tools/run_separate_bp.py", line 66, in create_app_from_blueprint
+    spec.loader.exec_module(app_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/Users/kuwatataiga/Downloads/epweb/tools/toc/toc＿app.py", line 35, in <module>
+    from pptx import Presentation
+  File "/Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/__init__.py", line 14, in <module>
+    from pptx.api import Presentation  # noqa
+  File "/Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/api.py", line 15, in <module>
+    from .package import Package
+  File "/Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/package.py", line 6, in <module>
+    from pptx.opc.package import OpcPackage
+  File "/Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/opc/package.py", line 11, in <module>
+    from pptx.compat import is_string, Mapping
+ImportError: cannot import name 'is_string' from 'pptx.compat' (/Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py)
+アプリケーションファイルを発見: /Users/kuwatataiga/Downloads/epweb/tools/toc/toc＿app.py
+エラー: toc アプリケーションの作成に失敗しました: cannot import name 'is_string' from 'pptx.compat' (/Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py)

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>403 Forbidden - Efficiency Expert</title>
+  <!-- 共通CSSファイル -->
+  <link rel="stylesheet" href="/static/css/index.style.css" />
+  <style>
+    .error-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 70vh;
+      text-align: center;
+      padding: 2rem;
+    }
+    
+    .error-code {
+      font-size: 8rem;
+      font-weight: bold;
+      color: var(--primary-color, #4a6eb5);
+      margin-bottom: 1rem;
+    }
+    
+    .error-message {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: var(--text-color, #333);
+    }
+    
+    .error-description {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      max-width: 600px;
+      color: var(--text-color-light, #666);
+    }
+    
+    .back-button {
+      background-color: var(--primary-color, #4a6eb5);
+      color: white;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      border-radius: 4px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      text-decoration: none;
+    }
+    
+    .back-button:hover {
+      background-color: var(--primary-color-dark, #3a5ea5);
+    }
+  </style>
+</head>
+<body>
+  <!-- ===== ヘッダーセクション ===== -->
+  <header>
+    <nav>
+      <div class="logo">
+        <a href="/">
+          <img src="/static/images/logo.png" alt="Efficiency Expert Logo" />
+          <span>Efficiency Expert</span>
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="error-container">
+      <div class="error-code">403</div>
+      <h1 class="error-message">アクセス権限がありません</h1>
+      <p class="error-description">
+        このページにアクセスする権限がありません。
+        ログイン情報を確認するか、以下のボタンからホームページに戻ってください。
+      </p>
+      <a href="/" class="back-button">ホームに戻る</a>
+    </div>
+  </main>
+
+  <!-- ===== フッターセクション ===== -->
+  <footer>
+    <p>© 2025 by CARSON Co.,Ltd.</p>
+  </footer>
+</body>
+</html>

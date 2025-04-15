@@ -1,0 +1,7 @@
+2025-04-01 15:52:52,890 - module_resolver - INFO - Applied Python 3.12 compatibility patch to /Users/kuwatataiga/Downloads/epweb/tools/gigafile/pptx/compat/__init__.py
+2025-04-01 15:52:53,327 - module_resolver - INFO - All required modules are available
+2025-04-01 15:52:54,252 - blueprint - INFO - Nametag blueprint imported
+Blueprintディレクトリ: /Users/kuwatataiga/Downloads/epweb/tools/nametag_generator
+Blueprintファイル: /Users/kuwatataiga/Downloads/epweb/tools/nametag_generator/blueprint.py
+エラー: /Users/kuwatataiga/Downloads/epweb/tools/nametag_generator/blueprint.py に nametag_generator_bp が見つかりません。
+利用可能な属性: ['A4', 'BASE_DIR', 'Blueprint', 'FONT_DIR', 'Frame', 'ImageDraw', 'ImageFont', 'PILImage', 'PageBreak', 'PageTemplate', 'Paragraph', 'ParagraphStyle', 'SimpleDocTemplate', 'Spacer', 'TTFont', 'UPLOAD_FOLDER', '__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__spec__', 'base64', 'canvas', 'colors', 'current_app', 'current_dir', 'datetime', 'generate_pdf', 'generate_pdf_endpoint', 'generate_preview', 'generate_preview_endpoint', 'getSampleStyleSheet', 'index', 'io', 'json', 'jsonify', 'logging', 'mm', 'nametag_bp', 'os', 'parent_dir', 'pd', 'pdfmetrics', 'render_template', 'request', 'select_design', 'send_file', 'static_dir', 'sys', 'template_dir', 'upload_file']

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <title>名札生成 - Efficiency Expert</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="nametag-generator.styles.css" />
+    <script type="module" src="nametag-generator.script.js"></script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">
+          <a href="/">
+            <img src="https://placehold.co/120x40/fff/000?text=Efficepart" alt="Efficepart Logo" />
+          </a>
+        </div>
+        <div class="nav-links">
+          <a href="/" class="nav-link">ホーム</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <h1>Efficiency Expert</h1>
+        <p class="subtitle">目々進化するタスクの解決にはエフィスパート</p>
+        <button class="explore-btn">Explore</button>
+      </section>
+
+      <section class="features">
+        <div class="feature-grid">
+          <div class="feature-card" onclick="window.location.href='index-generator.html'">
+            <div class="icon">🌐</div>
+            <h3>目次生成</h3>
+            <p>Generates an index for manuals.</p>
+          </div>
+          <div class="feature-card">
+            <div class="icon">✍️</div>
+            <h3>文章校正</h3>
+            <p>Proofreads and suggests content.</p>
+          </div>
+          <div class="feature-card" onclick="window.location.href='shift-scheduler.html'">
+            <div class="icon">👥</div>
+            <h3>休暇シフト</h3>
+            <p>Creates optimized schedules.</p>
+          </div>
+          <div class="feature-card" onclick="window.location.href='nametag-generator-top.html'">
+            <div class="icon">🏷️</div>
+            <h3>名札生成</h3>
+            <p>Generates name tags data.</p>
+          </div>
+          <div class="feature-card" onclick="window.location.href='nametag-generator.html'">
+            <div class="icon">📄</div>
+            <h3>形式変換</h3>
+            <p>Converts file formats.</p>
+          </div>
+          <div class="feature-card">
+            <div class="icon">📦</div>
+            <h3>圧縮転送</h3>
+            <p>Compresses and shares files.</p>
+          </div>
+        </div>
+      </section>
+
+      <div class="form-container">
+        <section class="form-section">
+          <div class="top-container">
+            <div class="left-container">
+              <div class="box1"></div>
+              <div class="box1box">
+                <span class="box1box-text">名札生成</span>
+              </div>
+            </div>
+            <div class="right-container">
+              <div class="box2"></div>
+              <div class="box3"></div>
+            </div>
+          </div>
+
+          <div class="bottom-container">
+            <div class="box4">
+              <h2>「名札データ、一括で簡単作成。」</h2>
+              <p class="form-description">
+                エクセルデータをアップロードすることで、複数の名札を一括生成。細かい調整も可能。
+              </p>
+              <form class="nametag-generator">
+                <div id="box4" class="settings-box">
+                  <div class="tab-container">
+                    <button class="tab active" data-tab="size-settings">サイズ</button>
+                    <button class="tab" data-tab="background-settings">背景</button>
+                    <button class="tab" data-tab="font-settings">フォント</button>
+                    <button class="tab" data-tab="position-settings">テキスト位置</button>
+                    <button class="tab" data-tab="output-settings">出力形式</button>
+                  </div>
+
+                  <div class="tab-content active" id="size-settings">
+                    <div class="input-container">
+                      <label>名札の幅(mm):</label>
+                      <input type="number" min="50" max="200" value="90">
+                    </div>
+                    <div class="input-container">
+                      <label>名札の高さ(mm):</label>
+                      <input type="number" min="50" max="200" value="55">
+                    </div>
+                  </div>
+
+                  <div class="tab-content" id="background-settings">
+                    <label>背景色:</label>
+                    <div class="input-container">
+                      <input type="color" id="background-color-picker" value="#ffffff">
+                    </div>
+                    <br>
+                    <label>背景画像:</label>
+                    <input type="file" accept="image/*">
+                  </div>
+
+                  <div class="tab-content" id="font-settings">
+                    <div class="input-container">
+                      <label>フォント名:</label>
+                      <select>
+                        <option>Arial</option>
+                        <option>Times New Roman</option>
+                        <option>Verdana</option>
+                      </select>
+                    </div>
+                    <div class="input-container">
+                      <label>フォントサイズ:</label>
+                      <input type="number" min="10" max="100" value="16">
+                    </div>
+                    <div class="input-container">
+                      <label>文字色:</label>
+                      <input type="color" id="text-color-picker" value="#000000">
+                    </div>
+                    <div class="input-container">
+                      <label>文字揃え:</label>
+                      <select>
+                        <option>左揃え</option>
+                        <option>中央揃え</option>
+                        <option>右揃え</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="tab-content" id="position-settings">
+                    <div class="input-container">
+                      <label>1行目</label>
+                    </div>
+                    <div class="input-container">
+                      <label>縦軸位置(px):</label>
+                      <input type="number" value="10">
+                    </div>
+                    <div class="input-container">
+                      <label>横軸位置(px):</label>
+                      <input type="number" value="10">
+                    </div>
+                  </div>
+
+                  <div class="tab-content" id="output-settings">
+                    <div class="input-container">
+                      <label>出力形式:</label>
+                      <select>
+                        <option>PDF</option>
+                        <option>JPG</option>
+                        <option>SVG</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <button type="submit" class="generate-btn">名札生成</button>
+              </form>
+            </div>
+          </div>
+        </section>
+        <section class="right-form-section">
+          <div class="right-top-container">
+            <p>ここは右側のセクションです。</p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2025 by CARSON Co.,Ltd.</p>
+    </footer>
+  </body>
+</html>

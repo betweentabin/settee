@@ -1,0 +1,1214 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>名札生成ツール - デザイン設定</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .tab {
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+            margin-bottom: 20px;
+        }
+
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+        }
+
+        .tab button:hover {
+            background-color: #ddd;
+        }
+
+        .tab button.active {
+            background-color: #ccc;
+        }
+
+        .tabcontent {
+            display: none;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-top: none;
+        }
+
+        .section {
+            margin-top: 20px;
+        }
+
+        .section h2 {
+            color: #007BFF;
+        }
+
+        .section label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .section input[type="text"],
+        .section input[type="number"],
+        .section select,
+        .section input[type="file"],
+        .section input[type="color"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .section input[type="color"] {
+            width: 50px;
+            height: 30px;
+            padding: 0;
+            margin-bottom: 10px;
+        }
+
+        .button-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .button-container button {
+            margin: 0 10px;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .button-container button:hover {
+            background-color: #0056b3;
+        }
+
+        .preview-container {
+            border: 1px solid #ccc;
+            padding: 20px;
+            text-align: center;
+            width: 100%;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            /*
+            margin-top: 20px;
+            position: sticky;
+            top: 20px;
+            */
+            flex: 1;
+            height: fit-content;
+            margin-top: 0;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .preview-content {
+            height: 500px;
+            /* TODO: あとで計算値を表示するように変更 */
+            position: relative;
+            width: 100%;
+        }
+
+        .preview-container img {
+            max-width: 100%;
+            height: auto;
+            width: 100%;
+        }
+
+        .trim-mark-svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .text-overlay {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: black;
+            font-size: 16px;
+            text-align: left;
+            pointer-events: none;
+            /* テキストをクリック不可に */
+            margin: 0 auto
+        }
+
+        .container {
+            display: flex;
+            gap: 20px;
+            margin: 20px;
+            height: calc(100vh - 100px);
+            /* ヘッダー分を引いた高さ */
+        }
+
+        .settings-container {
+            flex: 1;
+            overflow-y: auto;
+            padding-right: 20px;
+            max-width: 500px;
+        }
+
+        .trim-mark {
+            stroke: #000000;
+            stroke-width: 0.05mm;
+            fill: none;
+        }
+
+        .trim-mark-uti {
+            stroke: #f23838;
+            stroke-width: 0.05mm;
+            fill: none;
+        }
+
+        .trim-mark-naka {
+            stroke: #23ba26;
+            stroke-width: 0.05mm;
+            fill: none;
+        }
+
+        .trim-mark-soto {
+            stroke: #5e66ff;
+            stroke-width: 0.05mm;
+            fill: none;
+        }
+
+        .tab {
+            position: sticky;
+            top: 0;
+            background: #f1f1f1;
+            z-index: 100;
+        }
+
+        .settings-container::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .settings-container::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        .settings-container::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+
+        .settings-container::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        @media (max-width: 1024px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .settings-container {
+                max-width: 100%;
+            }
+
+            .preview-container {
+                position: relative;
+                top: 0;
+            }
+        }
+    </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdn.jsdelivr.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+
+<body>
+    <h1>デザイン設定</h1>
+
+    <div class="container">
+        <div class="settings-container">
+            <div class="tab">
+                <button class="tablinks" id="defaultOpen" onclick="openTab(event, 'FontSettings')">フォント設定</button>
+                <button class="tablinks" onclick="openTab(event, 'TextSettings')">文字色設定</button>
+                <button class="tablinks" onclick="openTab(event, 'CardSizeSettings')">名札サイズ設定</button>
+                <button class="tablinks" onclick="openTab(event, 'BackgroundSettings')">背景設定</button>
+                <button class="tablinks" onclick="openTab(event, 'OutputSettings')">出力設定</button>
+                <button class="tablinks" onclick="openTab(event, 'TextPositionSettings')">テキスト位置設定</button>
+            </div>
+
+            <div id="FontSettings" class="tabcontent">
+                <div class="section">
+                    <h2>フォント</h2>
+                    <label for="font_name">全行フォント名:</label>
+                    <select id="font_name" name="font_name" required>
+                        <option value="NotoSansJP">Noto Sans JP</option>
+                        <option value="BIZUDMincho-Regular">BIZUDMincho-Regular</option>
+                        <option value="BIZUDGothic-Regular">BIZUDGothic-Regular</option>
+                        <option value="BIZUDGothic-Bold">BIZUDGothic-Bold</option>
+
+                    </select>
+                    <label for="font_size">全行フォントサイズ:</label>
+                    <input type="number" id="font_size" name="font_size" value="5" min="1" max="15" required>
+
+                    <h3>1行目フォント</h3>
+                    <div>
+                        <label for="1-color">フォント名:</label>
+                        <select id="1-font-family" class="font-family-select">
+                            <option value="NotoSansJP">Noto Sans JP</option>
+                            <option value="BIZUDMincho-Regular">BIZUDMincho-Regular</option>
+                            <option value="BIZUDGothic-Regular">BIZUDGothic-Regular</option>
+                            <option value="BIZUDGothic-Bold">BIZUDGothic-Bold</option>
+
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="1-font-size">フォントサイズ:</label>
+                        <input type="number" id="1-font-size" class="font-size-input" value="5" min="1" max="15"
+                            required>
+                    </div>
+
+                    <h3>2行目フォント</h3>
+                    <div>
+                        <label for="2-color">フォント名:</label>
+                        <select id="2-font-family" class="font-family-select">
+                            <option value="NotoSansJP">Noto Sans JP</option>
+                            <option value="BIZUDMincho-Regular">BIZUDMincho-Regular</option>
+                            <option value="BIZUDGothic-Regular">BIZUDGothic-Regular</option>
+                            <option value="BIZUDGothic-Bold">BIZUDGothic-Bold</option>
+                            
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="2-font-size">フォントサイズ:</label>
+                        <input type="number" id="2-font-size" class="font-size-input" value="5" min="1" max="15"
+                            required>
+                    </div>
+
+                    <h3>3行目フォント</h3>
+                    <div>
+                        <label for="3-color">フォント名:</label>
+                        <select id="3-font-family" class="font-family-select">
+                            <option value="NotoSansJP">Noto Sans JP</option>
+                            <option value="BIZUDMincho-Regular">BIZUDMincho-Regular</option>
+                            <option value="BIZUDGothic-Regular">BIZUDGothic-Regular</option>
+                            <option value="BIZUDGothic-Bold">BIZUDGothic-Bold</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="3-font-size">フォントサイズ:</label>
+                        <input type="number" id="3-font-size" class="font-size-input" value="5" min="1" max="15"
+                            required>
+                    </div>
+
+                    <h3>4行目フォント</h3>
+                    <div>
+                        <label for="4-color">フォント名:</label>
+                        <select id="4-font-family" class="font-family-select">
+                            <option value="NotoSansJP">Noto Sans JP</option>
+                            <option value="BIZUDMincho-Regular">BIZUDMincho-Regular</option>
+                            <option value="BIZUDGothic-Regular">BIZUDGothic-Regular</option>
+                            <option value="BIZUDGothic-Bold">BIZUDGothic-Bold</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="4-font-size">フォントサイズ:</label>
+                        <input type="number" id="4-font-size" class="font-size-input" value="5" min="1" max="15"
+                            required>
+                    </div>
+
+                    <h3>5行目フォント</h3>
+                    <div>
+                        <label for="5-color">フォント名:</label>
+                        <select id="5-font-family" class="font-family-select">
+                            <option value="NotoSansJP">Noto Sans JP</option>
+                            <option value="BIZUDMincho-Regular">BIZUDMincho-Regular</option>
+                            <option value="BIZUDGothic-Regular">BIZUDGothic-Regular</option>
+                            <option value="BIZUDGothic-Bold">BIZUDGothic-Bold</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="5-font-size">フォントサイズ:</label>
+                        <input type="number" id="5-font-size" class="font-size-input" value="5" min="1" max="15"
+                            required>
+                    </div>
+
+                    <h3>6行目フォント</h3>
+                    <div>
+                        <label for="6-color">フォント名:</label>
+                        <select id="6-font-family" class="font-family-select">
+                            <option value="NotoSansJP">Noto Sans JP</option>
+                            <option value="BIZUDMincho-Regular">BIZUDMincho-Regular</option>
+                            <option value="BIZUDGothic-Regular">BIZUDGothic-Regular</option>
+                            <option value="BIZUDGothic-Bold">BIZUDGothic-Bold</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="6-font-size">フォントサイズ:</label>
+                        <input type="number" id="6-font-size" class="font-size-input" value="5" min="1" max="15"
+                            required>
+                    </div>
+
+                    <h3>7行目フォント</h3>
+                    <div>
+                        <label for="7-color">フォント名:</label>
+                        <select id="7-font-family" class="font-family-select">
+                            <option value="NotoSansJP">Noto Sans JP</option>
+                            <option value="BIZUDMincho-Regular">BIZUDMincho-Regular</option>
+                            <option value="BIZUDGothic-Regular">BIZUDGothic-Regular</option>
+                            <option value="BIZUDGothic-Bold">BIZUDGothic-Bold</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="7-font-size">フォントサイズ:</label>
+                        <input type="number" id="7-font-size" class="font-size-input" value="5" min="1" max="15"
+                            required>
+                    </div>
+
+                    <h3>8行目フォント</h3>
+                    <div>
+                        <label for="8-color">フォント名:</label>
+                        <select id="8-font-family" class="font-family-select">
+                            <option value="NotoSansJP">Noto Sans JP</option>
+                            <option value="BIZUDMincho-Regular">BIZUDMincho-Regular</option>
+                            <option value="BIZUDGothic-Regular">BIZUDGothic-Regular</option>
+                            <option value="BIZUDGothic-Bold">BIZUDGothic-Bold</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="8-font-size">フォントサイズ:</label>
+                        <input type="number" id="8-font-size" class="font-size-input" value="5" min="1" max="15"
+                            required>
+                    </div>
+
+                    <h3>9行目フォント</h3>
+                    <div>
+                        <label for="9-color">フォント名:</label>
+                        <select id="9-font-family" class="font-family-select">
+                            <option value="NotoSansJP">Noto Sans JP</option>
+                            <option value="BIZUDMincho-Regular">BIZUDMincho-Regular</option>
+                            <option value="BIZUDGothic-Regular">BIZUDGothic-Regular</option>
+                            <option value="BIZUDGothic-Bold">BIZUDGothic-Bold</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="9-font-size">フォントサイズ:</label>
+                        <input type="number" id="9-font-size" class="font-size-input" value="5" min="1" max="15"
+                            required>
+                    </div>
+
+                    <h3>10行目フォント</h3>
+                    <div>
+                        <label for="10-color">フォント名:</label>
+                        <select id="10-font-family" class="font-family-select">
+                            <option value="NotoSansJP">Noto Sans JP</option>
+                            <option value="BIZUDMincho-Regular">BIZUDMincho-Regular</option>
+                            <option value="BIZUDGothic-Regular">BIZUDGothic-Regular</option>
+                            <option value="BIZUDGothic-Bold">BIZUDGothic-Bold</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="10-font-size">フォントサイズ:</label>
+                        <input type="number" id="10-font-size" class="font-size-input" value="5" min="1" max="15"
+                            required>
+                    </div>
+                </div>
+            </div>
+
+            <div id="TextSettings" class="tabcontent">
+                <div class="section">
+                    <h2>文字色</h2>
+                    <label for="color">全行の色:</label>
+                    <input type="color" id="color" value="#000000">
+
+                    <label for="1-color">1行目の色:</label>
+                    <input type="color" id="1-color" value="#000000">
+
+                    <label for="2-color">2行目の色:</label>
+                    <input type="color" id="2-color" value="#000000">
+
+                    <label for="3-color">3行目の色:</label>
+                    <input type="color" id="3-color" value="#000000">
+
+                    <label for="4-color">4行目の色:</label>
+                    <input type="color" id="4-color" value="#000000">
+
+                    <label for="5-color">5行目の色:</label>
+                    <input type="color" id="5-color" value="#000000">
+
+                    <label for="6-color">6行目の色:</label>
+                    <input type="color" id="6-color" value="#000000">
+
+                    <label for="7-color">7行目の色:</label>
+                    <input type="color" id="7-color" value="#000000">
+
+                    <label for="8-color">8行目の色:</label>
+                    <input type="color" id="8-color" value="#000000">
+
+                    <label for="9-color">9行目の色:</label>
+                    <input type="color" id="9-color" value="#000000">
+
+                    <label for="10-color">10行目の色:</label>
+                    <input type="color" id="10-color" value="#000000">
+                </div>
+            </div>
+
+
+
+            <div id="CardSizeSettings" class="tabcontent">
+                <div class="section">
+                    <h2>名札サイズ</h2>
+                    <label for="card_width">名札の幅 (mm):</label>
+                    <input type="number" id="card_width" name="card_width" value="100" min="50" max="200" required>
+                    <label for="card_height">名札の高さ (mm):</label>
+                    <input type="number" id="card_height" name="card_height" value="67" min="50" max="200" required>
+                </div>
+            </div>
+
+            <div id="BackgroundSettings" class="tabcontent">
+                <div class="section">
+                    <h2>背景</h2>
+                    <label for="background_color">背景色:</label>
+                    <input type="color" id="background_color" name="background_color" value="#ffffff" required>
+                    <label for="background_image">背景画像:</label>
+                    <input type="file" id="background_image" name="background_image" accept="image/*">
+                </div>
+            </div>
+
+            <div id="OutputSettings" class="tabcontent">
+                <div class="section">
+                    <h2>出力設定</h2>
+                    <label for="output_format">出力形式:</label>
+                    <select id="output_format" name="output_format" required>
+                        <option value="pdf">PDF</option>
+                        <option value="jpg">JPEG</option>
+                        <option value="svg">SVG</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="TextPositionSettings" class="tabcontent">
+                <div class="section">
+                    <h2>テキスト位置</h2>
+                    <label for="1_x">1行目 X軸位置 (px):</label>
+                    <input type="number" id="1_x" name="1_x" value="15" required>
+                    <label for="1_y">1行目 Y軸位置 (px):</label>
+                    <input type="number" id="1_y" name="1_y" value="20" required>
+                    <label for="2_x">2行目 X軸位置 (px):</label>
+                    <input type="number" id="2_x" name="2_x" value="15" required>
+                    <label for="2_y">2行目 Y軸位置 (px):</label>
+                    <input type="number" id="2_y" name="2_y" value="25" required>
+                    <label for="3_x">3行目 X軸位置 (px):</label>
+                    <input type="number" id="3_x" name="3_x" value="15" required>
+                    <label for="3_y">3行目 Y軸位置 (px):</label>
+                    <input type="number" id="3_y" name="3_y" value="30" required>
+                    <label for="4_x">4行目 X軸位置 (px):</label>
+                    <input type="number" id="4_x" name="4_x" value="15" required>
+                    <label for="4_y">4行目 Y軸位置 (px):</label>
+                    <input type="number" id="4_y" name="4_y" value="35" required>
+                    <label for="5_x">5行目 X軸位置 (px):</label>
+                    <input type="number" id="5_x" name="5_x" value="15" required>
+                    <label for="5_y">5行目 Y軸位置 (px):</label>
+                    <input type="number" id="5_y" name="5_y" value="40" required>
+                    <label for="6_x">6行目 X軸位置 (px):</label>
+                    <input type="number" id="6_x" name="6_x" value="15" required>
+                    <label for="6_y">6行目 Y軸位置 (px):</label>
+                    <input type="number" id="6_y" name="6_y" value="45" required>
+                    <label for="7_x">7行目 X軸位置 (px):</label>
+                    <input type="number" id="7_x" name="7_x" value="15" required>
+                    <label for="7_y">7行目 Y軸位置 (px):</label>
+                    <input type="number" id="7_y" name="7_y" value="50" required>
+                    <label for="8_x">8行目 X軸位置 (px):</label>
+                    <input type="number" id="8_x" name="8_x" value="15" required>
+                    <label for="8_y">8行目 Y軸位置 (px):</label>
+                    <input type="number" id="8_y" name="8_y" value="55" required>
+                    <label for="9_x">9行目 X軸位置 (px):</label>
+                    <input type="number" id="9_x" name="9_x" value="15" required>
+                    <label for="9_y">9行目 Y軸位置 (px):</label>
+                    <input type="number" id="9_y" name="9_y" value="60" required>
+                    <label for="10_x">10行目 X軸位置 (px):</label>
+                    <input type="number" id="10_x" name="10_x" value="15" required>
+                    <label for="10_y">10行目 Y軸位置 (px):</label>
+                    <input type="number" id="10_y" name="10_y" value="65" required>
+                </div>
+            </div>
+
+
+            <div class="button-container">
+                <button type="submit" class="submit-button" onclick="submitForm()">バックエンドで生成</button>
+                <button type="button" class="submit-button" onclick="downloadPDF()">プレビューをPDFでダウンロード</button>
+                <button type="button" class="submit-button" onclick="downloadHiddenDataPDF()">隠しデータをPDFでダウンロード</button>
+                <button type="button" class="submit-button" onclick="downloadJPEG()">html2canvasでJPEG作成</button>
+                <button type="button" class="submit-button" onclick="download-PDF()">html2canvasでPDF作成</button>
+                <!-- 表示のオン/オフを制御するボタン -->
+                <button type="button" class="submit-button" onclick="toggleElement('trim-mark')">トリムマークを表示する</button>
+                <button type="button" class="submit-button" onclick="toggleElement('fragment')">切断線を表示する</button>
+                <button id="updatePreviewButton" class="submit-button">プレビューを更新</button>
+            </div>
+        </div>
+        <form class="design-form" id="designForm" action="/select_design" method="post" enctype="multipart/form-data">
+            <input type="hidden" id="hiddenData" name="data" value="{{ data }}">
+            <!-- 隠しデータの入力 -->
+            <input type="hidden" value='[
+        {"name": "山田太郎", "company": "株式会社a", "email": "yamada@example.com", "image": "https://via.placeholder.com/150"},
+        {"name": "田中花子", "company": "株式会社", "email": "tanaka@example.com", "image": "https://via.placeholder.com/150"}
+        ]'>
+        </form>
+        <div class="preview-container">
+            <h2>プレビュー</h2>
+            <div id="preview" class="preview-content">
+                <!-- <img id="previewImage" src="" alt="プレビュー画像"> -->
+                <!--
+                <div class="text-overlay">
+                    <span>株式会社サンプル</span>
+                    <span>営業部</span>
+                    <span>山田太郎</span>
+                    <span>Tel: 03-1234-5678</span>
+                    <span>Email: yamada@example.com</span>
+                </div>
+                -->
+                <!-- トリムマーク -->
+                <svg id="svg-image" viewBox="0 0 100 67" class="trim-mark-svg">
+                    <!-- 背景色用の矩形 -->
+                    <rect id="svg-background" x="7" y="7" width="88.25%" height="84%"
+                        fill="device-cmyk(0.11, 0.48, 0.83, 0.00)" />
+                    <!-- 背景画像 -->
+                    <image id="background-image" x="7" y="7" width="88.25%" height="84%"
+                        preserveAspectRatio="xMidYMid slice" style="display: none;" />
+                    <!-- テキスト -->
+                    <text id="1-text" x="15" y="20" font-family="Arial" font-size="5"
+                        fill="device-cmyk(0.11, 0.48, 0.83, 0.00)"></text>
+                    <text id="2-text" x="15" y="25" font-family="Arial" font-size="5" fill="#000000"></text>
+                    <text id="3-text" x="15" y="30" font-family="Arial" font-size="5" fill="#000000"></text>
+                    <text id="4-text" x="15" y="35" font-family="Arial" font-size="5" fill="#000000"></text>
+                    <text id="5-text" x="15" y="40" font-family="Arial" font-size="5" fill="#000000"></text>
+                    <text id="6-text" x="15" y="45" font-family="Arial" font-size="5" fill="#000000"></text>
+                    <text id="7-text" x="15" y="50" font-family="Arial" font-size="5" fill="#000000"></text>
+                    <text id="8-text" x="15" y="55" font-family="Arial" font-size="5" fill="#000000"></text>
+                    <text id="9-text" x="15" y="60" font-family="Arial" font-size="5" fill="#000000"></text>
+                    <text id="10-text" x="15" y="65" font-family="Arial" font-size="5" fill="#000000"></text>
+                    <!-- QRコード -->
+
+
+                    <!-- 右上 -->
+                    <svg id="trim-mark" class="trim-mark-svg" style="visibility: hidden;">
+                        <line class="trim-mark" x1="110" y1="7" x2="120" y2="7" />
+                        <line class="trim-mark" x1="110" y1="0" x2="110" y2="7" />
+                        <line class="trim-mark" x1="113" y1="10" x2="120" y2="10" />
+                        <line class="trim-mark" x1="113" y1="0" x2="113" y2="10" />
+                        <!-- 右下 -->
+                        <line class="trim-mark" x1="110" y1="80" x2="120" y2="80" />
+                        <line class="trim-mark" x1="110" y1="80" x2="110" y2="87" />
+                        <line class="trim-mark" x1="113" y1="77" x2="120" y2="77" />
+                        <line class="trim-mark" x1="113" y1="77" x2="113" y2="87" />
+                        <!-- 左上 -->
+                        <line class="trim-mark" x1="0" y1="7" x2="10" y2="7" />
+                        <line class="trim-mark" x1="10" y1="0" x2="10" y2="7" />
+                        <line class="trim-mark" x1="0" y1="10" x2="7" y2="10" />
+                        <line class="trim-mark" x1="7" y1="0" x2="7" y2="10" />
+                        <!-- 左下 -->
+                        <line class="trim-mark" x1="0" y1="77" x2="7" y2="77" />
+                        <line class="trim-mark" x1="7" y1="77" x2="7" y2="87" />
+                        <line class="trim-mark" x1="0" y1="80" x2="10" y2="80" />
+                        <line class="trim-mark" x1="10" y1="80" x2="10" y2="87" />
+                        <!-- 上クロス -->
+                        <line class="trim-mark" x1="52.5" y1="4" x2="67.5" y2="4" />
+                        <line class="trim-mark" x1="60" y1="0" x2="60" y2="6" />
+                        <!-- 下クロス -->
+                        <line class="trim-mark" x1="52.5" y1="83" x2="67.5" y2="83" />
+                        <line class="trim-mark" x1="60" y1="81" x2="60" y2="87" />
+                        <!-- 右クロス -->
+                        <line class="trim-mark" x1="114" y1="43.5" x2="120" y2="43.5" />
+                        <line class="trim-mark" x1="116" y1="36" x2="116" y2="51" />
+                        <!-- 左クロス -->
+                        <line class="trim-mark" x1="0" y1="43.5" x2="6" y2="43.5" />
+                        <line class="trim-mark" x1="4" y1="36" x2="4" y2="51" />
+                        <!-- 中側文字描写範囲 -->
+                        <svg id="fragment" class="trim-mark-svg" style="visibility:hidden;">
+                            <line class="trim-mark-naka" x1="13" y1="13" x2="107" y2="13" />
+                            <line class="trim-mark-naka" x1="13" y1="74" x2="107" y2="74" />
+                            <line class="trim-mark-naka" x1="13" y1="13" x2="13" y2="74" />
+                            <line class="trim-mark-naka" x1="107" y1="13" x2="107" y2="74" />
+                            <!-- 内側裁断位置 -->
+                            <line class="trim-mark-uti" x1="10" y1="10" x2="110" y2="10" />
+                            <line class="trim-mark-uti" x1="10" y1="77" x2="110" y2="77" />
+                            <line class="trim-mark-uti" x1="10" y1="10" x2="10" y2="77" />
+                            <line class="trim-mark-uti" x1="110" y1="10" x2="110" y2="77" />
+                            <!-- 外側塗りたし -->
+                            <line class="trim-mark-soto" x1="7" y1="7" x2="113" y2="7" />
+                            <line class="trim-mark-soto" x1="7" y1="80" x2="113" y2="80" />
+                            <line class="trim-mark-soto" x1="7" y1="7" x2="7" y2="80" />
+                            <line class="trim-mark-soto" x1="113" y1="7" x2="113" y2="80" />
+                            <!-- テキスト -->
+
+                        </svg>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // html2canvasでJPEG作成
+        function downloadJPEG() {
+            var target = document.getElementById("preview");
+            var options = {
+                type: "png",
+                quality: 1
+            };
+            html2canvas(target, options).then(function (canvas) {
+                var dataURL = canvas.toDataURL("image/jpg");
+                var link = document.createElement("a");
+                link.href = dataURL;
+                link.download = "download.jpeg";
+                link.click();
+            });
+        }
+
+       
+
+        function openTab(event, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            event.currentTarget.className += " active";
+        }
+
+        function submitForm() {
+            document.getElementById('designForm').submit();
+        }
+
+        const form = document.getElementById('designForm');
+        const inputs = document.querySelectorAll('.tabcontent input, .tabcontent select');
+
+        document.getElementById('defaultOpen').click();
+
+        inputs.forEach(input => {
+            input.addEventListener('input', () => {
+                updatePreview();
+            });
+        });
+
+        const fileInput = document.getElementById('background_image');
+
+        function downloadPDF() {
+            const element = document.getElementById('preview');
+            const options = {
+                margin: 1,
+                filename: 'name_tag_preview.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2 },
+                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            };
+
+            html2pdf()
+                .from(element)
+                .set(options)
+                .save();
+        }
+
+        function downloadHiddenDataPDF() {
+            const hiddenData = document.getElementById('hiddenData').value;
+            const users = JSON.parse(hiddenData);
+
+            const pdfPreview = document.createElement('div');
+            pdfPreview.style.display = 'none';
+            document.body.appendChild(pdfPreview);
+
+            users.forEach((user, index) => {
+                const userCard = document.createElement('div');
+                userCard.style.border = '1px solid #ccc';
+                userCard.style.marginBottom = '20px';
+                userCard.style.padding = '10px';
+
+                const name = document.createElement('h3');
+                name.textContent = user.name;
+                userCard.appendChild(name);
+
+                const company = document.createElement('p');
+                company.textContent = user.company;
+                userCard.appendChild(company);
+
+                const email = document.createElement('p');
+                email.textContent = user.email;
+                userCard.appendChild(email);
+
+                const img = document.createElement('img');
+                img.src = user.image;
+                img.alt = user.name;
+                img.style.maxWidth = '100px';
+                img.style.height = 'auto';
+                userCard.appendChild(img);
+
+                pdfPreview.appendChild(userCard);
+            });
+
+            const options = {
+                margin: 1,
+                filename: 'hidden_data.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2 },
+                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            };
+
+            html2pdf()
+                .from(pdfPreview)
+                .set(options)
+                .save();
+
+            pdfPreview.remove();
+        }
+
+        function toggleElement(id) {
+            var element = document.getElementById(id);
+            if (element.style.visibility === 'hidden') {
+                element.style.visibility = 'visible';
+            } else {
+                element.style.visibility = 'hidden';
+            }
+        }
+
+        // 名札サイズが変更された時に自動的に更新
+        document.getElementById('card_width').addEventListener('input', updatePreview);
+        document.getElementById('card_height').addEventListener('input', updatePreview);
+
+        // テキストポジションが変更された時に自動的に更新
+        document.getElementById('TextPositionSettings').addEventListener('input', updatePosition);
+
+        function updatePosition(event) {
+            const target = event.target
+            const id = target.id
+            const value = target.value
+
+            const sp = id.split('_');
+            const targetName = sp[0] + "-text"
+            const targetAttribute = sp[1];
+
+            // svg を取得
+            const svg = document.getElementById('svg-image');
+            svg.getElementById(targetName)?.setAttribute(targetAttribute, value);
+        }
+
+        // プレビュー更新ボタンのクリックイベント
+        function updatePreview() {
+            const cardWidth = parseFloat(document.getElementById('card_width').value);
+            const cardHeight = parseFloat(document.getElementById('card_height').value);
+
+            // viewBox を更新
+            updateViewBox(cardWidth, cardHeight);
+
+            // SVG の座標を更新
+            updateSVGCoordinates(cardWidth, cardHeight);
+        }
+
+        // 元の関数を更新
+        function updateViewBox(cardWidth, cardHeight) {
+            // 外側の余白を考慮して viewBox を設定
+            const newWidth = cardWidth + 20; // 左右10mmずつ追加
+            const newHeight = cardHeight + 20; // 上下10mmずつ追加
+
+            // SVG 要素を取得
+            const svg = document.getElementById('svg-image');
+            svg.setAttribute('viewBox', `0 0 ${newWidth} ${newHeight}`);
+        }
+
+
+        // サーバーから送信されたデータを取得して解析
+        function parseData() {
+            const serverDataInput = document.querySelector('input[name="data"]');
+            try {
+                if (serverDataInput && serverDataInput.value) {
+                    const parsedData = JSON.parse(serverDataInput.value);
+                    console.log('Parsed data:', parsedData); // デバッグ用
+                    return parsedData
+                }
+            } catch (error) {
+                console.error('データの解析エラー:', error);
+            }
+        }
+
+        // エクセル読み込みデータ
+        const parsedData = parseData()
+
+        // 初期表示時に行う処理
+        document.addEventListener('DOMContentLoaded', function () {
+            // 初期表示時にテキストを更新
+            if (parsedData.length > 0) {
+                const svg = document.getElementById('svg-image');
+                updateSVGText(svg, parsedData[0]);
+            }
+
+            // 初期表示時に背景を更新
+            updateSVGBackground();
+
+            // サイズを初期化
+            updatePreview();
+        });
+
+        // 背景色が変更されたときの処理
+        document.getElementById('background_color').addEventListener('input', function () {
+            updateSVGBackground();
+        });
+
+        // 背景画像が選択されたときの処理
+        document.getElementById('background_image').addEventListener('change', function () {
+            updateSVGBackground();
+        });
+
+        // SVGを更新する関数
+        function updateSVGText(target, data) {
+            // 各テキスト要素にデータを適用
+            target.getElementById('1-text').textContent = data["1行目"] || '';
+            target.getElementById('2-text').textContent = data["2行目"] || '';
+            target.getElementById('3-text').textContent = data["3行目"] || '';
+            target.getElementById('4-text').textContent = data["4行目"] || '';
+            target.getElementById('5-text').textContent = data["5行目"] || '';
+            target.getElementById('6-text').textContent = data["6行目"] || '';
+            target.getElementById('7-text').textContent = data["7行目"] || '';
+            target.getElementById('8-text').textContent = data["8行目"] || '';
+            target.getElementById('9-text').textContent = data["9行目"] || '';
+            target.getElementById('10-text').textContent = data["10行目"] || '';
+        }
+
+
+        // SVGの背景を更新する関数
+        function updateSVGBackground() {
+            const svg = document.getElementById('svg-image');
+            const backgroundRect = document.getElementById('svg-background');
+            const backgroundImage = document.getElementById('background-image');
+
+            // 背景色の更新
+            const backgroundColor = document.getElementById('background_color').value;
+            if (backgroundRect) {
+                backgroundRect.setAttribute('fill', backgroundColor);
+            }
+
+            // 背景画像の更新
+            const fileInput = document.getElementById('background_image');
+            if (fileInput.files && fileInput.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    backgroundImage.setAttribute('href', e.target.result);
+                    backgroundImage.style.display = 'block';
+                };
+                reader.readAsDataURL(fileInput.files[0]);
+            }
+        }
+
+        function updateSVGCoordinates(cardWidth, cardHeight) {
+            // 元のサイズ（初期設定）
+            const originalWidth = 100; // 初期幅 (mm)
+            const originalHeight = 67; // 初期高さ (mm)
+        
+            // スケーリング係数を計算
+            const scaleX = cardWidth / originalWidth;
+            const scaleY = cardHeight / originalHeight;
+        
+            // トリムマークの SVG 要素を取得
+            const trimMarkSVG = document.getElementById('trim-mark');
+        
+            // すべての line 要素を取得
+            const lines = trimMarkSVG.querySelectorAll('line');
+        
+            // 各 line 要素の座標を更新
+            lines.forEach(line => {
+                const x1 = parseFloat(line.getAttribute('x1')) * scaleX;
+                const y1 = parseFloat(line.getAttribute('y1')) * scaleY;
+                const x2 = parseFloat(line.getAttribute('x2')) * scaleX;
+                const y2 = parseFloat(line.getAttribute('y2')) * scaleY;
+        
+                line.setAttribute('x1', x1);
+                line.setAttribute('y1', y1);
+                line.setAttribute('x2', x2);
+                line.setAttribute('y2', y2);
+            });
+        }
+        document.addEventListener('DOMContentLoaded', function () {
+            // フォント名の変更イベント
+            const fontNameSelect = document.getElementById('font_name');
+            fontNameSelect.addEventListener('change', function () {
+                const selectedFont = fontNameSelect.value;
+                updateSVGFont(selectedFont);
+            });
+
+            // フォントサイズの変更イベント
+            const fontSizeInput = document.getElementById('font_size');
+            fontSizeInput.addEventListener('input', function () {
+                const selectedSize = fontSizeInput.value;
+                updateSVGFontSize(selectedSize);
+            });
+
+            // SVGのフォントを更新する関数
+            function updateSVGFont(font) {
+                const texts = document.querySelectorAll('#svg-image text');
+                texts.forEach(function (text) {
+                    text.setAttribute('font-family', font);
+                });
+            }
+
+            // SVGのフォントサイズを更新する関数
+            function updateSVGFontSize(size) {
+                const texts = document.querySelectorAll('#svg-image text');
+                texts.forEach(function (text) {
+                    text.setAttribute('font-size', size);
+                });
+            }
+
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            //全行の色を更新
+            const colorPicker = document.getElementById('color');
+            const texts = document.querySelectorAll('#svg-image text');
+
+            colorPicker.addEventListener('input', function () {
+                texts.forEach(function (text) {
+                    text.style.fill = this.value;
+                });
+            });
+        });
+        document.addEventListener('DOMContentLoaded', function () {
+
+            // 1行目のfont-familyが変更された場合
+            document.getElementById('1-font-family').addEventListener('change', function () {
+                const fontFamily = this.value;
+                document.getElementById('1-text').style.fontFamily = fontFamily;
+            });
+
+            // 1行目のfont-sizeが変更された場合
+            document.getElementById('1-font-size').addEventListener('input', function () {
+                const fontSize = this.value + 'px';
+                document.getElementById('1-text').style.fontSize = fontSize;
+            });
+
+            // 1行目の色を更新
+            document.getElementById('1-color').addEventListener('input', function () {
+                document.getElementById('1-text').style.fill = this.value;
+            });
+
+            // 2行目のfont-familyが変更された場合
+            document.getElementById('2-font-family').addEventListener('change', function () {
+                const fontFamily = this.value;
+                document.getElementById('2-text').style.fontFamily = fontFamily;
+            });
+
+            // 2行目のfont-sizeが変更された場合
+            document.getElementById('2-font-size').addEventListener('input', function () {
+                const fontSize = this.value + 'px';
+                document.getElementById('2-text').style.fontSize = fontSize;
+            });
+
+            // 2行目の色を更新
+            document.getElementById('2-color').addEventListener('input', function () {
+                document.getElementById('2-text').style.fill = this.value;
+            });
+
+            // 3行目のfont-familyが変更された場合
+            document.getElementById('3-font-family').addEventListener('change', function () {
+                const fontFamily = this.value;
+                document.getElementById('3-text').style.fontFamily = fontFamily;
+            });
+
+            // 1行目のfont-sizeが変更された場合
+            document.getElementById('3-font-size').addEventListener('input', function () {
+                const fontSize = this.value + 'px';
+                document.getElementById('3-text').style.fontSize = fontSize;
+            });
+
+            // 3行目の色を更新
+            document.getElementById('3-color').addEventListener('input', function () {
+                document.getElementById('3-text').style.fill = this.value;
+            });
+
+            // 4行目のfont-familyが変更された場合
+            document.getElementById('4-font-family').addEventListener('change', function () {
+                const fontFamily = this.value;
+                document.getElementById('4-text').style.fontFamily = fontFamily;
+            });
+
+            // 4行目のfont-sizeが変更された場合
+            document.getElementById('4-font-size').addEventListener('input', function () {
+                const fontSize = this.value + 'px';
+                document.getElementById('4-text').style.fontSize = fontSize;
+            });
+
+            // 4行目の色を更新
+            document.getElementById('4-color').addEventListener('input', function () {
+                document.getElementById('4-text').style.fill = this.value;
+            });
+
+            // 5行目のfont-familyが変更された場合
+            document.getElementById('5-font-family').addEventListener('change', function () {
+                const fontFamily = this.value;
+                document.getElementById('5-text').style.fontFamily = fontFamily;
+            });
+
+            // 5行目のfont-sizeが変更された場合
+            document.getElementById('5-font-size').addEventListener('input', function () {
+                const fontSize = this.value + 'px';
+                document.getElementById('5-text').style.fontSize = fontSize;
+            });
+
+            // 5行目の色を更新
+            document.getElementById('5-color').addEventListener('input', function () {
+                document.getElementById('5-text').style.fill = this.value;
+            });
+
+            // 6行目のfont-familyが変更された場合
+            document.getElementById('6-font-family').addEventListener('change', function () {
+                const fontFamily = this.value;
+                document.getElementById('6-text').style.fontFamily = fontFamily;
+            });
+
+            // 6行目のfont-sizeが変更された場合
+            document.getElementById('6-font-size').addEventListener('input', function () {
+                const fontSize = this.value + 'px';
+                document.getElementById('6-text').style.fontSize = fontSize;
+            });
+
+            // 6行目の色を更新
+            document.getElementById('6-color').addEventListener('input', function () {
+                document.getElementById('6-text').style.fill = this.value;
+            });
+
+            // 7行目のfont-familyが変更された場合
+            document.getElementById('7-font-family').addEventListener('change', function () {
+                const fontFamily = this.value;
+                document.getElementById('7-text').style.fontFamily = fontFamily;
+            });
+
+            // 7行目のfont-sizeが変更された場合
+            document.getElementById('7-font-size').addEventListener('input', function () {
+                const fontSize = this.value + 'px';
+                document.getElementById('7-text').style.fontSize = fontSize;
+            });
+
+            // 7行目の色を更新
+            document.getElementById('7-color').addEventListener('input', function () {
+                document.getElementById('7-text').style.fill = this.value;
+            });
+
+            // 8行目のfont-familyが変更された場合
+            document.getElementById('8-font-family').addEventListener('change', function () {
+                const fontFamily = this.value;
+                document.getElementById('8-text').style.fontFamily = fontFamily;
+            });
+
+            // 8行目のfont-sizeが変更された場合
+            document.getElementById('8-font-size').addEventListener('input', function () {
+                const fontSize = this.value + 'px';
+                document.getElementById('8-text').style.fontSize = fontSize;
+            });
+
+            // 8行目の色を更新
+            document.getElementById('8-color').addEventListener('input', function () {
+                document.getElementById('8-text').style.fill = this.value;
+            });
+
+            // 9行目のfont-familyが変更された場合
+            document.getElementById('9-font-family').addEventListener('change', function () {
+                const fontFamily = this.value;
+                document.getElementById('9-text').style.fontFamily = fontFamily;
+            });
+
+            // 9行目のfont-sizeが変更された場合
+            document.getElementById('9-font-size').addEventListener('input', function () {
+                const fontSize = this.value + 'px';
+                document.getElementById('9-text').style.fontSize = fontSize;
+            });
+
+            // 9行目の色を更新
+            document.getElementById('9-color').addEventListener('input', function () {
+                document.getElementById('9-text').style.fill = this.value;
+            });
+
+            // 10行目のfont-familyが変更された場合
+            document.getElementById('10-font-family').addEventListener('change', function () {
+                const fontFamily = this.value;
+                document.getElementById('10-text').style.fontFamily = fontFamily;
+            });
+
+            // 10行目のfont-sizeが変更された場合
+            document.getElementById('10-font-size').addEventListener('input', function () {
+                const fontSize = this.value + 'px';
+                document.getElementById('10-text').style.fontSize = fontSize;
+            });
+
+            // 10行目の色を更新
+            document.getElementById('10-color').addEventListener('input', function () {
+                document.getElementById('10-text').style.fill = this.value;
+            });
+        });
+
+        // 色彩設定をCMYKに
+        document.addEventListener('DOMContentLoaded', function () {
+            const texts = document.querySelectorAll('#svg-image text');
+
+            texts.forEach(function (text) {
+                text.setAttribute('fill', 'device-cmyk(0.11, 0.48, 0.83, 0.00)');
+            });
+        });
+        //QRコードを生成
+
+        function generateQRCode(data) {
+            var qrcode = new QRCode(document.getElementById("qr-container"), {
+                text: data,
+                width: 128,
+                height: 128,
+                color: "#000000",
+                background: "#ffffff"
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // 
+            const excelData = [
+                { col1: "A", col2: "B", col3: "C", col4: "D", col5: "E", col6: "F", col7: "G", col8: "H", col9: "I", col10: "J" },
+                { col1: "1", col2: "2", col3: "3", col4: "4", col5: "5", col6: "6", col7: "7", col8: "8", col9: "9", col10: "10" }
+            ];
+
+            // 10列目のデータを取得
+            const qrData = excelData[0].col10;
+
+            // QRコードを生成
+            generateQRCode(qrData);
+        });
+
+    </script>
+</body>
+
+</html>

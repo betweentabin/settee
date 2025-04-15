@@ -1,0 +1,312 @@
+2025-02-26 14:20:18,358 - __main__ - ERROR - Failed to import TOC app: No module named 'tools.TOC.TOC_app'
+2025-02-26 14:20:18,360 - __main__ - ERROR - Failed to import PDF app: No module named 'PyPDF2'
+2025-02-26 14:20:22,538 - __main__ - INFO - Shift app imported successfully
+2025-02-26 14:20:22,539 - __main__ - INFO - Starting server on port 5000
+2025-02-26 14:20:22,546 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:5000
+2025-02-26 14:20:22,546 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-02-26 14:20:22,555 - werkzeug - INFO -  * Restarting with watchdog (fsevents)
+2025-02-26 14:20:22,658 - __main__ - ERROR - Failed to import TOC app: No module named 'tools.TOC.TOC_app'
+2025-02-26 14:20:22,659 - __main__ - ERROR - Failed to import PDF app: No module named 'PyPDF2'
+2025-02-26 14:20:22,835 - __main__ - INFO - Shift app imported successfully
+2025-02-26 14:20:22,837 - __main__ - INFO - Starting server on port 5000
+2025-02-26 14:20:22,841 - werkzeug - WARNING -  * Debugger is active!
+2025-02-26 14:20:22,847 - werkzeug - INFO -  * Debugger PIN: 111-310-558
+2025-02-26 14:20:28,844 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/app.py', reloading
+2025-02-26 14:20:28,927 - werkzeug - INFO -  * Restarting with watchdog (fsevents)
+2025-02-26 14:20:29,039 - __main__ - ERROR - Failed to import TOC app: cannot import name 'TOC_app' from 'tools.TOC' (unknown location)
+2025-02-26 14:20:29,040 - __main__ - ERROR - Failed to import PDF app: No module named 'PyPDF2'
+2025-02-26 14:20:29,213 - __main__ - INFO - Shift app imported successfully
+2025-02-26 14:20:29,214 - __main__ - INFO - Starting server on port 5000
+2025-02-26 14:20:29,220 - werkzeug - WARNING -  * Debugger is active!
+2025-02-26 14:20:29,228 - werkzeug - INFO -  * Debugger PIN: 111-310-558
+2025-02-26 14:20:39,210 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/app.py', reloading
+2025-02-26 14:20:39,350 - werkzeug - INFO -  * Restarting with watchdog (fsevents)
+2025-02-26 14:20:39,755 - toc_app - INFO - TOC app imported as a module
+2025-02-26 14:20:39,761 - __main__ - INFO - TOC app imported successfully
+2025-02-26 14:20:39,762 - __main__ - ERROR - Failed to import PDF app: No module named 'PyPDF2'
+2025-02-26 14:20:39,960 - __main__ - INFO - Shift app imported successfully
+2025-02-26 14:20:39,960 - __main__ - INFO - Starting server on port 5000
+2025-02-26 14:20:39,965 - werkzeug - WARNING -  * Debugger is active!
+2025-02-26 14:20:39,971 - werkzeug - INFO -  * Debugger PIN: 111-310-558
+2025-02-26 14:21:17,776 - toc_app - INFO - TOC app imported as a module
+2025-02-26 14:21:17,780 - __main__ - INFO - TOC app imported successfully
+2025-02-26 14:21:17,781 - __main__ - ERROR - Failed to import PDF app: No module named 'PyPDF2'
+2025-02-26 14:21:18,102 - __main__ - INFO - Shift app imported successfully
+2025-02-26 14:21:18,103 - __main__ - INFO - Starting server on port 5000
+2025-02-26 14:21:18,112 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:5000
+2025-02-26 14:21:18,112 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-02-26 14:21:18,123 - werkzeug - INFO -  * Restarting with watchdog (fsevents)
+2025-02-26 14:21:18,409 - toc_app - INFO - TOC app imported as a module
+2025-02-26 14:21:18,410 - __main__ - INFO - TOC app imported successfully
+2025-02-26 14:21:18,411 - __main__ - ERROR - Failed to import PDF app: No module named 'PyPDF2'
+2025-02-26 14:21:18,582 - __main__ - INFO - Shift app imported successfully
+2025-02-26 14:21:18,583 - __main__ - INFO - Starting server on port 5000
+2025-02-26 14:21:18,588 - werkzeug - WARNING -  * Debugger is active!
+2025-02-26 14:21:18,598 - werkzeug - INFO -  * Debugger PIN: 111-310-558
+2025-02-26 14:23:20,839 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/pptx_compat_patch.py', reloading
+2025-02-26 14:23:20,840 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/pptx_compat_patch.py', reloading
+2025-02-26 14:23:21,074 - werkzeug - INFO -  * Restarting with watchdog (fsevents)
+2025-02-26 14:23:21,552 - toc_app - INFO - TOC app imported as a module
+2025-02-26 14:23:21,558 - __main__ - INFO - TOC app imported successfully
+2025-02-26 14:23:21,559 - __main__ - ERROR - Failed to import PDF app: No module named 'PyPDF2'
+2025-02-26 14:23:21,920 - __main__ - INFO - Shift app imported successfully
+2025-02-26 14:23:21,921 - __main__ - INFO - Starting server on port 5000
+2025-02-26 14:23:21,925 - werkzeug - WARNING -  * Debugger is active!
+2025-02-26 14:23:21,936 - werkzeug - INFO -  * Debugger PIN: 111-310-558
+2025-02-26 14:23:40,858 - werkzeug - INFO -  * Detected change in '/opt/anaconda3/lib/python3.12/site-packages/pptx/compat/__init__.py', reloading
+2025-02-26 14:23:41,138 - werkzeug - INFO -  * Restarting with watchdog (fsevents)
+2025-02-26 14:23:41,481 - toc_app - INFO - TOC app imported as a module
+2025-02-26 14:23:41,482 - __main__ - INFO - TOC app imported successfully
+2025-02-26 14:23:41,482 - __main__ - ERROR - Failed to import PDF app: No module named 'PyPDF2'
+2025-02-26 14:23:41,661 - __main__ - INFO - Shift app imported successfully
+2025-02-26 14:23:41,662 - __main__ - INFO - Starting server on port 5000
+2025-02-26 14:23:41,666 - werkzeug - WARNING -  * Debugger is active!
+2025-02-26 14:23:41,751 - werkzeug - INFO -  * Debugger PIN: 111-310-558
+2025-02-26 14:25:20,410 - toc_app - INFO - TOC app imported as a module
+2025-02-26 14:25:20,413 - __main__ - INFO - TOC app imported successfully
+2025-02-26 14:25:20,414 - __main__ - ERROR - Failed to import PDF app: No module named 'PyPDF2'
+2025-02-26 14:25:20,713 - __main__ - INFO - Shift app imported successfully
+2025-02-26 14:25:20,714 - __main__ - INFO - Starting server on port 5000
+2025-02-26 14:25:20,721 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:5000
+2025-02-26 14:25:20,721 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-02-26 14:25:20,730 - werkzeug - INFO -  * Restarting with watchdog (fsevents)
+2025-02-26 14:25:21,009 - toc_app - INFO - TOC app imported as a module
+2025-02-26 14:25:21,011 - __main__ - INFO - TOC app imported successfully
+2025-02-26 14:25:21,011 - __main__ - ERROR - Failed to import PDF app: No module named 'PyPDF2'
+2025-02-26 14:25:21,178 - __main__ - INFO - Shift app imported successfully
+2025-02-26 14:25:21,178 - __main__ - INFO - Starting server on port 5000
+2025-02-26 14:25:21,186 - werkzeug - WARNING -  * Debugger is active!
+2025-02-26 14:25:21,193 - werkzeug - INFO -  * Debugger PIN: 111-310-558
+2025-02-26 14:25:31,553 - werkzeug - INFO -  * Detected change in '/opt/anaconda3/lib/python3.12/site-packages/PyPDF2/__init__.py', reloading
+2025-02-26 14:25:31,553 - werkzeug - INFO -  * Detected change in '/opt/anaconda3/lib/python3.12/site-packages/PyPDF2/__init__.py', reloading
+2025-02-26 14:25:31,554 - werkzeug - INFO -  * Detected change in '/opt/anaconda3/lib/python3.12/site-packages/PyPDF2/_cmap.py', reloading
+2025-02-26 14:25:31,554 - werkzeug - INFO -  * Detected change in '/opt/anaconda3/lib/python3.12/site-packages/PyPDF2/_cmap.py', reloading
+2025-02-26 14:25:31,554 - werkzeug - INFO -  * Detected change in '/opt/anaconda3/lib/python3.12/site-packages/PyPDF2/_encryption.py', reloading
+2025-02-26 14:25:31,554 - werkzeug - INFO -  * Detected change in '/opt/anaconda3/lib/python3.12/site-packages/PyPDF2/_encryption.py', reloading
+2025-02-26 14:25:31,554 - werkzeug - INFO -  * Detected change in '/opt/anaconda3/lib/python3.12/site-packages/PyPDF2/_merger.py', reloading
+2025-02-26 14:25:31,554 - werkzeug - INFO -  * Detected change in '/opt/anaconda3/lib/python3.12/site-packages/PyPDF2/_merger.py', reloading
+2025-02-26 14:25:31,554 - werkzeug - INFO -  * Detected change in '/opt/anaconda3/lib/python3.12/site-packages/PyPDF2/_page.py', reloading
+2025-02-26 14:25:31,555 - werkzeug - INFO -  * Detected change in '/opt/anaconda3/lib/python3.12/site-packages/PyPDF2/_page.py', reloading
+2025-02-26 14:25:31,555 - werkzeug - INFO -  * Detected change in '/opt/anaconda3/lib/python3.12/site-packages/PyPDF2/_protocols.py', reloading
+2025-02-26 14:25:31,555 - werkzeug - INFO -  * Detected change in '/opt/anaconda3/lib/python3.12/site-packages/PyPDF2/_protocols.py', reloading
+2025-02-26 14:25:31,562 - werkzeug - INFO -  * Detected change in '/opt/anaconda3/lib/python3.12/site-packages/PyPDF2/_protocols.py', reloading
+2025-02-26 14:25:31,562 - werkzeug - INFO -  * Detected change in '/opt/anaconda3/lib/python3.12/site-packages/PyPDF2/_reader.py', reloading
+2025-02-26 14:25:31,562 - werkzeug - INFO -  * Detected change in '/opt/anaconda3/lib/python3.12/site-packages/PyPDF2/_reader.py', reloading
+2025-02-26 14:25:31,562 - werkzeug - INFO -  * Detected change in '/opt/anaconda3/lib/python3.12/site-packages/PyPDF2/_security.py', reloading
+2025-02-26 14:25:31,562 - werkzeug - INFO -  * Detected change in '/opt/anaconda3/lib/python3.12/site-packages/PyPDF2/_security.py', reloading
+2025-02-26 14:25:31,562 - werkzeug - INFO -  * Detected change in '/opt/anaconda3/lib/python3.12/site-packages/PyPDF2/_utils.py', reloading
+2025-02-26 14:25:31,563 - werkzeug - INFO -  * Detected change in '/opt/anaconda3/lib/python3.12/site-packages/PyPDF2/_utils.py', reloading
+2025-02-26 14:25:31,563 - werkzeug - INFO -  * Detected change in '/opt/anaconda3/lib/python3.12/site-packages/PyPDF2/_version.py', reloading
+2025-02-26 14:25:31,563 - werkzeug - INFO -  * Detected change in '/opt/anaconda3/lib/python3.12/site-packages/PyPDF2/_version.py', reloading
+2025-02-26 14:25:31,563 - werkzeug - INFO -  * Detected change in '/opt/anaconda3/lib/python3.12/site-packages/PyPDF2/_writer.py', reloading
+2025-02-26 14:25:31,563 - werkzeug - INFO -  * Detected change in '/opt/anaconda3/lib/python3.12/site-packages/PyPDF2/_writer.py', reloading
+2025-02-26 14:25:31,563 - werkzeug - INFO -  * Detected change in '/opt/anaconda3/lib/python3.12/site-packages/PyPDF2/constants.py', reloading
+2025-02-26 14:25:31,563 - werkzeug - INFO -  * Detected change in '/opt/anaconda3/lib/python3.12/site-packages/PyPDF2/constants.py', reloading
+2025-02-26 14:25:31,564 - werkzeug - INFO -  * Detected change in '/opt/anaconda3/lib/python3.12/site-packages/PyPDF2/errors.py', reloading
+2025-02-26 14:25:31,564 - werkzeug - INFO -  * Detected change in '/opt/anaconda3/lib/python3.12/site-packages/PyPDF2/errors.py', reloading
+2025-02-26 14:25:31,564 - werkzeug - INFO -  * Detected change in '/opt/anaconda3/lib/python3.12/site-packages/PyPDF2/filters.py', reloading
+2025-02-26 14:25:31,564 - werkzeug - INFO -  * Detected change in '/opt/anaconda3/lib/python3.12/site-packages/PyPDF2/filters.py', reloading
+2025-02-26 14:25:31,564 - werkzeug - INFO -  * Detected change in '/opt/anaconda3/lib/python3.12/site-packages/PyPDF2/pagerange.py', reloading
+2025-02-26 14:25:31,564 - werkzeug - INFO -  * Detected change in '/opt/anaconda3/lib/python3.12/site-packages/PyPDF2/pagerange.py', reloading
+2025-02-26 14:25:31,564 - werkzeug - INFO -  * Detected change in '/opt/anaconda3/lib/python3.12/site-packages/PyPDF2/papersizes.py', reloading
+2025-02-26 14:25:31,565 - werkzeug - INFO -  * Detected change in '/opt/anaconda3/lib/python3.12/site-packages/PyPDF2/papersizes.py', reloading
+2025-02-26 14:25:31,565 - werkzeug - INFO -  * Detected change in '/opt/anaconda3/lib/python3.12/site-packages/PyPDF2/types.py', reloading
+2025-02-26 14:25:31,565 - werkzeug - INFO -  * Detected change in '/opt/anaconda3/lib/python3.12/site-packages/PyPDF2/types.py', reloading
+2025-02-26 14:25:31,565 - werkzeug - INFO -  * Detected change in '/opt/anaconda3/lib/python3.12/site-packages/PyPDF2/xmp.py', reloading
+2025-02-26 14:25:31,565 - werkzeug - INFO -  * Detected change in '/opt/anaconda3/lib/python3.12/site-packages/PyPDF2/xmp.py', reloading
+2025-02-26 14:25:31,565 - werkzeug - INFO -  * Detected change in '/opt/anaconda3/lib/python3.12/site-packages/PyPDF2/_codecs/__init__.py', reloading
+2025-02-26 14:25:31,566 - werkzeug - INFO -  * Detected change in '/opt/anaconda3/lib/python3.12/site-packages/PyPDF2/_codecs/__init__.py', reloading
+2025-02-26 14:25:31,566 - werkzeug - INFO -  * Detected change in '/opt/anaconda3/lib/python3.12/site-packages/PyPDF2/_codecs/adobe_glyphs.py', reloading
+2025-02-26 14:25:31,566 - werkzeug - INFO -  * Detected change in '/opt/anaconda3/lib/python3.12/site-packages/PyPDF2/_codecs/adobe_glyphs.py', reloading
+2025-02-26 14:25:31,566 - werkzeug - INFO -  * Detected change in '/opt/anaconda3/lib/python3.12/site-packages/PyPDF2/_codecs/pdfdoc.py', reloading
+2025-02-26 14:25:31,566 - werkzeug - INFO -  * Detected change in '/opt/anaconda3/lib/python3.12/site-packages/PyPDF2/_codecs/pdfdoc.py', reloading
+2025-02-26 14:25:31,566 - werkzeug - INFO -  * Detected change in '/opt/anaconda3/lib/python3.12/site-packages/PyPDF2/_codecs/std.py', reloading
+2025-02-26 14:25:31,566 - werkzeug - INFO -  * Detected change in '/opt/anaconda3/lib/python3.12/site-packages/PyPDF2/_codecs/std.py', reloading
+2025-02-26 14:25:31,566 - werkzeug - INFO -  * Detected change in '/opt/anaconda3/lib/python3.12/site-packages/PyPDF2/_codecs/symbol.py', reloading
+2025-02-26 14:25:31,566 - werkzeug - INFO -  * Detected change in '/opt/anaconda3/lib/python3.12/site-packages/PyPDF2/_codecs/symbol.py', reloading
+2025-02-26 14:25:31,567 - werkzeug - INFO -  * Detected change in '/opt/anaconda3/lib/python3.12/site-packages/PyPDF2/_codecs/zapfding.py', reloading
+2025-02-26 14:25:31,567 - werkzeug - INFO -  * Detected change in '/opt/anaconda3/lib/python3.12/site-packages/PyPDF2/_codecs/zapfding.py', reloading
+2025-02-26 14:25:31,567 - werkzeug - INFO -  * Detected change in '/opt/anaconda3/lib/python3.12/site-packages/PyPDF2/generic/__init__.py', reloading
+2025-02-26 14:25:31,567 - werkzeug - INFO -  * Detected change in '/opt/anaconda3/lib/python3.12/site-packages/PyPDF2/generic/__init__.py', reloading
+2025-02-26 14:25:31,567 - werkzeug - INFO -  * Detected change in '/opt/anaconda3/lib/python3.12/site-packages/PyPDF2/generic/_annotations.py', reloading
+2025-02-26 14:25:31,567 - werkzeug - INFO -  * Detected change in '/opt/anaconda3/lib/python3.12/site-packages/PyPDF2/generic/_annotations.py', reloading
+2025-02-26 14:25:31,567 - werkzeug - INFO -  * Detected change in '/opt/anaconda3/lib/python3.12/site-packages/PyPDF2/generic/_base.py', reloading
+2025-02-26 14:25:31,568 - werkzeug - INFO -  * Detected change in '/opt/anaconda3/lib/python3.12/site-packages/PyPDF2/generic/_base.py', reloading
+2025-02-26 14:25:31,568 - werkzeug - INFO -  * Detected change in '/opt/anaconda3/lib/python3.12/site-packages/PyPDF2/generic/_data_structures.py', reloading
+2025-02-26 14:25:31,568 - werkzeug - INFO -  * Detected change in '/opt/anaconda3/lib/python3.12/site-packages/PyPDF2/generic/_data_structures.py', reloading
+2025-02-26 14:25:31,568 - werkzeug - INFO -  * Detected change in '/opt/anaconda3/lib/python3.12/site-packages/PyPDF2/generic/_fit.py', reloading
+2025-02-26 14:25:31,568 - werkzeug - INFO -  * Detected change in '/opt/anaconda3/lib/python3.12/site-packages/PyPDF2/generic/_fit.py', reloading
+2025-02-26 14:25:31,568 - werkzeug - INFO -  * Detected change in '/opt/anaconda3/lib/python3.12/site-packages/PyPDF2/generic/_outline.py', reloading
+2025-02-26 14:25:31,568 - werkzeug - INFO -  * Detected change in '/opt/anaconda3/lib/python3.12/site-packages/PyPDF2/generic/_outline.py', reloading
+2025-02-26 14:25:31,568 - werkzeug - INFO -  * Detected change in '/opt/anaconda3/lib/python3.12/site-packages/PyPDF2/generic/_rectangle.py', reloading
+2025-02-26 14:25:31,569 - werkzeug - INFO -  * Detected change in '/opt/anaconda3/lib/python3.12/site-packages/PyPDF2/generic/_rectangle.py', reloading
+2025-02-26 14:25:31,569 - werkzeug - INFO -  * Detected change in '/opt/anaconda3/lib/python3.12/site-packages/PyPDF2/generic/_utils.py', reloading
+2025-02-26 14:25:31,569 - werkzeug - INFO -  * Detected change in '/opt/anaconda3/lib/python3.12/site-packages/PyPDF2/generic/_utils.py', reloading
+2025-02-26 14:25:32,382 - werkzeug - INFO -  * Restarting with watchdog (fsevents)
+2025-02-26 14:25:32,729 - toc_app - INFO - TOC app imported as a module
+2025-02-26 14:25:32,730 - __main__ - INFO - TOC app imported successfully
+2025-02-26 14:25:32,749 - __main__ - INFO - PDF app imported successfully
+2025-02-26 14:25:32,927 - __main__ - INFO - Shift app imported successfully
+2025-02-26 14:25:32,928 - __main__ - INFO - Starting server on port 5000
+2025-02-26 14:25:32,932 - werkzeug - WARNING -  * Debugger is active!
+2025-02-26 14:25:32,936 - werkzeug - INFO -  * Debugger PIN: 111-310-558
+2025-02-26 14:25:37,219 - toc_app - INFO - TOC app imported as a module
+2025-02-26 14:25:37,220 - __main__ - INFO - TOC app imported successfully
+2025-02-26 14:25:37,241 - __main__ - INFO - PDF app imported successfully
+2025-02-26 14:25:37,444 - __main__ - INFO - Shift app imported successfully
+2025-02-26 14:25:37,445 - __main__ - INFO - Starting server on port 5000
+2025-02-26 14:25:37,451 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:5000
+2025-02-26 14:25:37,451 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-02-26 14:25:37,455 - werkzeug - INFO -  * Restarting with watchdog (fsevents)
+2025-02-26 14:25:37,776 - toc_app - INFO - TOC app imported as a module
+2025-02-26 14:25:37,777 - __main__ - INFO - TOC app imported successfully
+2025-02-26 14:25:37,793 - __main__ - INFO - PDF app imported successfully
+2025-02-26 14:25:37,936 - __main__ - INFO - Shift app imported successfully
+2025-02-26 14:25:37,936 - __main__ - INFO - Starting server on port 5000
+2025-02-26 14:25:37,940 - werkzeug - WARNING -  * Debugger is active!
+2025-02-26 14:25:37,945 - werkzeug - INFO -  * Debugger PIN: 111-310-558
+2025-02-26 14:30:16,788 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/check_pptx.py', reloading
+2025-02-26 14:30:16,789 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/check_pptx.py', reloading
+2025-02-26 14:30:17,087 - werkzeug - INFO -  * Restarting with watchdog (fsevents)
+2025-02-26 14:30:17,734 - toc_app - INFO - TOC app imported as a module
+2025-02-26 14:30:17,737 - __main__ - INFO - TOC app imported successfully
+2025-02-26 14:30:17,766 - __main__ - INFO - PDF app imported successfully
+2025-02-26 14:30:18,059 - __main__ - INFO - Shift app imported successfully
+2025-02-26 14:30:18,060 - __main__ - INFO - Starting server on port 5000
+2025-02-26 14:30:18,065 - werkzeug - WARNING -  * Debugger is active!
+2025-02-26 14:30:18,071 - werkzeug - INFO -  * Debugger PIN: 111-310-558
+2025-02-26 14:46:39,392 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/tools/TOC/TOC＿app.py', reloading
+2025-02-26 14:46:40,410 - werkzeug - INFO -  * Restarting with watchdog (fsevents)
+2025-02-26 14:46:40,843 - toc_app - INFO - TOC app imported as a module
+2025-02-26 14:46:40,847 - __main__ - INFO - TOC app imported successfully
+2025-02-26 14:46:40,870 - __main__ - INFO - PDF app imported successfully
+2025-02-26 14:46:41,152 - __main__ - INFO - Shift app imported successfully
+2025-02-26 14:46:41,153 - __main__ - INFO - Starting server on port 5000
+2025-02-26 14:46:41,158 - werkzeug - WARNING -  * Debugger is active!
+2025-02-26 14:46:41,164 - werkzeug - INFO -  * Debugger PIN: 111-310-558
+2025-02-26 14:48:06,984 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/tools/TOC/pptx/__init__.py', reloading
+2025-02-26 14:48:06,985 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/tools/TOC/pptx/__init__.py', reloading
+2025-02-26 14:48:06,985 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/tools/TOC/pptx/action.py', reloading
+2025-02-26 14:48:06,986 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/tools/TOC/pptx/action.py', reloading
+2025-02-26 14:48:06,986 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/tools/TOC/pptx/api.py', reloading
+2025-02-26 14:48:06,986 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/tools/TOC/pptx/api.py', reloading
+2025-02-26 14:48:06,987 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/tools/TOC/pptx/exc.py', reloading
+2025-02-26 14:48:06,987 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/tools/TOC/pptx/exc.py', reloading
+2025-02-26 14:48:06,987 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/tools/TOC/pptx/media.py', reloading
+2025-02-26 14:48:06,988 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/tools/TOC/pptx/media.py', reloading
+2025-02-26 14:48:06,988 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/tools/TOC/pptx/package.py', reloading
+2025-02-26 14:48:06,989 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/tools/TOC/pptx/package.py', reloading
+2025-02-26 14:48:06,990 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/tools/TOC/pptx/presentation.py', reloading
+2025-02-26 14:48:06,990 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/tools/TOC/pptx/presentation.py', reloading
+2025-02-26 14:48:06,991 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/tools/TOC/pptx/shared.py', reloading
+2025-02-26 14:48:06,991 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/tools/TOC/pptx/shared.py', reloading
+2025-02-26 14:48:06,991 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/tools/TOC/pptx/slide.py', reloading
+2025-02-26 14:48:06,991 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/tools/TOC/pptx/slide.py', reloading
+2025-02-26 14:48:06,992 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/tools/TOC/pptx/spec.py', reloading
+2025-02-26 14:48:06,992 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/tools/TOC/pptx/spec.py', reloading
+2025-02-26 14:48:06,992 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/tools/TOC/pptx/table.py', reloading
+2025-02-26 14:48:06,992 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/tools/TOC/pptx/table.py', reloading
+2025-02-26 14:48:06,993 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/tools/TOC/pptx/util.py', reloading
+2025-02-26 14:48:06,993 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/tools/TOC/pptx/util.py', reloading
+2025-02-26 14:48:07,941 - werkzeug - INFO -  * Restarting with watchdog (fsevents)
+2025-02-26 14:48:08,388 - toc_app - INFO - TOC app imported as a module
+2025-02-26 14:48:08,389 - __main__ - INFO - TOC app imported successfully
+2025-02-26 14:48:08,411 - __main__ - INFO - PDF app imported successfully
+2025-02-26 14:48:08,569 - __main__ - INFO - Shift app imported successfully
+2025-02-26 14:48:08,572 - __main__ - INFO - Starting server on port 5000
+2025-02-26 14:48:08,578 - werkzeug - WARNING -  * Debugger is active!
+2025-02-26 14:48:08,583 - werkzeug - INFO -  * Debugger PIN: 111-310-558
+2025-02-26 14:48:48,972 - toc_app - INFO - TOC app imported as a module
+2025-02-26 14:48:48,974 - __main__ - INFO - TOC app imported successfully
+2025-02-26 14:48:48,999 - __main__ - INFO - PDF app imported successfully
+2025-02-26 14:48:49,240 - __main__ - INFO - Shift app imported successfully
+2025-02-26 14:48:49,244 - __main__ - INFO - Starting server on port 5000
+2025-02-26 14:48:49,277 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:5000
+2025-02-26 14:48:49,277 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-02-26 14:48:49,286 - werkzeug - INFO -  * Restarting with watchdog (fsevents)
+2025-02-26 14:48:49,594 - toc_app - INFO - TOC app imported as a module
+2025-02-26 14:48:49,596 - __main__ - INFO - TOC app imported successfully
+2025-02-26 14:48:49,614 - __main__ - INFO - PDF app imported successfully
+2025-02-26 14:48:49,795 - __main__ - INFO - Shift app imported successfully
+2025-02-26 14:48:49,796 - __main__ - INFO - Starting server on port 5000
+2025-02-26 14:48:49,801 - werkzeug - WARNING -  * Debugger is active!
+2025-02-26 14:48:49,810 - werkzeug - INFO -  * Debugger PIN: 111-310-558
+2025-02-26 14:49:12,373 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/setup_pptx.py', reloading
+2025-02-26 14:49:12,374 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/setup_pptx.py', reloading
+2025-02-26 14:49:13,151 - werkzeug - INFO -  * Restarting with watchdog (fsevents)
+2025-02-26 14:49:13,637 - toc_app - INFO - TOC app imported as a module
+2025-02-26 14:49:13,639 - __main__ - INFO - TOC app imported successfully
+2025-02-26 14:49:13,670 - __main__ - INFO - PDF app imported successfully
+2025-02-26 14:49:13,971 - __main__ - INFO - Shift app imported successfully
+2025-02-26 14:49:13,972 - __main__ - INFO - Starting server on port 5000
+2025-02-26 14:49:13,979 - werkzeug - WARNING -  * Debugger is active!
+2025-02-26 14:49:13,989 - werkzeug - INFO -  * Debugger PIN: 111-310-558
+2025-02-26 15:04:13,874 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/tools/TOC/pptx/package.py', reloading
+2025-02-26 15:04:13,878 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/tools/TOC/pptx/slide.py', reloading
+2025-02-26 15:04:13,879 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/tools/TOC/pptx/media.py', reloading
+2025-02-26 15:04:13,880 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/tools/TOC/pptx/util.py', reloading
+2025-02-26 15:04:13,882 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/tools/TOC/pptx/__init__.py', reloading
+2025-02-26 15:04:13,882 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/tools/TOC/pptx/spec.py', reloading
+2025-02-26 15:04:13,883 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/tools/TOC/pptx/action.py', reloading
+2025-02-26 15:04:13,883 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/tools/TOC/pptx/shared.py', reloading
+2025-02-26 15:04:13,883 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/tools/TOC/pptx/api.py', reloading
+2025-02-26 15:04:13,884 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/tools/TOC/pptx/presentation.py', reloading
+2025-02-26 15:04:13,884 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/tools/TOC/pptx/exc.py', reloading
+2025-02-26 15:04:13,885 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/tools/TOC/pptx/table.py', reloading
+2025-02-26 15:04:14,475 - werkzeug - INFO -  * Restarting with watchdog (fsevents)
+2025-02-26 15:04:15,168 - toc_app - INFO - TOC app imported as a module
+2025-02-26 15:04:15,192 - __main__ - INFO - TOC app imported successfully
+2025-02-26 15:04:15,231 - __main__ - INFO - PDF app imported successfully
+2025-02-26 15:04:15,607 - __main__ - INFO - Shift app imported successfully
+2025-02-26 15:04:15,608 - __main__ - INFO - Starting server on port 5000
+2025-02-26 15:04:15,617 - werkzeug - WARNING -  * Debugger is active!
+2025-02-26 15:04:15,627 - werkzeug - INFO -  * Debugger PIN: 111-310-558
+2025-02-26 15:08:09,337 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/tools/TOC/TOC＿app.py', reloading
+2025-02-26 15:08:10,460 - werkzeug - INFO -  * Restarting with watchdog (fsevents)
+2025-02-26 15:08:11,223 - toc_app - INFO - TOC app imported as a module
+2025-02-26 15:08:11,236 - __main__ - INFO - TOC app imported successfully
+2025-02-26 15:08:11,263 - __main__ - INFO - PDF app imported successfully
+2025-02-26 15:08:11,578 - __main__ - INFO - Shift app imported successfully
+2025-02-26 15:08:11,579 - __main__ - INFO - Starting server on port 5000
+2025-02-26 15:08:11,584 - werkzeug - WARNING -  * Debugger is active!
+2025-02-26 15:08:11,591 - werkzeug - INFO -  * Debugger PIN: 111-310-558
+2025-02-26 15:08:23,353 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/setup_dependencies.py', reloading
+2025-02-26 15:08:23,354 - werkzeug - INFO -  * Detected change in '/Users/kuwatataiga/Downloads/epweb/setup_dependencies.py', reloading
+2025-02-26 15:08:23,835 - werkzeug - INFO -  * Restarting with watchdog (fsevents)
+2025-02-26 15:08:24,291 - toc_app - INFO - TOC app imported as a module
+2025-02-26 15:08:24,292 - __main__ - INFO - TOC app imported successfully
+2025-02-26 15:08:24,315 - __main__ - INFO - PDF app imported successfully
+2025-02-26 15:08:24,480 - __main__ - INFO - Shift app imported successfully
+2025-02-26 15:08:24,481 - __main__ - INFO - Starting server on port 5000
+2025-02-26 15:08:24,486 - werkzeug - WARNING -  * Debugger is active!
+2025-02-26 15:08:24,490 - werkzeug - INFO -  * Debugger PIN: 111-310-558
+2025-02-26 15:08:38,491 - werkzeug - INFO -  * Detected change in '/opt/anaconda3/lib/python3.12/site-packages/pptx/compat/__init__.py', reloading
+2025-02-26 15:08:38,719 - werkzeug - INFO -  * Restarting with watchdog (fsevents)
+2025-02-26 15:08:39,073 - toc_app - INFO - TOC app imported as a module
+2025-02-26 15:08:39,074 - __main__ - INFO - TOC app imported successfully
+2025-02-26 15:08:39,095 - __main__ - INFO - PDF app imported successfully
+2025-02-26 15:08:39,248 - __main__ - INFO - Shift app imported successfully
+2025-02-26 15:08:39,250 - __main__ - INFO - Starting server on port 5000
+2025-02-26 15:08:39,255 - werkzeug - WARNING -  * Debugger is active!
+2025-02-26 15:08:39,259 - werkzeug - INFO -  * Debugger PIN: 111-310-558
+2025-02-26 15:09:38,837 - toc_app - INFO - TOC app imported as a module
+2025-02-26 15:09:38,841 - __main__ - INFO - TOC app imported successfully
+2025-02-26 15:09:38,866 - __main__ - INFO - PDF app imported successfully
+2025-02-26 15:09:39,159 - __main__ - INFO - Shift app imported successfully
+2025-02-26 15:09:39,160 - __main__ - INFO - Starting server on port 5000
+2025-02-26 15:09:39,169 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:5000
+2025-02-26 15:09:39,169 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-02-26 15:09:39,179 - werkzeug - INFO -  * Restarting with watchdog (fsevents)
+2025-02-26 15:09:39,473 - toc_app - INFO - TOC app imported as a module
+2025-02-26 15:09:39,474 - __main__ - INFO - TOC app imported successfully
+2025-02-26 15:09:39,493 - __main__ - INFO - PDF app imported successfully
+2025-02-26 15:09:39,651 - __main__ - INFO - Shift app imported successfully
+2025-02-26 15:09:39,653 - __main__ - INFO - Starting server on port 5000
+2025-02-26 15:09:39,658 - werkzeug - WARNING -  * Debugger is active!
+2025-02-26 15:09:39,671 - werkzeug - INFO -  * Debugger PIN: 111-310-558

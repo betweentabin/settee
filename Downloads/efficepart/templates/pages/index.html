@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Efficiency Expert</title>
+  <!-- 共通CSSファイル -->
+  <link rel="stylesheet" href="/static/css/index.style.css" />
+  <!-- 追加のCSSファイル -->
+  <link rel="stylesheet" href="/static/css/toc_index.styles.css" />
+  <link rel="stylesheet" href="/static/css/tool-content.css" />
+  <!-- PDF.jsライブラリの読み込み -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script>pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';</script>
+  <!-- 追加のJavaScriptファイル -->
+  <script src="/static/js/toc_TOC_main.js"></script>
+</head>
+<body>
+  <!-- ===== ヘッダーセクション ===== -->
+  <header>
+    <nav>
+      <div class="logo">
+        <a href="/">Efficiency Expert</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ===== ヒーローセクション ===== -->
+  <section class="hero">
+    <h1>Efficiency Expert</h1>
+    <p class="subtitle">日々進化するタスクの解決にはエフィスパート</p>
+    <a href="#features" class="explore-btn">Explore</a>
+  </section>
+
+  <!-- ===== コンテンツセクション ===== -->
+  <main id="features">
+
+    <!-- ===== 機能カードセクション ===== -->
+    <section class="features">
+      <div class="feature-grid">
+        <!-- 各機能カード -->
+        <div class="feature-card" id="indexcard" data-card-type="目次生成" onclick="window.location.href='/toc/'">
+          <div class="icon">🌐</div>
+          <h3>目次生成</h3>
+          <p>Generates an index for manuals.</p>
+        </div>
+        <div class="feature-card" id="proofreadcard" data-card-type="文章校正">
+          <div class="icon">✍️</div>
+          <h3>文章校正</h3>
+          <p>Proofreads and suggests content.</p>
+        </div>
+        <div class="feature-card" id="breakcard" data-card-type="休憩シフト" onclick="window.location.href='/shift/'">
+          <div class="icon">👥</div>
+          <h3>休憩シフト</h3>
+          <p>Creates optimized schedules.</p>
+        </div>
+        <div class="feature-card" id="namecard" data-card-type="名札生成" onclick="window.location.href='nametag-manual-form.html'">
+          <div class="icon">🏷️</div>
+          <h3>名札生成</h3>
+          <p>Generates name tags data.</p>
+        </div>        
+        <div class="feature-card" id="formatcard" data-card-type="形式変換" onclick="window.location.href='/converter/'">
+          <div class="icon">📄</div>
+          <h3>形式変換</h3>
+          <p>Converts file formats.</p>
+        </div>
+        <div class="feature-card" id="compresscard" data-card-type="圧縮転送" onclick="window.location.href='/gigafile/'">
+          <div class="icon">📦</div>
+          <h3>圧縮転送</h3>
+          <p>Compresses and shares files.</p>
+        </div>
+        <div class="feature-card" id="pdftool1" data-card-type="PDFツール" onclick="window.location.href='/pdf/index'">
+          <div class="icon">📑</div>
+          <h3>PDFツール</h3>
+          <p>Edit and process PDF files.</p>
+        </div>
+        <div class="feature-card" id="pdftool2" data-card-type="PDFツール" onclick="window.location.href='/pdf/index'">
+          <div class="icon">📑</div>
+          <h3>PDFツール</h3>
+          <p>Edit and process PDF files.</p>
+        </div>
+      </div>
+    </section>
+    <!-- TOCコンテンツを表示するセクション -->
+    <section id="toc-content" class="tool-content" style="display: none;">
+      <div class="tool-header">
+        <h2>目次生成ツール</h2>
+        <button class="close-tool-btn" onclick="closeTocContent()">×</button>
+      </div>
+      <div id="toc-container" class="tool-container">
+        <!-- ここにTOCコンテンツが読み込まれます -->
+        <div class="loading">読み込み中...</div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== フッターセクション ===== -->
+  <footer>
+    <p>© 2025 by CARSON Co.,Ltd.</p>
+  </footer>
+  
+
+</body>
+</html>

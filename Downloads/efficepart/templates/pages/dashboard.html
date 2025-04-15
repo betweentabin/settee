@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <title>ダッシュボード - Efficiency Expert</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/index.style.css') }}" />
+  <style>
+    .dashboard-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    .dashboard-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+    .dashboard-title {
+      font-size: 2rem;
+      color: #333;
+    }
+    .dashboard-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .stat-card {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 1.5rem;
+      transition: transform 0.3s ease;
+    }
+    .stat-card:hover {
+      transform: translateY(-5px);
+    }
+    .stat-title {
+      font-size: 1.1rem;
+      color: #666;
+      margin-bottom: 0.5rem;
+    }
+    .stat-value {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #0066cc;
+    }
+    .recent-activity {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 1.5rem;
+    }
+    .activity-title {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: #333;
+    }
+    .activity-list {
+      list-style: none;
+      padding: 0;
+    }
+    .activity-item {
+      padding: 1rem 0;
+      border-bottom: 1px solid #eee;
+    }
+    .activity-item:last-child {
+      border-bottom: none;
+    }
+    .activity-time {
+      font-size: 0.85rem;
+      color: #999;
+    }
+    .activity-description {
+      margin-top: 0.25rem;
+      color: #333;
+    }
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .tool-card {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 1.5rem;
+      text-align: center;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    .tool-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+    .tool-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .tool-title {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+      color: #333;
+    }
+    .tool-description {
+      color: #666;
+      font-size: 0.9rem;
+    }
+    .tool-port {
+      font-size: 0.8rem;
+      color: #999;
+      margin-top: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">
+        <a href="/">
+          <img src="https://placehold.co/120x40/fff/000?text=Efficepart" alt="Efficepart Logo" />
+        </a>
+      </div>
+      <div class="nav-links">
+        <a href="/" class="nav-link">ホーム</a>
+        <a href="/dashboard" class="nav-link active">ダッシュボード</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="dashboard-container">
+      <div class="dashboard-header">
+        <h1 class="dashboard-title">ダッシュボード</h1>
+        <div class="dashboard-actions">
+          <button class="btn btn-primary">新規プロジェクト</button>
+        </div>
+      </div>
+
+      <div class="dashboard-stats">
+        <div class="stat-card">
+          <div class="stat-title">完了したタスク</div>
+          <div class="stat-value">24</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-title">進行中のプロジェクト</div>
+          <div class="stat-value">3</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-title">今月の生産性</div>
+          <div class="stat-value">92%</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-title">節約された時間</div>
+          <div class="stat-value">14h</div>
+        </div>
+      </div>
+
+      <div class="recent-activity">
+        <h2 class="activity-title">最近のアクティビティ</h2>
+        <ul class="activity-list">
+          <li class="activity-item">
+            <div class="activity-time">今日 14:32</div>
+            <div class="activity-description">目次が正常に生成されました</div>
+          </li>
+          <li class="activity-item">
+            <div class="activity-time">今日 11:15</div>
+            <div class="activity-description">シフトスケジュールが更新されました</div>
+          </li>
+          <li class="activity-item">
+            <div class="activity-time">昨日 16:42</div>
+            <div class="activity-description">名札テンプレートが作成されました</div>
+          </li>
+          <li class="activity-item">
+            <div class="activity-time">2日前 09:27</div>
+            <div class="activity-description">PDFファイルが処理されました</div>
+          </li>
+        </ul>
+      </div>
+
+      <h2 style="margin-top: 2rem; color: #333;">利用可能なツール</h2>
+      <div class="tools-grid">
+        {% for blueprint in blueprints %}
+        <div class="tool-card" onclick="window.location.href='{{ blueprint.url }}'">
+          <div class="tool-icon">
+            {% if blueprint.name == 'toc' %}🌐
+            {% elif blueprint.name == 'pdf' %}📄
+            {% elif blueprint.name == 'shift' %}👥
+            {% elif blueprint.name == 'nametag' or blueprint.name == 'nametag_generator' %}🏷️
+            {% elif blueprint.name == 'transfer' %}📤
+            {% elif blueprint.name == 'gigafile' %}📦
+            {% elif blueprint.name == 'howto' %}📚
+            {% elif blueprint.name == 'proofreading' %}✅
+            {% elif blueprint.name == 'converter' %}🔄
+            {% else %}🔧
+            {% endif %}
+          </div>
+          <div class="tool-title">{{ blueprint.display_name }}</div>
+          <div class="tool-description">
+            {% if blueprint.name == 'toc' %}
+            マニュアルやドキュメントの目次を自動生成します
+            {% elif blueprint.name == 'pdf' %}
+            PDFファイルの変換、結合、分割などを行います
+            {% elif blueprint.name == 'shift' %}
+            最適化されたシフトスケジュールを作成します
+            {% elif blueprint.name == 'nametag' or blueprint.name == 'nametag_generator' %}
+            イベントや会議用の名札を簡単に作成します
+            {% elif blueprint.name == 'transfer' %}
+            ファイル転送を高速かつ安全に行います
+            {% elif blueprint.name == 'gigafile' %}
+            大容量ファイルの転送・共有を行います
+            {% elif blueprint.name == 'howto' %}
+            各ツールの使い方ガイドを提供します
+            {% elif blueprint.name == 'proofreading' %}
+            文書の校正・チェックを行います
+            {% elif blueprint.name == 'converter' %}
+            様々なファイル形式の変換を行います
+            {% else %}
+            ポート{{ blueprint.port }}で実行されているツールです
+            {% endif %}
+          </div>
+          <div class="tool-port">ポート: {{ blueprint.port }}</div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Efficiency Expert</h3>
+        <p>効率的な業務をサポートするツール集</p>
+      </div>
+      <div class="footer-section">
+        <h3>リンク</h3>
+        <ul>
+          <li><a href="/">ホーム</a></li>
+          <li><a href="/dashboard">ダッシュボード</a></li>
+          <li><a href="#">ヘルプ</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>お問い合わせ</h3>
+        <p>support@efficiencyexpert.com</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Efficiency Expert. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // ダッシュボード機能のJavaScript
+    document.addEventListener('DOMContentLoaded', function() {
+      console.log('Dashboard loaded');
+      // ここに必要なJavaScriptコードを追加
+    });
+  </script>
+</body>
+</html>

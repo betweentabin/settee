@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <title>名札デザイン - Efficiency Expert</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- 外部CSSファイルの読み込み -->
+  <link rel="stylesheet" href="/static/css/design_nametag_style.css" />
+  <!-- PDF.jsライブラリの読み込み -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script>pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';</script>
+  
+  <!-- 外部JavaScriptファイルを読み込む -->
+  <script src="/static/js/design_nametag_style.js"></script>
+</head>
+<body>
+
+  <main>
+    <!-- 名札デザインコンテナ -->
+    <div class="nametag-container">
+      <!-- ===== 名札生成フォームセクション ===== -->
+      <section class="form-section1">
+        <h2>デザイン設定</h2>
+        
+        <!-- タブコンテナ -->
+        <div class="tabs-container">
+          <!-- タブメニュー -->
+          <ul class="tabs">
+            <li class="tab-item"><a class="tab-link active" data-tab="size">サイズ</a></li>
+            <li class="tab-item"><a class="tab-link" data-tab="background">背景</a></li>
+            <li class="tab-item"><a class="tab-link" data-tab="font">フォント</a></li>
+            <li class="tab-item"><a class="tab-link" data-tab="text-position">テキスト位置</a></li>
+          </ul>
+          
+          <!-- タブコンテンツ -->
+          <div class="tab-content active" id="size">
+            <h3>サイズ設定</h3>
+            <div class="form-group">
+              <label for="width">名札の幅(mm)</label>
+              <input type="number" id="width" name="width" value="90" min="50" max="200">
+            </div>
+            <div class="form-group">
+              <label for="height">名札の高さ(mm)</label>
+              <input type="number" id="height" name="height" value="55" min="30" max="150">
+            </div>
+          </div>
+          
+          <div class="tab-content" id="background">
+            <h3>背景設定</h3>
+            <div class="form-group">
+              <label for="bg-color">背景色</label>
+              <div class="color-picker">
+                <input type="color" id="bg-color" name="bg-color" value="#ffffff">
+                <div class="cmyk-controls">
+                  <div class="cmyk-slider">
+                    <label>C</label>
+                    <input type="range" id="bg-cyan" min="0" max="100" value="0" class="cmyk-input">
+                    <span class="cmyk-value">0%</span>
+                  </div>
+                  <div class="cmyk-slider">
+                    <label>M</label>
+                    <input type="range" id="bg-magenta" min="0" max="100" value="0" class="cmyk-input">
+                    <span class="cmyk-value">0%</span>
+                  </div>
+                  <div class="cmyk-slider">
+                    <label>Y</label>
+                    <input type="range" id="bg-yellow" min="0" max="100" value="0" class="cmyk-input">
+                    <span class="cmyk-value">0%</span>
+                  </div>
+                  <div class="cmyk-slider">
+                    <label>K</label>
+                    <input type="range" id="bg-black" min="0" max="100" value="0" class="cmyk-input">
+                    <span class="cmyk-value">0%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="bg-image">背景画像</label>
+              <input type="file" id="bg-image" name="bg-image" accept="image/*">
+            </div>
+          </div>
+          
+          <div class="tab-content" id="font">
+            <h3>フォント設定</h3>
+            <div class="form-group">
+              <label for="text-line-select-font">行の選択</label>
+              <select id="text-line-select-font" name="text-line-select-font" class="line-selector">
+                <option value="all" selected>All</option>
+                <option value="1">1行目</option>
+                <option value="2">2行目</option>
+                <option value="3">3行目</option>
+                <option value="4">4行目</option>
+                <option value="5">5行目</option>
+                <option value="6">6行目</option>
+                <option value="7">7行目</option>
+                <option value="8">8行目</option>
+                <option value="9">9行目</option>
+                <option value="10">10行目</option>
+                <option value="qr">QRコード</option>
+              </select>
+            </div>
+            
+            <!-- テキスト行の設定 -->
+            <div id="text-settings" class="settings-group">
+              <div class="form-group">
+                <label for="font-family">フォント</label>
+                <select id="font-family" name="font-family" class="line-specific-setting" data-setting-type="font-family">
+                  <option value="sans-serif">ゴシック体</option>
+                  <option value="serif">明朝体</option>
+                  <option value="monospace">等幅フォント</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="font-size">フォントサイズ</label>
+                <input type="number" id="font-size" name="font-size" value="16" min="8" max="72" class="line-specific-setting" data-setting-type="font-size">
+              </div>
+              <div class="form-group">
+                <label for="font-color">フォント色</label>
+                <div class="color-picker">
+                  <input type="color" id="font-color" name="font-color" value="#000000" class="line-specific-setting" data-setting-type="font-color">
+                  <div class="cmyk-controls">
+                    <div class="cmyk-slider">
+                      <label>C</label>
+                      <input type="range" id="font-cyan" min="0" max="100" value="0" class="cmyk-input">
+                      <span class="cmyk-value">0%</span>
+                    </div>
+                    <div class="cmyk-slider">
+                      <label>M</label>
+                      <input type="range" id="font-magenta" min="0" max="100" value="0" class="cmyk-input">
+                      <span class="cmyk-value">0%</span>
+                    </div>
+                    <div class="cmyk-slider">
+                      <label>Y</label>
+                      <input type="range" id="font-yellow" min="0" max="100" value="0" class="cmyk-input">
+                      <span class="cmyk-value">0%</span>
+                    </div>
+                    <div class="cmyk-slider">
+                      <label>K</label>
+                      <input type="range" id="font-black" min="0" max="100" value="0" class="cmyk-input">
+                      <span class="cmyk-value">0%</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- QRコードの設定 -->
+            <div id="qr-settings" class="settings-group" style="display: none;">
+              <div class="form-group">
+                <label for="qr-size">QRコードサイズ</label>
+                <input type="number" id="qr-size" name="qr-size" value="100" min="50" max="200" class="line-specific-setting" data-setting-type="qr-size">
+              </div>
+              <div class="form-group">
+                <label for="qr-color">QRコード色</label>
+                <div class="color-picker">
+                  <input type="color" id="qr-color" name="qr-color" value="#000000" class="line-specific-setting" data-setting-type="qr-color">
+                  <div class="cmyk-controls">
+                    <div class="cmyk-slider">
+                      <label>C</label>
+                      <input type="range" id="qr-cyan" min="0" max="100" value="0" class="cmyk-input">
+                      <span class="cmyk-value">0%</span>
+                    </div>
+                    <div class="cmyk-slider">
+                      <label>M</label>
+                      <input type="range" id="qr-magenta" min="0" max="100" value="0" class="cmyk-input">
+                      <span class="cmyk-value">0%</span>
+                    </div>
+                    <div class="cmyk-slider">
+                      <label>Y</label>
+                      <input type="range" id="qr-yellow" min="0" max="100" value="0" class="cmyk-input">
+                      <span class="cmyk-value">0%</span>
+                    </div>
+                    <div class="cmyk-slider">
+                      <label>K</label>
+                      <input type="range" id="qr-black" min="0" max="100" value="0" class="cmyk-input">
+                      <span class="cmyk-value">0%</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="tab-content" id="text-position">
+            <h3>テキスト位置設定</h3>
+            <div class="form-group">
+              <label for="text-line-select-position">行の選択</label>
+              <select id="text-line-select-position" name="text-line-select-position" class="line-selector">
+                <option value="all" selected>All</option>
+                <option value="1">1行目</option>
+                <option value="2">2行目</option>
+                <option value="3">3行目</option>
+                <option value="4">4行目</option>
+                <option value="5">5行目</option>
+                <option value="6">6行目</option>
+                <option value="7">7行目</option>
+                <option value="8">8行目</option>
+                <option value="9">9行目</option>
+                <option value="10">10行目</option>
+                <option value="qr">QRコード</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="horizontal-position">横軸位置(px)</label>
+              <input type="number" id="horizontal-position" name="horizontal-position" value="0" min="-100" max="100" class="line-specific-setting" data-setting-type="horizontal-position">
+            </div>
+            <div class="form-group">
+              <label for="vertical-position">縦軸位置(px)</label>
+              <input type="number" id="vertical-position" name="vertical-position" value="0" min="-100" max="100" class="line-specific-setting" data-setting-type="vertical-position">
+            </div>
+          </div>
+        </div>
+        
+      </section>
+
+      <!-- ===== プレビューフォームセクション ===== -->
+      <section class="form-section2">
+        <h2>プレビュー</h2>
+        <div class="preview-container">
+          <div class="nametag-preview">
+            <!-- プレビュー内容はJavaScriptで動的に生成 -->
+          </div>
+        </div>
+        <div class="preview-buttons">
+          <div class="preview-buttons-top">
+            <button class="preview-btn" id="save-btn">トリムマーク非表示</button>
+            <button class="preview-btn" id="print-btn">切断線非表示</button>
+          </div>
+        </div>
+        <div class="download-area">
+          <h3>ダウンロード形式</h3>
+          <div class="download-format-selector">
+            <select id="download-format" class="format-select">
+              <option value="pdf">PDF形式</option>
+              <option value="png">PNG形式</option>
+              <option value="jpg">JPG形式</option>
+            </select>
+            <button class="download-format-btn">ダウンロード</button>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+</body>
+</html> 
