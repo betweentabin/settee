@@ -1,6 +1,8 @@
 import React, { createContext, useState, useContext, useEffect } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
+const API_BASE_URL = 'http://localhost:5000/api';
+
 const AuthContext = createContext();
 
 export const useAuth = () => useContext(AuthContext);
@@ -29,53 +31,60 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   const login = async (email, password) => {
+    setLoading(true);
+    setError(null);
     try {
-      setLoading(true);
-      // 実際のAPIリクエストはここに実装
-      // 仮のユーザーデータ
-      const userData = {
-        id: '123456',
-        name: 'テストユーザー',
-        email: email,
-        profileImage: null,
-        verificationStatus: {
-          isEmailVerified: true,
-          isStudentIdVerified: false
+      const response = await fetch(`${API_BASE_URL}/auth/login`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
         },
-        points: 100
-      };
-      
-      await AsyncStorage.setItem('user', JSON.stringify(userData));
-      setUser(userData);
-      return userData;
+        body: JSON.stringify({ email, password }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.message || 'ログインに失敗しました');
+      }
+
+      const userDataWithToken = { ...data.user, token: data.token };
+      await AsyncStorage.setItem('user', JSON.stringify(userDataWithToken));
+      setUser(userDataWithToken);
+      return userDataWithToken;
     } catch (e) {
-      setError('ログインに失敗しました');
+      setError(e.message || 'ログイン処理中にエラーが発生しました');
       throw e;
     } finally {
       setLoading(false);
     }
   };
 
-  const register = async (userData) => {
+  const register = async (registrationData) => {
+    setLoading(true);
+    setError(null);
     try {
-      setLoading(true);
-      // 実際のAPIリクエストはここに実装
-      // 仮の登録処理
-      const newUser = {
-        id: Math.random().toString(36).substr(2, 9),
-        ...userData,
-        verificationStatus: {
-          isEmailVerified: false,
-          isStudentIdVerified: false
+      const response = await fetch(`${API_BASE_URL}/auth/register`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
         },
-        points: 0
-      };
-      
-      await AsyncStorage.setItem('user', JSON.stringify(newUser));
-      setUser(newUser);
-      return newUser;
+        body: JSON.stringify(registrationData),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.message || 'アカウント登録に失敗しました');
+      }
+
+      // Assuming backend returns user and token like login
+      const newUserWithToken = { ...data.user, token: data.token };
+      await AsyncStorage.setItem('user', JSON.stringify(newUserWithToken));
+      setUser(newUserWithToken);
+      return newUserWithToken;
     } catch (e) {
-      setError('アカウント登録に失敗しました');
+      setError(e.message || 'アカウント登録処理中にエラーが発生しました');
       throw e;
     } finally {
       setLoading(false);

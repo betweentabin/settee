@@ -1,8 +1,8 @@
 const socketIo = require('socket.io');
 const jwt = require('jsonwebtoken');
-const User = require('../models/user.model');
-const ChatRoom = require('../models/chatroom.model');
-const Message = require('../models/message.model');
+const User = require('./user.model');
+const ChatRoom = require('./chatroom.model');
+const Message = require('./message.model');
 
 // Socket.IOサーバーの初期化
 const initializeSocketServer = (server) => {

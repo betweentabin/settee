@@ -1,7 +1,7 @@
 const http = require('http');
 const app = require('./app');
 const dotenv = require('dotenv');
-const { initializeSocketServer } = require('./sockets/socket');
+const { initializeSocketServer } = require('./socket');
 
 // 環境変数の読み込み
 dotenv.config();

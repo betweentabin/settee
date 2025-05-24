@@ -1,14 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, FlatList, Image } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 import { useTheme } from '../../contexts/ThemeContext';
 import { useLocation } from '../../contexts/LocationContext';
 import MapView, { Marker, PROVIDER_GOOGLE } from 'react-native-maps';
 
+const API_BASE_URL = 'http://localhost:5000/api'; // Temporary: Should be in a shared config
+
 const HomeScreen = () => {
   const { colors } = useTheme();
-  const { location, getCurrentLocation, errorMsg } = useLocation();
+  const { location, getCurrentLocation, errorMsg: locationErrorMsg } = useLocation();
   const [pins, setPins] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loadingPins, setLoadingPins] = useState(true);
+  const [pinsError, setPinsError] = useState(null);
+  const navigation = useNavigation();
 
   useEffect(() => {
     // 位置情報を取得
@@ -16,77 +21,34 @@ const HomeScreen = () => {
       await getCurrentLocation();
     };
 
-    // ピンデータを取得（実際のアプリではAPIから取得）
+    // ピンデータを取得
     const fetchPins = async () => {
+      setLoadingPins(true);
+      setPinsError(null);
       try {
-        // 仮のピンデータ
-        const dummyPins = [
-          {
-            id: '1',
-            creatorId: 'user1',
-            creatorName: '田中さん',
-            title: '一緒にランチしませんか？',
-            description: '学食で一緒にランチしましょう！',
-            location: {
-              latitude: 35.6812,
-              longitude: 139.7671,
-              address: '東京都千代田区'
-            },
-            dateTime: new Date().toISOString(),
-            isToday: true,
-            participants: 0,
-            createdAt: new Date().toISOString()
-          },
-          {
-            id: '2',
-            creatorId: 'user2',
-            creatorName: '佐藤さん',
-            title: '図書館で勉強会',
-            description: '期末試験対策の勉強会を開きます',
-            location: {
-              latitude: 35.6842,
-              longitude: 139.7695,
-              address: '東京都千代田区'
-            },
-            dateTime: new Date(Date.now() + 86400000).toISOString(), // 明日
-            isToday: false,
-            participants: 2,
-            createdAt: new Date().toISOString()
-          },
-          {
-            id: '3',
-            creatorId: 'user3',
-            creatorName: '鈴木さん',
-            title: 'カフェでおしゃべり',
-            description: '新しいカフェでお茶しませんか？',
-            location: {
-              latitude: 35.6822,
-              longitude: 139.7651,
-              address: '東京都千代田区'
-            },
-            dateTime: new Date(Date.now() + 172800000).toISOString(), // 明後日
-            isToday: false,
-            participants: 1,
-            createdAt: new Date().toISOString()
-          }
-        ];
-        
-        setPins(dummyPins);
+        const response = await fetch(`${API_BASE_URL}/pins`);
+        if (!response.ok) {
+          const errorData = await response.json();
+          throw new Error(errorData.message || 'ピンの取得に失敗しました');
+        }
+        const data = await response.json();
+        setPins(data);
       } catch (error) {
         console.error('Error fetching pins:', error);
+        setPinsError(error.message || 'ピンの読み込み中にエラーが発生しました');
       } finally {
-        setLoading(false);
+        setLoadingPins(false);
       }
     };
 
     fetchLocation();
     fetchPins();
-  }, []);
+  }, [getCurrentLocation]); // Added getCurrentLocation to dependency array
 
   const renderPinItem = ({ item }) => (
     <TouchableOpacity
       style={[styles.pinItem, { backgroundColor: colors.card }]}
-      onPress={() => navigation.navigate('PinDetail', { pinId: item.id })}
+      onPress={() => navigation.navigate('PinDetail', { pinId: item._id })} // Assuming pin ID from backend is _id
     >
       {item.isToday && (
         <View style={styles.todayBadge}>
@@ -166,7 +128,7 @@ const HomeScreen = () => {
       ) : (
         <View style={[styles.loadingContainer, { backgroundColor: colors.card }]}>
           <Text style={[styles.loadingText, { color: colors.text }]}>
-            {errorMsg || '位置情報を取得中...'}
+            {locationErrorMsg || '位置情報を取得中...'}
           </Text>
         </View>
       )}
@@ -176,18 +138,27 @@ const HomeScreen = () => {
           近くのピン
         </Text>
         
-        {loading ? (
+        {loadingPins ? (
           <Text style={[styles.loadingText, { color: colors.textSecondary }]}>
             ピンを読み込み中...
+          </Text>
+        ) : pinsError ? (
+          <Text style={[styles.errorText, { color: colors.error }]}>
+            {pinsError}
           </Text>
         ) : (
           <FlatList
             data={pins}
             renderItem={renderPinItem}
-            keyExtractor={item => item.id}
+            keyExtractor={item => item._id} // Assuming pin ID from backend is _id
             horizontal
             showsHorizontalScrollIndicator={false}
             contentContainerStyle={styles.pinList}
+            ListEmptyComponent={
+              <Text style={[styles.emptyListText, { color: colors.textSecondary }]}>
+                近くにピンはありません。
+              </Text>
+            }
           />
         )}
       </View>
@@ -216,6 +187,17 @@ const styles = StyleSheet.create({
   },
   loadingText: {
     fontSize: 16,
+  },
+  errorText: {
+    fontSize: 16,
+    textAlign: 'center',
+    marginHorizontal: 20,
+  },
+  emptyListText: {
+    fontSize: 14,
+    textAlign: 'center',
+    fontStyle: 'italic',
+    paddingHorizontal: 20,
   },
   pinListContainer: {
     position: 'absolute',
