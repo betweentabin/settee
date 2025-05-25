@@ -1,0 +1,137 @@
+name: Claude Code Test
+on:
+  workflow_dispatch:  # 手動実行用
+  push:
+    branches: [main, master]
+
+jobs:
+  claude-code-test:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: |
+          npm install -g @anthropic-ai/claude-code || echo "Claude Code installation attempted"
+
+      - name: Test Claude Code availability
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          echo "Testing Claude Code..."
+          # claude-code --version || echo "Claude Code not available, using curl instead"
+          
+          # 代替案: Anthropic APIを直接呼び出し
+          if [ -n "$ANTHROPIC_API_KEY" ]; then
+            echo "API Key is set, testing connection..."
+            curl -X POST https://api.anthropic.com/v1/messages \
+              -H "Content-Type: application/json" \
+              -H "x-api-key: $ANTHROPIC_API_KEY" \
+              -H "anthropic-version: 2023-06-01" \
+              -d '{
+                "model": "claude-3-sonnet-20240229",
+                "max_tokens": 100,
+                "messages": [{"role": "user", "content": "Hello, this is a GitHub Actions test"}]
+              }' || echo "API test failed"
+          else
+            echo "ANTHROPIC_API_KEY not set"
+          fi
+
+      - name: Analyze repository structure
+        run: |
+          echo "Repository structure:"
+          find . -type f -name "*.js" -o -name "*.py" -o -name "*.java" -o -name "*.cpp" -o -name "*.ts" | head -10
+          
+          echo "Total code files:"
+          find . -type f \( -name "*.js" -o -name "*.py" -o -name "*.java" -o -name "*.cpp" -o -name "*.ts" \) | wc -l
+
+      - name: Create simple code analysis
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          # 簡単なPythonスクリプトでClaude APIを呼び出し
+          cat > analyze_code.py << 'EOF'
+          import os
+          import json
+          import subprocess
+          import requests
+          
+          def analyze_with_claude():
+              api_key = os.environ.get('ANTHROPIC_API_KEY')
+              if not api_key:
+                  print("API key not found")
+                  return
+              
+              # 簡単なコードファイルを見つける
+              result = subprocess.run(['find', '.', '-name', '*.py', '-o', '-name', '*.js'], 
+                                    capture_output=True, text=True)
+              files = result.stdout.strip().split('\n')[:3]  # 最初の3つのファイル
+              
+              for file in files:
+                  if file and os.path.exists(file):
+                      try:
+                          with open(file, 'r') as f:
+                              content = f.read()[:1000]  # 最初の1000文字のみ
+                          
+                          headers = {
+                              'Content-Type': 'application/json',
+                              'x-api-key': api_key,
+                              'anthropic-version': '2023-06-01'
+                          }
+                          
+                          data = {
+                              'model': 'claude-3-sonnet-20240229',
+                              'max_tokens': 200,
+                              'messages': [{
+                                  'role': 'user', 
+                                  'content': f'Analyze this code and provide brief suggestions for improvement:\n\n{content}'
+                              }]
+                          }
+                          
+                          response = requests.post('https://api.anthropic.com/v1/messages', 
+                                                 headers=headers, json=data, timeout=30)
+                          
+                          if response.status_code == 200:
+                              result = response.json()
+                              print(f"\n=== Analysis for {file} ===")
+                              print(result['content'][0]['text'])
+                          else:
+                              print(f"Error analyzing {file}: {response.status_code}")
+                              
+                      except Exception as e:
+                          print(f"Error processing {file}: {e}")
+          
+          if __name__ == "__main__":
+              analyze_with_claude()
+          EOF
+          
+          python analyze_code.py
+
+      - name: Create improvement suggestions
+        run: |
+          echo "## Claude Code Analysis Results" > claude_analysis.md
+          echo "Generated on: $(date)" >> claude_analysis.md
+          echo "" >> claude_analysis.md
+          echo "This analysis was performed by Claude via GitHub Actions." >> claude_analysis.md
+          
+          # ファイルが作成されていれば、コミット
+          if [ -f claude_analysis.md ]; then
+            git config --local user.email "action@github.com"
+            git config --local user.name "GitHub Action"
+            git add claude_analysis.md
+            git commit -m "Add Claude code analysis results" || echo "No changes to commit"
+            git push || echo "Push failed"
+          fi
