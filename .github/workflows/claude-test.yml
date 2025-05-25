@@ -1,137 +1,227 @@
-name: Claude Code Test
+name: Claude Code Review
 on:
-  workflow_dispatch:  # 手動実行用
-  push:
-    branches: [main, master]
+  pull_request:
+    types: [opened, synchronize]
+  workflow_dispatch:
+    inputs:
+      review_type:
+        description: 'Review type'
+        required: true
+        default: 'full'
+        type: choice
+        options:
+        - full
+        - security
+        - performance
+        - documentation
 
 jobs:
-  claude-code-test:
+  claude-review:
     runs-on: ubuntu-latest
     permissions:
-      contents: write
+      contents: read
       pull-requests: write
-    
+      issues: write
+
     steps:
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - name: Get changed files
+        id: changed-files
+        uses: tj-actions/changed-files@v41
         with:
-          node-version: '20'
+          files: |
+            **/*.py
+            **/*.js
+            **/*.ts
+            **/*.jsx
+            **/*.tsx
+            **/*.java
+            **/*.cpp
+            **/*.c
+            **/*.cs
+            **/*.php
+            **/*.rb
+            **/*.go
+            **/*.rs
+
+      - name: Setup Python for Claude API
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
 
       - name: Install dependencies
         run: |
-          npm install -g @anthropic-ai/claude-code || echo "Claude Code installation attempted"
+          pip install anthropic requests
 
-      - name: Test Claude Code availability
-        env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      - name: Create Claude review script
         run: |
-          echo "Testing Claude Code..."
-          # claude-code --version || echo "Claude Code not available, using curl instead"
-          
-          # 代替案: Anthropic APIを直接呼び出し
-          if [ -n "$ANTHROPIC_API_KEY" ]; then
-            echo "API Key is set, testing connection..."
-            curl -X POST https://api.anthropic.com/v1/messages \
-              -H "Content-Type: application/json" \
-              -H "x-api-key: $ANTHROPIC_API_KEY" \
-              -H "anthropic-version: 2023-06-01" \
-              -d '{
-                "model": "claude-3-sonnet-20240229",
-                "max_tokens": 100,
-                "messages": [{"role": "user", "content": "Hello, this is a GitHub Actions test"}]
-              }' || echo "API test failed"
-          else
-            echo "ANTHROPIC_API_KEY not set"
-          fi
-
-      - name: Analyze repository structure
-        run: |
-          echo "Repository structure:"
-          find . -type f -name "*.js" -o -name "*.py" -o -name "*.java" -o -name "*.cpp" -o -name "*.ts" | head -10
-          
-          echo "Total code files:"
-          find . -type f \( -name "*.js" -o -name "*.py" -o -name "*.java" -o -name "*.cpp" -o -name "*.ts" \) | wc -l
-
-      - name: Create simple code analysis
-        env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: |
-          # 簡単なPythonスクリプトでClaude APIを呼び出し
-          cat > analyze_code.py << 'EOF'
+          cat > claude_review.py << 'EOF'
           import os
+          import sys
           import json
-          import subprocess
-          import requests
-          
-          def analyze_with_claude():
-              api_key = os.environ.get('ANTHROPIC_API_KEY')
-              if not api_key:
-                  print("API key not found")
+          import anthropic
+          from pathlib import Path
+
+          def get_file_content(file_path, max_lines=500):
+              """ファイル内容を取得（大きすぎるファイルは制限）"""
+              try:
+                  with open(file_path, 'r', encoding='utf-8', errors='ignore') as f:
+                      lines = f.readlines()
+                      if len(lines) > max_lines:
+                          return ''.join(lines[:max_lines]) + f"\n\n... (残り{len(lines) - max_lines}行は省略)"
+                      return ''.join(lines)
+              except Exception as e:
+                  return f"Error reading file: {e}"
+
+          def review_code_with_claude(files, review_type):
+              """Claude APIでコードレビュー"""
+              client = anthropic.Anthropic(api_key=os.environ['ANTHROPIC_API_KEY'])
+              
+              review_prompts = {
+                  'full': 'このコードを包括的にレビューしてください。バグ、改善点、ベストプラクティスの観点から分析してください。',
+                  'security': 'このコードのセキュリティ上の問題を特定してください。',
+                  'performance': 'このコードのパフォーマンス改善点を指摘してください。',
+                  'documentation': 'このコードのドキュメント不足や改善点を指摘してください。'
+              }
+              
+              results = []
+              
+              for file_path in files:
+                  if not os.path.exists(file_path):
+                      continue
+                      
+                  content = get_file_content(file_path)
+                  if not content.strip():
+                      continue
+                  
+                  prompt = f"""
+          {review_prompts.get(review_type, review_prompts['full'])}
+
+          ファイル: {file_path}
+
+          ```
+          {content}
+          ```
+
+          以下の形式で回答してください：
+          ## {file_path}
+
+          ### 🔍 主な問題点
+          - 
+
+          ### 💡 改善提案
+          - 
+
+          ### ✅ 良い点
+          - 
+          """
+                  
+                  try:
+                      message = client.messages.create(
+                          model="claude-3-sonnet-20240229",
+                          max_tokens=2000,
+                          messages=[{"role": "user", "content": prompt}]
+                      )
+                      
+                      results.append({
+                          'file': file_path,
+                          'review': message.content[0].text
+                      })
+                      
+                  except Exception as e:
+                      results.append({
+                          'file': file_path,
+                          'review': f"エラー: {e}"
+                      })
+              
+              return results
+
+          def create_pr_comment(reviews):
+              """PR用のコメントを作成"""
+              comment = "## 🤖 Claude Code Review\n\n"
+              
+              for review in reviews:
+                  comment += review['review'] + "\n\n"
+              
+              comment += "---\n*このレビューはClaude AIによって自動生成されました*"
+              return comment
+
+          def main():
+              files = sys.argv[1].split(',') if len(sys.argv) > 1 else []
+              review_type = sys.argv[2] if len(sys.argv) > 2 else 'full'
+              
+              if not files or not files[0]:
+                  print("レビューするファイルがありません")
                   return
               
-              # 簡単なコードファイルを見つける
-              result = subprocess.run(['find', '.', '-name', '*.py', '-o', '-name', '*.js'], 
-                                    capture_output=True, text=True)
-              files = result.stdout.strip().split('\n')[:3]  # 最初の3つのファイル
+              print(f"レビュー対象ファイル: {files}")
+              print(f"レビュータイプ: {review_type}")
               
-              for file in files:
-                  if file and os.path.exists(file):
-                      try:
-                          with open(file, 'r') as f:
-                              content = f.read()[:1000]  # 最初の1000文字のみ
-                          
-                          headers = {
-                              'Content-Type': 'application/json',
-                              'x-api-key': api_key,
-                              'anthropic-version': '2023-06-01'
-                          }
-                          
-                          data = {
-                              'model': 'claude-3-sonnet-20240229',
-                              'max_tokens': 200,
-                              'messages': [{
-                                  'role': 'user', 
-                                  'content': f'Analyze this code and provide brief suggestions for improvement:\n\n{content}'
-                              }]
-                          }
-                          
-                          response = requests.post('https://api.anthropic.com/v1/messages', 
-                                                 headers=headers, json=data, timeout=30)
-                          
-                          if response.status_code == 200:
-                              result = response.json()
-                              print(f"\n=== Analysis for {file} ===")
-                              print(result['content'][0]['text'])
-                          else:
-                              print(f"Error analyzing {file}: {response.status_code}")
-                              
-                      except Exception as e:
-                          print(f"Error processing {file}: {e}")
-          
-          if __name__ == "__main__":
-              analyze_with_claude()
-          EOF
-          
-          python analyze_code.py
+              reviews = review_code_with_claude(files, review_type)
+              comment = create_pr_comment(reviews)
+              
+              # 結果をファイルに保存
+              with open('claude_review_result.md', 'w', encoding='utf-8') as f:
+                  f.write(comment)
+              
+              print("レビュー完了!")
 
-      - name: Create improvement suggestions
+          if __name__ == "__main__":
+              main()
+          EOF
+
+      - name: Run Claude review
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
-          echo "## Claude Code Analysis Results" > claude_analysis.md
-          echo "Generated on: $(date)" >> claude_analysis.md
-          echo "" >> claude_analysis.md
-          echo "This analysis was performed by Claude via GitHub Actions." >> claude_analysis.md
+          REVIEW_TYPE="${{ github.event.inputs.review_type || 'full' }}"
+          CHANGED_FILES="${{ steps.changed-files.outputs.all_changed_files }}"
           
-          # ファイルが作成されていれば、コミット
-          if [ -f claude_analysis.md ]; then
-            git config --local user.email "action@github.com"
-            git config --local user.name "GitHub Action"
-            git add claude_analysis.md
-            git commit -m "Add Claude code analysis results" || echo "No changes to commit"
-            git push || echo "Push failed"
+          if [ -n "$CHANGED_FILES" ]; then
+            echo "Changed files: $CHANGED_FILES"
+            python claude_review.py "$CHANGED_FILES" "$REVIEW_TYPE"
+          else
+            echo "No code files changed"
+            echo "# No Code Changes\nコードファイルに変更がありませんでした。" > claude_review_result.md
+          fi
+
+      - name: Comment on PR
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            
+            try {
+              const reviewContent = fs.readFileSync('claude_review_result.md', 'utf8');
+              
+              await github.rest.issues.createComment({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: reviewContent
+              });
+            } catch (error) {
+              console.log('Error posting comment:', error);
+            }
+
+      - name: Upload review results
+        uses: actions/upload-artifact@v4
+        with:
+          name: claude-review-results
+          path: claude_review_result.md
+
+      - name: Summary
+        run: |
+          echo "## Claude Review Summary" >> $GITHUB_STEP_SUMMARY
+          echo "- Review Type: ${{ github.event.inputs.review_type || 'full' }}" >> $GITHUB_STEP_SUMMARY
+          echo "- Files Reviewed: ${{ steps.changed-files.outputs.all_changed_files_count }}" >> $GITHUB_STEP_SUMMARY
+          if [ -f claude_review_result.md ]; then
+            echo "- Status: ✅ Complete" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "- Status: ❌ Failed" >> $GITHUB_STEP_SUMMARY
           fi
