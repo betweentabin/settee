@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, ScrollView, Image, Alert } from 'react-native';
-import { useTheme } from '../../contexts/ThemeContext';
+import { useTheme } from './ThemeContext';
 import MapView, { Marker, PROVIDER_GOOGLE } from 'react-native-maps';
 
 const PinDetailScreen = ({ navigation, route }) => {

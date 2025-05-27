@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, TextInput, TouchableOpacity, ScrollView, Alert } from 'react-native';
-import { useTheme } from '../../contexts/ThemeContext';
+import { useTheme } from './ThemeContext';
 
 const EmailInputScreen = ({ navigation, route }) => {
   const { colors } = useTheme();

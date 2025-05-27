@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
-import { useTheme } from '../../contexts/ThemeContext';
+import { useTheme } from './ThemeContext';
 
 const SplashScreen = ({ navigation }) => {
   const { colors } = useTheme();
@@ -8,7 +8,7 @@ const SplashScreen = ({ navigation }) => {
   return (
     <View style={[styles.container, { backgroundColor: colors.background }]}>
       <Image
-        source={require('../../assets/logo.png')}
+        source={require('./icon.png')}
         style={styles.logo}
         resizeMode="contain"
       />

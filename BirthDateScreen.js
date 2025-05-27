@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, ScrollView, Alert } from 'react-native';
-import { useTheme } from '../../contexts/ThemeContext';
+import { useTheme } from './ThemeContext';
 
 const BirthDateScreen = ({ navigation, route }) => {
   const { colors } = useTheme();

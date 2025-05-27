@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, ScrollView, TouchableOpacity, TextInput, Share, Alert } from 'react-native';
-import { useTheme } from '../../contexts/ThemeContext';
+import { useTheme } from './ThemeContext';
 
 const InviteFriendsScreen = ({ navigation }) => {
   const { colors } = useTheme();

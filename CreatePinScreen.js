@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, TextInput, TouchableOpacity, ScrollView, Alert } from 'react-native';
-import { useTheme } from '../../contexts/ThemeContext';
-import { useLocation } from '../../contexts/LocationContext';
+import { useTheme } from './ThemeContext';
+import { useLocation } from './LocationContext';
 import MapView, { Marker, PROVIDER_GOOGLE } from 'react-native-maps';
 import DateTimePicker from '@react-native-community/datetimepicker';
 

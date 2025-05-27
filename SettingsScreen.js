@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Switch } from 'react-native';
-import { useTheme } from '../../contexts/ThemeContext';
-import { useAuth } from '../../contexts/AuthContext';
+import { useTheme } from './ThemeContext';
+import { useAuth } from './AuthContext';
 
 const SettingsScreen = ({ navigation }) => {
   const { colors, theme, toggleTheme } = useTheme();
