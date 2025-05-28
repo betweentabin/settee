@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, TextInput, TouchableOpacity, ScrollView, Alert } from 'react-native';
-import { useTheme } from '../../contexts/ThemeContext';
-import { useAuth } from '../../contexts/AuthContext';
+import { useTheme } from './ThemeContext';
+import { useAuth } from './AuthContext';
 
 const LoginScreen = ({ navigation }) => {
   const { colors } = useTheme();

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Image } from 'react-native';
-import { useTheme } from '../../contexts/ThemeContext';
-import { useAuth } from '../../contexts/AuthContext';
+import { useTheme } from './ThemeContext';
+import { useAuth } from './AuthContext';
 
 const PointsScreen = ({ navigation }) => {
   const { colors } = useTheme();

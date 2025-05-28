@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, FlatList, Image } from 'react-native';
-import { useTheme } from '../../contexts/ThemeContext';
-import { useLocation } from '../../contexts/LocationContext';
+import { useTheme } from './ThemeContext';
+import { useLocation } from './LocationContext';
 import MapView, { Marker, PROVIDER_GOOGLE } from 'react-native-maps';
 
 const HomeScreen = () => {
