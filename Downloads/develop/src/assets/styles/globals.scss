@@ -1,0 +1,74 @@
+@import 'variables';
+@import 'mixins';
+
+/* Reset and Base Styles */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Container styles */
+.container-center-horizontal {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.screen {
+  width: 100%;
+  max-width: 1440px;
+}
+
+/* Flex utilities */
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+/* Common positioning */
+.overlap-group,
+.overlap-group1,
+.overlap-group2,
+.overlap-group3,
+.overlap-group4,
+.overlap-group5,
+.overlap-group6,
+.overlap-group7,
+.overlap-group8,
+.overlap-group9,
+.overlap-group10,
+.overlap-group11,
+.overlap-group12,
+.overlap-group13 {
+  position: relative;
+}
+
+/* Text utilities */
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+} 

@@ -1,0 +1,28 @@
+{
+  "name": "telepathy-vite-template",
+  "version": "1.0.0",
+  "description": "Viteを使用したフロントエンド開発環境テンプレート",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --port 3000",
+    "build": "vite build",
+    "build:cache-buster": "CACHE_BUSTER=true vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@splidejs/splide": "^4.1.4",
+    "animejs": "^3.2.2"
+  },
+  "devDependencies": {
+    "glob": "^11.0.0",
+    "sass-embedded": "^1.71.0",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.8",
+    "vite-plugin-ejs": "^1.7.0",
+    "vite-plugin-sass-glob-import": "^4.0.0",
+    "vite-plugin-typescript": "^1.0.4"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+} 

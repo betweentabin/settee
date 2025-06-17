@@ -1,0 +1,43 @@
+// レスポンシブデザイン用ミックスイン
+@mixin media-query($breakpoint) {
+  @if $breakpoint == sm {
+    @media (min-width: $breakpoint-sm) { @content; }
+  }
+  @if $breakpoint == md {
+    @media (min-width: $breakpoint-md) { @content; }
+  }
+  @if $breakpoint == lg {
+    @media (min-width: $breakpoint-lg) { @content; }
+  }
+  @if $breakpoint == xl {
+    @media (min-width: $breakpoint-xl) { @content; }
+  }
+}
+
+// フレックスボックス用ミックスイン
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// ボタンスタイル用ミックスイン
+@mixin button-style($bg-color, $text-color: #fff) {
+  background-color: $bg-color;
+  color: $text-color;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  
+  &:hover {
+    background-color: darken($bg-color, 10%);
+  }
+}
+
+// グリッドシステム用ミックスイン
+@mixin make-col($size, $columns: 12) {
+  flex: 0 0 percentage($size / $columns);
+  max-width: percentage($size / $columns);
+} 
